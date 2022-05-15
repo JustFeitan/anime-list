@@ -21,4 +21,5 @@ export const animeSlice = createSlice({
     }
 })
 
+
 export default animeSlice.reducer;

@@ -14,6 +14,11 @@ export const animeAPI = createApi({
                 }
             }),
         }),
+        fetchWholeAnime: build.query<IAnime[], number>({
+            query: () => ({
+                url: `/anime`,
+            }),
+        }),
         fetchAnimeBySeason: build.query<IAnime[], AnimeSeasonTypes>({
             query: (season: AnimeSeasonTypes) => ({
                 url: `/anime?animeSeason.season=${season}`

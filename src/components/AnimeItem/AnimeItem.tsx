@@ -16,7 +16,7 @@ const AnimeItem: FC<AnimeItemProps> = ({anime}) => {
     }
 
     return (
-        <div className='anime-item'>
+        <article className='anime-item'>
             <div style={ImgStyles} className='anime-item__img'>
                 <img src='' alt=""/>
                 <div className="anime-item__description">
@@ -29,10 +29,8 @@ const AnimeItem: FC<AnimeItemProps> = ({anime}) => {
                         <span>Year: {anime.animeSeason.year}</span>
                     </div>
                 </div>
-
             </div>
-
-        </div>
+        </article>
     );
 };
 

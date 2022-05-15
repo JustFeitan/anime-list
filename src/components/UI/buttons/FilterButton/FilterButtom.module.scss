@@ -1,0 +1,19 @@
+.filterButton {
+  font-weight: 700;
+  margin-bottom: 5px;
+  padding: 5px 15px;
+  border: 1px solid #00D1FF;
+  border-radius: 12px;
+  background: white;
+  color: #00D1FF;
+}
+
+.filterButton.active {
+  background: #00D1FF;
+  color: white;
+}
+
+.filterButton.noActive {
+  background: #00D1FF;
+  color: white;
+}

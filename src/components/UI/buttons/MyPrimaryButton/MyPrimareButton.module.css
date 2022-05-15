@@ -1,0 +1,11 @@
+.primaryBtn {
+  background: #00D1FF;
+  color: white;
+  width: 145px;
+  height: 30px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/*# sourceMappingURL=MyPrimareButton.module.css.map */

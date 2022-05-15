@@ -1,0 +1,13 @@
+.slider-arrow {
+  width: 25px;
+  height: 25px;
+  background: rgba(0, 209, 255, 0.25);
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  cursor: pointer;
+}
+
+/*# sourceMappingURL=RightArrow.css.map */
