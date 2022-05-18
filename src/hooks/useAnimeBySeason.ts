@@ -1,8 +1,9 @@
 import {useMemo} from "react";
 import {AnimeSeasonTypes} from "../models/AnimeTypes";
 import {IAnime} from "../models/IAnime";
+import {IAnimeFilter} from "../models/IAnimeFilter";
 
-export const useAnimeBySeason = (animes: IAnime[], filters: { season: AnimeSeasonTypes[], year: number[] }) => {
+export const useAnimeBySeason = (animes: IAnime[], filters: IAnimeFilter) => {
     return useMemo(() => {
         if (!animes) return animes;
         for (let filter in filters) {

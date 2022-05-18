@@ -8,6 +8,8 @@ import {IAnimeFilter} from "../../models/IAnimeFilter";
 import {useAction, useAppSelector} from "../../hooks/redux";
 import {FilterTypes} from "../../models/FilterTypes";
 import './AnimeFilter.scss';
+import {AnimeSeasonTypes} from "../../models/AnimeTypes";
+import {useFilterWindow} from "../../hooks/useFilterWindow";
 
 interface AnimeFilterProps {
     filterList: any[];
@@ -19,57 +21,49 @@ interface AnimeFilterProps {
 const AnimeFilter: FC<AnimeFilterProps> = ({filterList, setFilters, filterName, filterType}) => {
 
     const [modal, setModal] = useState<boolean>(false);
-    const {filters} = useAppSelector(state => state.FilterReducer);
-    const [reset, setRest] = useState(false)
-    const {resetSeason, resetYear} = useAction();
+
+    const {filters, filter, reset, setIsReset, isReset} = useFilterWindow(filterType);
+
+
+    useEffect(() => {
+        reset();
+        setFilters(filters);
+    }, [isReset])
+
+
+    const isResetHandler = () => {
+        setIsReset(true);
+    }
 
     const acceptHandler = () => {
         setFilters(filters);
         setModal(false);
     }
 
-    useEffect(() => {
-        if (!reset) return;
-        switch (filterType) {
-            case FilterTypes.YEAR:
-                resetYear();
-                break;
-            case FilterTypes.SEASON:
-                resetSeason();
-                break;
-        }
-        setRest(false);
-    }, [reset])
-
-    useEffect(() => {
-        setFilters(filters);
-    }, [reset])
-
-    const resetHandler = () => {
-        setRest(true);
-    }
 
     return (
         <div>
+
             <div className='filter__btn'>
                 <MyPrimaryButton onClick={() => setModal(true)}>
                     {filterName}
                 </MyPrimaryButton>
             </div>
+
             <Modal visible={modal} setVisible={setModal}>
                 <List type={ListTypes.FILTER}
                       items={filterList}
-                      renderItem={(filter) =>
+                      renderItem={(filterTitle) =>
                           <FilterButton
-                              reset={reset}
-                              filterTitle={filter}
-                              filterType={filterType}
-                              title={filter}
+                              reset={isReset}
+                              filter={filter}
+                              filterTitle={filterTitle}
                           />}
                 />
+
                 <div className='filter__nav'>
                     <MyPrimaryButton
-                        onClick={resetHandler}
+                        onClick={isResetHandler}
                         width={'70px'}
                     >
                         Reset

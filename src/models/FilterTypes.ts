@@ -1,4 +1,4 @@
 export enum FilterTypes {
-    YEAR = 'YEAR',
-    SEASON = "SEASON",
+    YEAR = 'year',
+    SEASON = "season",
 }

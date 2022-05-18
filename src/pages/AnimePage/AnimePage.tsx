@@ -10,6 +10,7 @@ import {IAnimeFilter} from "../../models/IAnimeFilter";
 import './AnimePage.scss'
 import AnimeFilter from "../../components/AnimeFilter/AnimeFilter";
 import {FilterTypes} from "../../models/FilterTypes";
+import {useFilterWindow} from "../../hooks/useFilterWindow";
 
 const AnimePage: FC = () => {
     const yearFilters = [
@@ -35,15 +36,16 @@ const AnimePage: FC = () => {
 
 
     const [filters, setFilters] = useState<IAnimeFilter>({season: [], year: []})
-
     const filteredAnime = useAnimeBySeason(animes as IAnime[], filters);
 
-    console.log(filters)
+
 
     return (
         <div>
             <div className='filter'>
-                <AnimeFilter filterList={yearFilters} filterName={'Years'} setFilters={setFilters}
+                <AnimeFilter filterList={yearFilters}
+                             filterName={'Years'}
+                             setFilters={setFilters}
                              filterType={FilterTypes.YEAR}/>
                 <AnimeFilter filterList={seasonFilters} filterName={'Seasons'} setFilters={setFilters}
                              filterType={FilterTypes.SEASON}/>
