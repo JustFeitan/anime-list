@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {animeAPI} from "../../Services/AnimeService";
+import {animeAPI} from "../../services/AnimeService";
 import {IAnime} from "../../models/IAnime";
 import AnimeItem from "../../components/AnimeItem/AnimeItem";
 import TitleBar from "../../components/TitleBar/TitleBar";
@@ -19,7 +19,9 @@ const HomePage = () => {
         data: animeSpring,
         isLoading: isSpringAnimeIsLoading,
         error: springAnimeRError
-    } = animeAPI.useFetchAnimeBySeasonQuery(AnimeSeasonTypes.SPRING)
+    } = animeAPI.useFetchAnimeBySeasonQuery(AnimeSeasonTypes.SPRING);
+
+    console.log(animeSpring)
 
     //const springAnime = useAnimeBySeason(animes as IAnime[], filters); // филтрация
     return (

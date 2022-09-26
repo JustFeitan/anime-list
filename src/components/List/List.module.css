@@ -1,5 +1,5 @@
 .all {
-  padding: 25px;
+  padding: 25px 25px 0 25px;
   width: 100%;
 }
 
@@ -18,16 +18,6 @@
   flex-wrap: wrap;
   justify-content: space-between;
   align-content: start;
-}
-
-.filterWrapper {
-  padding: 10px;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-content: end;
 }
 
 /*# sourceMappingURL=List.module.css.map */

@@ -1,10 +1,12 @@
 import React, {AriaAttributes, ButtonHTMLAttributes, DetailedHTMLProps, FC, useState} from 'react';
 import styles from './FilterButtom.module.scss';
+import {FilterTypes} from "../../../../models/FilterTypes";
 
 interface FilterButtonProps extends DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>, AriaAttributes {
     filterTitle: number | string;
-    filter: (filterTitle: number | string) => void;
+    filter: (filterTitle: string | number, filterType: FilterTypes) => void;
     reset: boolean;
+    filterType: FilterTypes;
 }
 
 const FilterButton: FC<FilterButtonProps> =
@@ -12,6 +14,7 @@ const FilterButton: FC<FilterButtonProps> =
          filterTitle,
          filter,
          reset,
+         filterType,
          ...props
      }) => {
 
@@ -29,7 +32,7 @@ const FilterButton: FC<FilterButtonProps> =
 
         const activeHandler = () => {
             setActive(prevState => !prevState);
-            filter(filterTitle);
+            filter(filterTitle, filterType);
         }
 
         return (

@@ -1,7 +1,9 @@
-import {AnimeSeasonTypes} from "./AnimeTypes";
+import {AnimeSeasonTypes, AnimeTypes} from "./AnimeTypes";
 
-export interface IAnimeFilter{
+export type IAnimeFilter = {
     season: AnimeSeasonTypes[];
     year: number[];
+    tags: string[];
+    type: AnimeTypes[];
 }
 

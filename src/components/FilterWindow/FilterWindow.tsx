@@ -4,39 +4,35 @@ import {ListTypes} from "../../models/ListTypes";
 import FilterButton from "../UI/buttons/FilterButton/FilterButton";
 import MyPrimaryButton from "../UI/buttons/MyPrimaryButton/MyPrimaryButton";
 import Modal from "../UI/Modal/Modal";
-import {IAnimeFilter} from "../../models/IAnimeFilter";
-import {useAction, useAppSelector} from "../../hooks/redux";
 import {FilterTypes} from "../../models/FilterTypes";
-import './AnimeFilter.scss';
-import {AnimeSeasonTypes} from "../../models/AnimeTypes";
-import {useFilterWindow} from "../../hooks/useFilterWindow";
+import './FilterWindow.scss';
 
 interface AnimeFilterProps {
     filterList: any[];
     filterName: string;
-    setFilters: ({}: IAnimeFilter) => void;
     filterType: FilterTypes;
+    acceptHandler: () => void;
+    resetHandler: (filterType: FilterTypes) => void;
+    filter: (filterTitle: any, filterType: FilterTypes) => void;
 }
 
-const AnimeFilter: FC<AnimeFilterProps> = ({filterList, setFilters, filterName, filterType}) => {
+const FilterWindow: FC<AnimeFilterProps> = ({filterList, filterName, filterType, resetHandler, acceptHandler, filter}) => {
 
     const [modal, setModal] = useState<boolean>(false);
-
-    const {filters, filter, reset, setIsReset, isReset} = useFilterWindow(filterType);
-
+    const [isReset, setIsReset] = useState<boolean>(false);
 
     useEffect(() => {
-        reset();
-        setFilters(filters);
+        resetHandler(filterType);
+        setIsReset(false);
     }, [isReset])
 
 
-    const isResetHandler = () => {
+    const reset = () => {
         setIsReset(true);
     }
 
-    const acceptHandler = () => {
-        setFilters(filters);
+    const accept = () => {
+        acceptHandler();
         setModal(false);
     }
 
@@ -58,19 +54,20 @@ const AnimeFilter: FC<AnimeFilterProps> = ({filterList, setFilters, filterName, 
                               reset={isReset}
                               filter={filter}
                               filterTitle={filterTitle}
+                              filterType={filterType}
                           />}
                 />
 
                 <div className='filter__nav'>
                     <MyPrimaryButton
-                        onClick={isResetHandler}
+                        onClick={reset}
                         width={'70px'}
                     >
                         Reset
                     </MyPrimaryButton>
 
                     <MyPrimaryButton
-                        onClick={acceptHandler}
+                        onClick={accept}
                         width={'70px'}
                     >
                         Accept
@@ -81,4 +78,4 @@ const AnimeFilter: FC<AnimeFilterProps> = ({filterList, setFilters, filterName, 
     );
 };
 
-export default AnimeFilter;
+export default FilterWindow;

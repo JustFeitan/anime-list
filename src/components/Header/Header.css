@@ -35,5 +35,35 @@
   font-size: 24px;
   color: #00D1FF;
 }
+.header__input {
+  border: 1px solid lightgray;
+  border-radius: 5px;
+  font-size: 14px;
+  padding: 5px 5px 5px 30px;
+  background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/0/0b/Search_Icon.svg/1024px-Search_Icon.svg.png");
+  background-repeat: no-repeat;
+  background-size: 20px;
+  background-position: 5px center;
+  width: 100%;
+}
+.header__search {
+  position: relative;
+  width: 50%;
+}
+.header__result {
+  display: none;
+}
+.header__result--active {
+  display: block;
+  background-color: white;
+  position: absolute;
+  top: 44px;
+  width: 100%;
+  z-index: 1;
+  max-height: calc(100vh - $header-height);
+  border: 2px solid black;
+  border-radius: 5px;
+  overflow: scroll;
+}
 
 /*# sourceMappingURL=Header.css.map */

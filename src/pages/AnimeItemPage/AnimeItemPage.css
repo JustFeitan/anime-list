@@ -1,0 +1,21 @@
+.anime {
+  margin-top: 10px;
+  padding: 15px;
+  background-color: #fff;
+  border-radius: 5px;
+}
+.anime-title {
+  padding-bottom: 15px;
+  color: #00D1FF;
+}
+.anime-geners {
+  color: rgba(0, 0, 0, 0.5);
+}
+.anime__main {
+  display: flex;
+}
+.anime__description {
+  padding: 0 10px;
+}
+
+/*# sourceMappingURL=AnimeItemPage.css.map */

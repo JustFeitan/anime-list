@@ -5,6 +5,7 @@
   background-color: white;
   border-radius: 8px;
   margin-bottom: 20px;
+
   &__img {
     display: flex;
     flex-direction: column;
@@ -12,11 +13,13 @@
     background-position: center;
     border-radius: 8px;
   }
+
   &__description {
     padding: 10px;
     background-color: white;
     opacity: .85;
   }
+
   &__title {
     font-weight: 700;
     font-size: 14px;
@@ -26,8 +29,16 @@
     white-space: nowrap;
     text-overflow: ellipsis;
   }
+
   &__data {
     display: flex;
     flex-direction: column;
+
+  }
+
+  &__geners {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 }
