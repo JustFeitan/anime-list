@@ -1,4 +1,4 @@
-import React, {FC} from 'react';
+import React, {FC, memo} from 'react';
 import {IAnime} from "../../models/IAnime";
 import './AnimeItem.scss'
 import {useNavigate} from "react-router-dom";
@@ -9,7 +9,7 @@ interface AnimeItemProps {
 }
 
 
-const AnimeItem: FC<AnimeItemProps> = ({anime}) => {
+const AnimeItem: FC<AnimeItemProps> = memo(({anime}) => {
 
     const navigate = useNavigate();
     const animeTitle = anime.title;
@@ -28,18 +28,17 @@ const AnimeItem: FC<AnimeItemProps> = ({anime}) => {
                         {anime.title}
                     </div>
                     <div className="anime-item__data">
-                        {/*<span>Episodes: {anime.episodes}</span>*/}
-                        <span>Type: {anime.type}</span>
                         <div className='anime-item__geners'>
-                            Geners: {anime.tags.join(' ')}
+                            {/*Generes*/}
+                            {anime.tags.slice(0,3).join(' / ')}
                         </div>
-                        <span>Season: {anime.animeSeason.season}</span>
-                        <span>Year: {anime.animeSeason.year}</span>
+                        <span>{anime.type}</span>
+                        <span>{anime.animeSeason.year}</span>
                     </div>
                 </div>
             </div>
         </article>
     );
-};
+});
 
 export default AnimeItem;

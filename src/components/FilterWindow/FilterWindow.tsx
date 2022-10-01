@@ -1,5 +1,5 @@
 import React, {FC, useEffect, useState} from 'react';
-import List from "../List/List";
+import List from "../Lists/List/List";
 import {ListTypes} from "../../models/ListTypes";
 import FilterButton from "../UI/buttons/FilterButton/FilterButton";
 import MyPrimaryButton from "../UI/buttons/MyPrimaryButton/MyPrimaryButton";

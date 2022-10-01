@@ -4,7 +4,7 @@ export enum FilterTypes {
     YEAR = 'year',
     SEASON = "season",
     TYPE = 'type',
-    GENERS = 'tags'
+    GENRES = 'tags'
 }
 
 

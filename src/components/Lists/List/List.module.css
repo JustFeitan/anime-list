@@ -20,4 +20,11 @@
   align-content: start;
 }
 
+.search {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-content: space-between;
+}
+
 /*# sourceMappingURL=List.module.css.map */

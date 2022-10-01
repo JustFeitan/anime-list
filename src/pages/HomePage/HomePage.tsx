@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import {animeAPI} from "../../services/AnimeService";
 import {IAnime} from "../../models/IAnime";
 import AnimeItem from "../../components/AnimeItem/AnimeItem";
-import TitleBar from "../../components/TitleBar/TitleBar";
+import TitleBar from "../../components/UI/TitleBar/TitleBar";
 import {AnimeSeasonTypes} from "../../models/AnimeTypes";
 import {useAnimeBySeason} from "../../hooks/useAnimeBySeason";
 import Loader from "../../components/UI/Loader/Loader";

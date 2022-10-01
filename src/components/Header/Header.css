@@ -53,17 +53,45 @@
 .header__result {
   display: none;
 }
+.header__result-nothing {
+  padding: 10px;
+  text-decoration: none;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 22px;
+  color: #00D1FF;
+}
 .header__result--active {
-  display: block;
+  display: flex;
+  justify-content: center;
   background-color: white;
   position: absolute;
   top: 44px;
   width: 100%;
   z-index: 1;
+  min-height: 50px;
   max-height: calc(100vh - $header-height);
   border: 2px solid black;
   border-radius: 5px;
   overflow: scroll;
+  overflow-x: hidden;
+  /* width */
+  /* Track */
+  /* Handle */
+  /* Handle on hover */
+}
+.header__result--active::-webkit-scrollbar {
+  width: 10px;
+}
+.header__result--active::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+.header__result--active::-webkit-scrollbar-thumb {
+  border-radius: 3px;
+  background: #00D1FF;
+}
+.header__result--active::-webkit-scrollbar-thumb:hover {
+  background: dodgerblue;
 }
 
 /*# sourceMappingURL=Header.css.map */

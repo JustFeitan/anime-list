@@ -30,7 +30,7 @@ const AnimeItemPage = () => {
                             <img src={anime[0].picture} alt=""/>
                             <div className='anime__description'>
                                 <h2>Description</h2>
-                                <span className='anime-geners'>{anime[0].tags.slice(1,4).join(' ')}</span>
+                                <span className='anime-genres'>{anime[0].tags.slice(1,4).join(' ')}</span>
                                 <p>
                                     Something from data base i don't have(
                                 </p>

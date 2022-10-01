@@ -5,5 +5,6 @@ export const headerLogo: string;
 export const headerNav: string;
 export const headerResult: string;
 export const headerResultActive: string;
+export const headerResultNothing: string;
 export const headerSearch: string;
 export const headerWrapper: string;

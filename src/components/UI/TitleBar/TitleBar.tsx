@@ -1,10 +1,10 @@
 import React, {useRef} from 'react';
 import Slider from "react-slick";
 import './TitleBar.scss';
-import LeftArrow from "../UI/MySliderArrows/LeftArrow/LeftArrow";
-import RightArrow from "../UI/MySliderArrows/RightArrow/RightArrow";
+import LeftArrow from "../MySliderArrows/LeftArrow/LeftArrow";
+import RightArrow from "../MySliderArrows/RightArrow/RightArrow";
 import {Link} from "react-router-dom";
-import MyPrimaryButton from "../UI/buttons/MyPrimaryButton/MyPrimaryButton";
+import MyPrimaryButton from "../buttons/MyPrimaryButton/MyPrimaryButton";
 
 interface TitleBarProps<T> {
     title: string;
@@ -52,7 +52,9 @@ export default function SliderBar<T>({title, img, items, renderItem, slider}: Ti
                     {items.map(item => renderItem(item))}
                 </Slider>
             : <div className='no-slider-bar'>
-                    {items.map(item => renderItem(item))}
+                    <div className='no-slider-bar__list'>
+                        {items.map(item => renderItem(item))}
+                    </div>
                     <MyPrimaryButton>See more</MyPrimaryButton>
                 </div>
             }

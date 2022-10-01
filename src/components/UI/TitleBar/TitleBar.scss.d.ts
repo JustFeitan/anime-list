@@ -1,4 +1,6 @@
 export const noSliderBar: string;
+export const noSliderBarList: string;
+export const slickList: string;
 export const slickSlide: string;
 export const sliderBar: string;
 export const sliderBarArrows: string;

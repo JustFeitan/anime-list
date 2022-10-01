@@ -14,6 +14,7 @@ const AppRouter = () => {
                     <Route path='anime' element={<AnimePage/>}/>
                     <Route path='manga' element={<MangaPage/>}/>
                     <Route path='anime/:title' element={<AnimeItemPage/>}/>
+                    <Route path='anime?' element={<AnimeItemPage/>}/>
                 </Route>
             </Routes>
     );

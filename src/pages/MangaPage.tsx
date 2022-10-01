@@ -6,7 +6,7 @@ import {IAnime} from "../models/IAnime";
 import FilterWindow from "../components/FilterWindow/FilterWindow";
 import {FilterTypes} from "../models/FilterTypes";
 import Loader from "../components/UI/Loader/Loader";
-import List from "../components/List/List";
+import List from "../components/Lists/List/List";
 import {ListTypes} from "../models/ListTypes";
 import AnimeItem from "../components/AnimeItem/AnimeItem";
 import {useAnimeFilterWindow} from "../hooks/useAnimeFilterWindow";

@@ -1,19 +1,17 @@
-import React, {FC, useEffect, useState} from 'react';
+import React, {ChangeEvent, FC, useState} from 'react';
 import {Link} from "react-router-dom";
 import './Header.scss'
 import {animeAPI} from "../../services/AnimeService";
-import Loader from "../UI/Loader/Loader";
-import List from "../List/List";
-import {ListTypes} from "../../models/ListTypes";
 import {IAnime} from "../../models/IAnime";
 import AnimeItem from "../AnimeItem/AnimeItem";
 import {useDebounce} from "../../hooks/useDebounce";
+import DropDown from "../UI/DropDown/DropDown";
 
 const Header: FC = () => {
 
     const [searchInput, setSearchInput] = useState<string>('');
     const [isFocused, setIsFocused] = useState<boolean>(false);
-    const {data: animes, isLoading, error, refetch} = animeAPI.useFetchAnimeBySearchQuery(searchInput);
+
 
     const onBlurHandler = (e: React.FocusEvent<HTMLInputElement>) => {
         setSearchInput('');
@@ -21,14 +19,18 @@ const Header: FC = () => {
             setIsFocused(false);
         }, 200)
     }
-    // const debouncedRefetch = useDebounce(refetch, 1500);
-    // useEffect(() => {
-    //     debouncedRefetch();
-    // }, [searchInput])
+
+    const debouncedSearchInput = useDebounce(searchInput, 1000);
+    const {data: animes, isLoading, error} = animeAPI.useFetchAnimeBySearchQuery(debouncedSearchInput);
 
     const onFocusHandler = () => {
         setIsFocused(true);
     }
+
+    const onChangedHandler = (event: ChangeEvent<HTMLInputElement>) => {
+        setSearchInput(event.target.value);
+    }
+
     return (
         <header className='header'>
             <div className="header__wrapper">
@@ -39,26 +41,15 @@ const Header: FC = () => {
                     <Link className='header__link' to='anime'>Anime</Link>
                     <Link className='header__link' to='manga'>Manga</Link>
                 </nav>
+                {/*Добавить компонент*/}
                 <div className='header__search' onBlur={onBlurHandler}>
                     <input className='header__input' type="text" placeholder='Search...'
                            value={searchInput}
-                           onChange={event => setSearchInput(event.target.value)}
+                           onChange={onChangedHandler}
                            onFocus={onFocusHandler}
                     />
-                    <div className={isFocused ? 'header__result--active' : 'header__result'}
-                    >
-
-                        {error && 'status' in error
-                            ? <span>{error.status}</span>
-                            : isLoading
-                                ? <Loader/>
-                                : animes && animes.length
-                                    ? <List type={ListTypes.ANIME} items={animes as IAnime[]}
-                                            renderItem={(anime: IAnime, index) => <AnimeItem anime={anime}
-                                                                                      key={index}/>}/>
-                                    : <span>Nothing founded</span>
-                        }
-                    </div>
+                    <DropDown isActive={isFocused} error={error} isLoading={isLoading} items={animes as IAnime[]}
+                              renderItem={(anime: IAnime, index) => <AnimeItem anime={anime} key={index}/>}/>
                 </div>
 
             </div>

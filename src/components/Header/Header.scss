@@ -56,17 +56,47 @@ $header-height: 50px;
   &__result {
     display: none;
 
+    &-nothing {
+      padding: 10px;
+      text-decoration: none;
+      font-style: normal;
+      font-weight: 400;
+      font-size: 22px;
+      color: #00D1FF;
+    }
+
     &--active{
-      display: block;
+      display: flex;
+      justify-content: center;
       background-color: white;
       position: absolute;
       top: 44px;
       width: 100%;
       z-index: 1;
+      min-height: 50px;
       max-height: calc(100vh - $header-height);
       border: 2px solid black;
       border-radius: 5px;
       overflow: scroll;
+      overflow-x: hidden;
+      /* width */
+      &::-webkit-scrollbar {
+        width: 10px;
+      }
+      /* Track */
+      &::-webkit-scrollbar-track {
+        background: #f1f1f1;
+      }
+      /* Handle */
+      &::-webkit-scrollbar-thumb {
+        border-radius: 3px;
+        background: #00D1FF;
+      }
+
+      /* Handle on hover */
+      &::-webkit-scrollbar-thumb:hover {
+        background: dodgerblue;
+      }
     }
   }
 

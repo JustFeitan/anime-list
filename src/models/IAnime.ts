@@ -2,7 +2,7 @@ import {AnimeSeasonTypes, AnimeTypes} from "./AnimeTypes";
 
 export interface ISeason {
     season: AnimeSeasonTypes;
-    year: number;
+    year: string;
 }
 
 export interface IAnime {

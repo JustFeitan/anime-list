@@ -1,8 +1,6 @@
 import React from 'react'
-import {ListTypes} from "../../models/ListTypes";
+import {ListTypes} from "../../../models/ListTypes";
 import styles from './List.module.scss'
-import MyPrimaryButton from "../UI/buttons/MyPrimaryButton/MyPrimaryButton";
-import {useAppSelector} from "../../hooks/redux";
 
 interface ListProps<T> {
     type: ListTypes
@@ -20,6 +18,9 @@ export default function List<T>(props: ListProps<T>) {
         case ListTypes.FILTER:
             rootStiles.push(styles.filter);
             break;
+        case ListTypes.SEARCH:
+            rootStiles.push(styles.search);
+            break;
     }
 
     return (
@@ -29,5 +30,7 @@ export default function List<T>(props: ListProps<T>) {
 
     );
 };
+
+
 
 

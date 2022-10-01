@@ -1,19 +1,32 @@
 import {FilterTypes} from "../models/FilterTypes";
-import {AnimeSeasonTypes} from "../models/AnimeTypes";
-import {useState} from "react";
+import {AnimeSeasonTypes, AnimeTypes} from "../models/AnimeTypes";
+import {useCallback, useState} from "react";
 import {IAnimeFilter} from "../models/IAnimeFilter";
+import {useSearchParams} from "react-router-dom";
 
 export const useAnimeFilterWindow = () => {
 
-    const [filters, setFilters] = useState<IAnimeFilter>({season: [], year: [], tags: [], type: []});
+    const [searchParams, setSearchParams] = useSearchParams();
 
-    function filter(filterTitle: any, filterType: FilterTypes) {
+    const year = searchParams.getAll('year');
+    const season = searchParams.getAll('season') as AnimeSeasonTypes[];
+    const type = searchParams.getAll('type') as AnimeTypes[];
+    const tags = searchParams.getAll('tag');
+
+    const [filters, setFilters] = useState<IAnimeFilter>({
+        season: season || [],
+        year: year || [],
+        tags: tags || [],
+        type: type || []
+    });
+
+    const filter = useCallback((filterTitle: any, filterType: FilterTypes) => {
         switch (filterType) {
             case FilterTypes.YEAR:
-                if (filters.year.includes(filterTitle as number)) {
-                    setFilters({...filters, year: filters.year.filter(year => year !== filterTitle as number)});
+                if (filters.year.includes(filterTitle)) {
+                    setFilters({...filters, year: filters.year.filter(year => year !== filterTitle )});
                 } else {
-                    setFilters({...filters, year: [...filters.year, filterTitle as number]});
+                    setFilters({...filters, year: [...filters.year, filterTitle]});
                 }
                 break;
             case FilterTypes.SEASON:
@@ -31,7 +44,7 @@ export const useAnimeFilterWindow = () => {
                     setFilters({...filters, type: [...filters.type, filterTitle]});
                 }
                 break;
-            case FilterTypes.GENERS:
+            case FilterTypes.GENRES:
                 if (filters.tags.includes(filterTitle)) {
                     setFilters({...filters, tags: filters.tags.filter(tags => tags !== filterTitle)});
                 } else {
@@ -39,7 +52,7 @@ export const useAnimeFilterWindow = () => {
                 }
                 break;
         }
-    }
+    }, [filters])
 
     function reset(filterType: FilterTypes) {
         switch (filterType) {
@@ -49,7 +62,7 @@ export const useAnimeFilterWindow = () => {
             case FilterTypes.SEASON:
                 setFilters({...filters, season: []});
                 break;
-            case FilterTypes.GENERS:
+            case FilterTypes.GENRES:
                 setFilters({...filters, tags: []});
                 break;
             case FilterTypes.TYPE:

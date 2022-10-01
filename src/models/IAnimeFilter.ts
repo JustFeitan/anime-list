@@ -2,7 +2,7 @@ import {AnimeSeasonTypes, AnimeTypes} from "./AnimeTypes";
 
 export type IAnimeFilter = {
     season: AnimeSeasonTypes[];
-    year: number[];
+    year: string[];
     tags: string[];
     type: AnimeTypes[];
 }

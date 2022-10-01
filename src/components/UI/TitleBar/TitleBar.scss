@@ -2,6 +2,11 @@
   border-left: 4px solid #F4F4F4;
 }
 
+.slick-list {
+  padding: 10px 0!important;
+
+}
+
 .slider-bar {
   margin-top: 30px;
   &__title-bar {
@@ -38,6 +43,14 @@
   width: 100%;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: center;
   align-content: space-between;
+  &__list {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    justify-items: center;
+    align-content: space-between;
+  }
 }
