@@ -1,0 +1,32 @@
+.login-bg{
+  position: absolute;
+  right: 0;
+  left: 0;
+  background-image: url("../../assets/login-background.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: calc(100vh - 50px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+}
+.login {
+  padding: 30px 30px;
+  background-color: rgba(255,255,255,0.75);
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  &__title {
+    font-family: 'Roboto', sans-serif;
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 10px;
+  }
+  &__input {
+    color: #ffffff;
+  }
+}

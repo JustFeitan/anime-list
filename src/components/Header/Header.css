@@ -18,7 +18,6 @@
   align-items: center;
 }
 .header__link {
-  margin-top: 7px;
   margin-left: 52px;
   text-decoration: none;
   font-style: normal;
@@ -48,7 +47,7 @@
 }
 .header__search {
   position: relative;
-  width: 50%;
+  width: 45%;
 }
 .header__result {
   display: none;
@@ -70,7 +69,8 @@
   width: 100%;
   z-index: 1;
   min-height: 50px;
-  max-height: calc(100vh - $header-height);
+  max-height: calc(100vh - 50px);
+  /*male variable*/
   border: 2px solid black;
   border-radius: 5px;
   overflow: scroll;
@@ -92,6 +92,12 @@
 }
 .header__result--active::-webkit-scrollbar-thumb:hover {
   background: dodgerblue;
+}
+.header__profile__logo {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  background-color: blue;
 }
 
 /*# sourceMappingURL=Header.css.map */

@@ -1,0 +1,53 @@
+.input {
+  min-width: 320px;
+  width: 100%;
+  margin-bottom: 15px;
+  &__label {
+    font-size: 14px;
+    font-weight: 700;
+    margin-bottom: 5px;
+    letter-spacing: 1px;
+  }
+
+  &__field {
+    border: 1px solid lightgray;
+    border-radius: 5px;
+    font-size: 14px;
+    padding: 10px 7px;
+    width: 100%;
+    letter-spacing: 1px;
+    &:focus {
+      outline: none;
+    }
+
+    &--invalid {
+      border: 1px solid red;
+      border-radius: 5px;
+      font-size: 14px;
+      padding: 10px 7px;
+      width: 100%;
+      letter-spacing: 1px;
+      &:focus {
+        outline: none;
+      }
+    }
+  }
+
+  &__helper-text{
+    padding: 5px;
+    font-size: 12px;
+    color: lightgray;
+    letter-spacing: 1px;
+    min-inline-size: 320px;
+    overflow-wrap: break-word;
+    &--invalid {
+      color: red;
+      padding: 5px;
+      font-size: 12px;
+      letter-spacing: 1px;
+      max-inline-size: 320px;
+      overflow-wrap: break-word;
+    }
+  }
+}
+

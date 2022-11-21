@@ -1,5 +1,5 @@
 import {createSlice, PayloadAction} from "@reduxjs/toolkit";
-import {IAnime} from "../../models/IAnime";
+import {IAnime} from "../../../models/IAnime";
 
 interface AnimeState {
     loading: boolean;
@@ -24,4 +24,4 @@ export const animeSlice = createSlice({
 })
 
 
-export default animeSlice.reducer;
+export const animeReducer = animeSlice.reducer;

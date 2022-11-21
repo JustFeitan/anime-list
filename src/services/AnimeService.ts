@@ -60,5 +60,5 @@ export const animeAPI = createApi({
 
 })
 
-
+export const animeAPIReducer = animeAPI.reducer;
 

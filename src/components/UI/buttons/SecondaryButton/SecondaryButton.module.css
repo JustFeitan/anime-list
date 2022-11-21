@@ -1,0 +1,10 @@
+.secondaryBtn {
+  background: #fff;
+  color: #00D1FF;
+  border: 1px solid #00D1FF;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+/*# sourceMappingURL=SecondaryButton.module.css.map */

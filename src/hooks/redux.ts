@@ -1,9 +1,9 @@
 import {TypedUseSelectorHook, useDispatch, useSelector} from "react-redux";
-import {AppDispatch, RootReducer} from "../store/store";
-import Actions from '../store/reducers/actions';
+import {AppDispatch, AppStore} from "../store/store";
+import Actions from '../store/reducers/anime/actions';
 import {bindActionCreators} from "@reduxjs/toolkit";
 
-export const useAppSelector: TypedUseSelectorHook<RootReducer> = useSelector;
+export const useAppSelector: TypedUseSelectorHook<AppStore> = useSelector;
 
 export const useAppDispatch = () => useDispatch<AppDispatch>();
 

@@ -3,6 +3,7 @@ export const headerInput: string;
 export const headerLink: string;
 export const headerLogo: string;
 export const headerNav: string;
+export const headerProfileLogo: string;
 export const headerResult: string;
 export const headerResultActive: string;
 export const headerResultNothing: string;

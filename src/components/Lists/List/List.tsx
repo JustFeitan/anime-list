@@ -22,7 +22,6 @@ export default function List<T>(props: ListProps<T>) {
             rootStiles.push(styles.search);
             break;
     }
-
     return (
             <div className={rootStiles.join(' ')}>
                 {props.items.map(props.renderItem)}

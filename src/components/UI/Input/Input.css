@@ -1,0 +1,51 @@
+.input {
+  min-width: 320px;
+  width: 100%;
+  margin-bottom: 15px;
+}
+.input__label {
+  font-size: 14px;
+  font-weight: 700;
+  margin-bottom: 5px;
+  letter-spacing: 1px;
+}
+.input__field {
+  border: 1px solid lightgray;
+  border-radius: 5px;
+  font-size: 14px;
+  padding: 10px 7px;
+  width: 100%;
+  letter-spacing: 1px;
+}
+.input__field:focus {
+  outline: none;
+}
+.input__field--invalid {
+  border: 1px solid red;
+  border-radius: 5px;
+  font-size: 14px;
+  padding: 10px 7px;
+  width: 100%;
+  letter-spacing: 1px;
+}
+.input__field--invalid:focus {
+  outline: none;
+}
+.input__helper-text {
+  padding: 5px;
+  font-size: 12px;
+  color: lightgray;
+  letter-spacing: 1px;
+  min-inline-size: 320px;
+  overflow-wrap: break-word;
+}
+.input__helper-text--invalid {
+  color: red;
+  padding: 5px;
+  font-size: 12px;
+  letter-spacing: 1px;
+  max-inline-size: 320px;
+  overflow-wrap: break-word;
+}
+
+/*# sourceMappingURL=Input.css.map */

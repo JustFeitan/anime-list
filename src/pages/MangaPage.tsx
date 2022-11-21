@@ -37,7 +37,7 @@ const MangaPage = () => {
 
     return (
         <div>
-
+                Выборг крутой
         </div>
     );
 };
