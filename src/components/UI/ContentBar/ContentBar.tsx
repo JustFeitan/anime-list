@@ -1,12 +1,12 @@
 import React, {useRef} from 'react';
 import Slider from "react-slick";
-import './TitleBar.scss';
+import './ContentBar.scss';
 import LeftArrow from "../MySliderArrows/LeftArrow/LeftArrow";
 import RightArrow from "../MySliderArrows/RightArrow/RightArrow";
 import {Link} from "react-router-dom";
 import MyPrimaryButton from "../buttons/MyPrimaryButton/MyPrimaryButton";
 
-interface TitleBarProps<T> {
+interface ContentBarProps<T> {
     title: string;
     img: string;
     items: T[];
@@ -14,7 +14,7 @@ interface TitleBarProps<T> {
     slider: boolean
 }
 
-export default function SliderBar<T>({title, img, items, renderItem, slider}: TitleBarProps<T>) {
+export default function ContentBar<T>({title, img, items, renderItem, slider}: ContentBarProps<T>) {
     const settings = {
         dots: true,
         infinite: true,

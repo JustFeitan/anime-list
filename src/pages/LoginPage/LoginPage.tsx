@@ -1,66 +1,89 @@
 import React, {FC} from 'react';
 import Form from "../../components/UI/Form/Form";
-import Input from "../../components/UI/Input/Input";
+import Input from "../../components/UI/inputs/Input/Input";
 import './LoginPage.scss';
-import {useForm} from 'react-hook-form';
+import {SubmitHandler, useForm} from 'react-hook-form';
 import * as yup from 'yup';
 import {yupResolver} from '@hookform/resolvers/yup';
 import MyPrimaryButton from "../../components/UI/buttons/MyPrimaryButton/MyPrimaryButton";
+import {ILoginRequest} from "../../models/User/ILoginRequest";
+import "react-toastify/dist/ReactToastify.css";
+import {Link, useLocation, useNavigate} from "react-router-dom";
+import Typography from "../../components/UI/Typography/Typography";
+import {useLogin} from "../../hooks/useLogin";
+import FullScreenImageContainer from "../../components/UI/FullScreenImageContainer/FullScreenImageContainer";
+import LoginBackgroundImage from './../../assets/login-background.jpg'
+import FormWrapper from "../../components/UI/FormWrapper/FormWrapper";
+import PasswordInput from "../../components/UI/inputs/PasswordInput/PasswordInput";
 
-
-const schema = yup.object().shape({
-    username: yup
+export const loginSchema = yup.object().shape({
+    email: yup
         .string()
-        .required('Username required')
-        .matches(/^(?=.{8,20}$)(?![_.])(?!.*[_.]{2})[a-zA-Z0-9._]+(?<![_.])$/, 'Username have to 8 - 20 length, without \".\" and _')
-        ,
+        .required('Email required')
+        .email('Wrong email format'),
     password: yup
         .string()
         .required('Password required')
-        .matches(/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$/, 'At least 8 symbols, one uppercase letter, one lowercase letter and one number')
-       ,
-
+        .matches(/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$/, 'At least 8 symbols, one uppercase letter, one lowercase letter and one number'),
 })
 
-interface AuthFormState {
-    username: string;
+interface LoginFormState {
+    email: string;
     password: string;
 }
 
 const LoginPage: FC = () => {
 
-    const {register, formState: {errors}, handleSubmit, getValues} = useForm<AuthFormState>({
-        mode: "onChange",
-        resolver: yupResolver(schema)
+
+    const location = useLocation();
+    const navigate = useNavigate();
+    const {login, mutationResult: {isLoading}} = useLogin();
+
+    const fromPage = location.state?.from?.pathname;
+
+    const {register, formState: {errors}, handleSubmit, getValues} = useForm<LoginFormState>({
+        mode: "onBlur",
+        resolver: yupResolver(loginSchema)
     })
-    console.log(errors)
-    console.log(getValues())
+
+    const onLoginSubmit: SubmitHandler<ILoginRequest> = async (loginRequest) => {
+        await login(loginRequest, () => navigate(fromPage, {replace: true}))
+    }
+
+
     return (
-        <div className='login-bg'>
-            <div className="login">
-                <Form>
-                    <span className='login__title'>Login</span>
+        <FullScreenImageContainer backgroundImg={LoginBackgroundImage}>
+            <FormWrapper variant='login'>
+                <Form onSubmit={handleSubmit(onLoginSubmit)}>
+                    <Typography component='h2'>Login</Typography>
                     <Input
-                        className='login__title__input'
-                        placeholder='Email or username'
-                        error={!!errors.username}
-                        helperText={errors.username?.message}
-                        label='Username'
+                        placeholder='Email'
+                        error={!!errors.email}
+                        helperText={errors.email?.message}
+                        label='Email'
                         type='text'
-                        {...register('username')}
+                        {...register('email')}
                     />
-                    <Input
+                    <PasswordInput
                         placeholder='Password'
                         error={!!errors.password}
                         helperText={errors.password?.message}
                         label='Password'
-                        type='password'
                         {...register('password')}
                     />
-                    <MyPrimaryButton width='200px' height='40px' type='submit'>Log in</MyPrimaryButton>
+
+                    <MyPrimaryButton isLoading={isLoading} fullWidth height='40px'>
+                        Log in
+                    </MyPrimaryButton>
                 </Form>
-            </div>
-        </div>
+
+                <div>
+                    <Typography className='register-text' component='span'>Don't have
+                        account?</Typography>
+                    <Link className='register-btn' to='/signup'>Register</Link>
+                </div>
+            </FormWrapper>
+        </FullScreenImageContainer>
     );
 };
 

@@ -13,88 +13,21 @@ import {useAnimeFilterWindow} from "../../hooks/useAnimeFilterWindow";
 import {useAnimeQueryParams} from "../../hooks/useAnimeQueryParams";
 import ReactPaginate from "react-paginate";
 import {pageCount} from "../../utils/pageCount";
-import {useLocation, useNavigate, useSearchParams} from 'react-router-dom'
+import {useNavigate, useSearchParams} from 'react-router-dom'
 import {useMySearchParams} from "../../hooks/useMySearchParams";
 import MyPrimaryButton from "../../components/UI/buttons/MyPrimaryButton/MyPrimaryButton";
+import {AnimeFilterData} from "../../data/AnimeFilterData";
+import {useAuth} from "../../hooks/useAuth";
 
-const yearFilters = [
-    '2012',
-    '2013',
-    '2014',
-    '2015',
-    '2016',
-    '2017',
-    '2018',
-    '2019',
-    '2020',
-    '2021',
-    '2022',
-];
-const seasonFilters = [
-    'Spring',
-    'Summer',
-    'Winter',
-    'Fall',
-];
+const {typeFilter, yearFilters, seasonFilters, genresFilters} = AnimeFilterData;
 
-const genresFilters = [
-    "chibi",
-    "comedy",
-    "fantasy",
-    "fantasy world",
-    "future",
-    "game",
-    "magic",
-    "mmorpg",
-    "new",
-    "nonsense-comedy",
-    "nudity",
-    "parody",
-    "present",
-    "rpg",
-    "seinen",
-    "shorts",
-    "slapstick",
-    "swords & co",
-    "virtual reality",
-    "virtual world",
-    "action",
-    "adventure",
-    "alternative world",
-    "comedy",
-    "fantasy",
-    "game",
-    "magic",
-    "manga",
-    "mmorpg",
-    "new",
-    "present",
-    "rpg",
-    "sci fi",
-    "sci-fi",
-    "science fiction",
-    "science-fiction",
-    "seinen",
-    "shounen",
-    "siblings",
-    "slapstick",
-    "swords & co",
-    "video games",
-    "virtual reality",
-    "virtual world"
-]
-
-const typeFilter = [
-    'TV', 'MOVIE', 'OVA', 'ONA', 'SPECIAL', 'UNKNOWN'
-]
 const AnimePage: FC = () => {
 
-    //useObserver(nextPageBlock, page < 10, isLoading, () => setPage(prevState => prevState + 1));
-    //const {data: animes, isLoading, error} = animeAPI.useFetchAllAnimeQuery(-1);
-    //const filteredAnime = useAnimeBySeason(animes as IAnime[], filters);
-
-
+const user = useAuth();
+    console.log(user)
+    //Main filter state
     const [filters, setFilters] = useState<IAnimeFilter>({season: [], year: [], tags: [], type: []});
+    //Local filter state for using inside modal window
     const {filters: windowFilters, filter, reset} = useAnimeFilterWindow();
 
     const [searchParams, setSearchParams] = useSearchParams();
@@ -106,9 +39,14 @@ const AnimePage: FC = () => {
     const [totalPages, setTotalPages] = useState<number | null>(null);
 
     const queryParams = useAnimeQueryParams(mySearchParams, page);
-    const {data: filteredQuery, isLoading, refetch, status} = animeAPI.useFetchAnimeByFilterQuery(queryParams);
+    const {
+        data: filteredQuery,
+        isLoading,
+        refetch,
+        status
+    } = animeAPI.useFetchAnimeByFilterQuery(queryParams);
 
-
+    //!!!Combine totalPagesCount and useEffect
     const totalPagesCount = useMemo(() => {
         if (isLoading) return;
         return pageCount(filteredQuery!.totalCount)
@@ -136,7 +74,6 @@ const AnimePage: FC = () => {
 
     const acceptHandler = () => {
         setFilters(windowFilters);
-
     }
 
     const changePageHandler = (selectedItem: { selected: number; }) => {
@@ -144,11 +81,7 @@ const AnimePage: FC = () => {
         console.log(selectedItem.selected + 1)
     }
 
-    const activePageHandler = (selectedItem: { selected: number; }) => {
-        console.log(selectedItem.selected + 1)
-    }
     const navigate = useNavigate()
-    const location = useLocation()
     const goBack = () => navigate(-1);
 
     return (

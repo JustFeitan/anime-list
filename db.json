@@ -5227,44 +5227,81 @@
     }
   ],
   "posts": [
-    { "id": 1, "title": "json-server", "author": "typicode" }
-  ],
-  "comments": [
-    { "id": 1, "body": "some comment", "postId": 1 }
-  ],
-  "profile": { "name": "typicode" },
-  "users":[
     {
-      "id":1,
-      "unm":"sean"
-    }
-  ],
-  "todos":[
-    {
-      "id":1,
-      "name":"list1",
-      "items":[
-        {
-          "title":"asd",
-          "descrp":"asd"
-        }
-      ],
-      "userId":1
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode",
+      "userId": 2
     },
     {
-      "id":2,
-      "name":"list2",
-      "items":[
-        {
-          "title":"Book",
-          "descrp":"Read Outliers"
-        },
-        {
-          "title":"sadasd",
-          "descrp":"Reassasdasdasdssliers"
-        }
-      ],
-      "userId":1
+      "text": "blabla",
+      "id": 2,
+      "userId": 4
+    },
+    {
+      "text": "blabla",
+      "userId": 4,
+      "id": 3
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "users": [
+    {
+      "id": 1,
+      "name": "bruno",
+      "email": "bruno@email.com",
+      "password": "bruno"
+    },
+    {
+      "id": 2,
+      "name": "nilson",
+      "email": "nilson@email.com",
+      "password": "nilson"
+    },
+    {
+      "email": "olivier@mail.com",
+      "password": "$2a$10$FvXcFG/.rsUm5IZr3oJVlOM6HwfZvZ53O43ytjhzMCPBX3oLjk.qu",
+      "id": 3
+    },
+    {
+      "email": "asdasdsad@mail.com",
+      "password": "$2a$10$k4us4K0.gjbYflgjsPriluGlLnKKsyhp7rxmPRzJF/d7W6Dj331Gy",
+      "id": 4
+    },
+    {
+      "email": "olivi4er@mail.com",
+      "password": "$2a$10$8s/8QpTO9Q6iE3kymeJFveiWFfHjIHQYA0sdxdLnKVNRLkQMuhzGW",
+      "id": 5
+    },
+    {
+      "email": "1234567@gmail.com",
+      "password": "$2a$10$4Kr5b4AII0WYqdQLnFzlQechYv3r6mVwBFE2zTsTdYX9KSnTRvGIO",
+      "id": 6
+    },
+    {
+      "username": "Qwert",
+      "email": "1234567Qwert@gmail.com",
+      "password": "$2a$10$tsu0aEP.GcWWV6mG7MFkoeUQ/mKsHaxRSI7t/CceFjfp3EPUH2xn2",
+      "id": 7
+    },
+    {
+
+      "email": "12324567@gmail.com",
+      "password": "$2a$10$3.KrCm04icIYbl3ldN8w.O6Uo2YDWTOnGZOVwRMqYPMHeyKLdl52W",
+      "id": 8
+    }
+  ],
+  "usersAnimes": [
+    {
+      "a_id": 1,
+      "userId": 4,
+      "id": 1
     }
   ]
 }

@@ -2,19 +2,36 @@ import React, {AriaAttributes, ButtonHTMLAttributes, DetailedHTMLProps, FC} from
 import styles from './MyPrimareButton.module.scss'
 
 interface MyPrimaryButtonProps extends DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>, AriaAttributes {
+    fullWidth?: boolean;
     width?: string;
     height?: string;
-    fontSize?: string
+    fontSize?: string;
+    isLoading?: boolean
 }
 
 
-const MyPrimaryButton: FC<MyPrimaryButtonProps> = ({width = '145px', fontSize , height = '30px', children, ...props}) => {
+const MyPrimaryButton: FC<MyPrimaryButtonProps> = ({
+                                                       fullWidth,
+                                                       width = '145px',
+                                                       fontSize,
+                                                       height = '30px',
+                                                       children,
+                                                       isLoading,
+                                                       ...props
+                                                   }) => {
+    const optionalStyles = {
+        width: fullWidth ? '100%' : width,
+        height: height,
+        fontSize: fontSize,
+    }
 
     return <button className={styles.primaryBtn}
-                   style={{width: width, height: height, fontSize: fontSize}}
+                   type='submit'
+                   style={optionalStyles}
                    {...props}
+                   disabled={isLoading}
     >
-        {children}
+        {isLoading ? children + '...' : children}
     </button>;
 };
 

@@ -1,16 +1,28 @@
 import {createApi, fetchBaseQuery} from "@reduxjs/toolkit/dist/query/react";
 import {IAnime} from "../models/IAnime";
 import {AnimeSeasonTypes} from "../models/AnimeTypes";
-import {IAnimeFilter} from "../models/IAnimeFilter";
 import {QueryFilterPage} from "../models/QueryFilterPage";
-import {BaseQueryMeta, BaseQueryResult} from "@reduxjs/toolkit/dist/query/baseQueryTypes";
-import {animeTitle} from "../pages/AnimeItemPage/AnimeItemPage.scss";
+import {AppStore} from "../store/store";
 
 type FetchBaseQueryMeta = { request: Request; response?: Response }
 
+export const emptyApi = createApi({
+    baseQuery: fetchBaseQuery({baseUrl: '/'}),
+    endpoints: () => ({})
+})
+
 export const animeAPI = createApi({
     reducerPath: 'animeAPI',
-    baseQuery: fetchBaseQuery({baseUrl: 'http://localhost:5000'}),
+    baseQuery: fetchBaseQuery({
+        baseUrl: 'http://localhost:5000',
+        prepareHeaders: (headers, {getState}) => {
+            const token = (getState() as AppStore).authReducer.accessToken;
+            if (token) {
+                headers.set('Authorization', `Bearer ${token}`)
+            }
+            return headers;
+        },
+    }),
     endpoints: (build) => ({
         fetchAllAnime: build.query<IAnime[], number>({
             query: (limit: number = 10) => ({
@@ -30,7 +42,7 @@ export const animeAPI = createApi({
                 url: `/anime?animeSeason.season=${season}`
             })
         }),
-        fetchAnimeByFilter: build.query<{response: IAnime[], totalCount: number}, QueryFilterPage>({
+        fetchAnimeByFilter: build.query<{ response: IAnime[], totalCount: number }, QueryFilterPage>({
             query: (queryParams) => ({
                 url: `/anime?${queryParams.query}`,
                 params: {

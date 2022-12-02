@@ -6,6 +6,7 @@ import {Provider} from "react-redux";
 import {setStore} from "./store/store";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import {CookiesProvider} from "react-cookie";
 
 const store = setStore();
 
@@ -14,10 +15,11 @@ const root = ReactDOM.createRoot(
 );
 root.render(
     <BrowserRouter>
-        <Provider store={store}>
-            <App />
-        </Provider>
-
+        <CookiesProvider>
+            <Provider store={store}>
+                <App />
+            </Provider>
+        </CookiesProvider>
     </BrowserRouter>
 );
 

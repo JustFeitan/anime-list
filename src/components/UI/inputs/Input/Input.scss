@@ -1,7 +1,5 @@
 .input {
-  min-width: 320px;
   width: 100%;
-  margin-bottom: 15px;
   &__label {
     font-size: 14px;
     font-weight: 700;
@@ -9,6 +7,24 @@
     letter-spacing: 1px;
   }
 
+  &__wrapper{
+    width: 100%;
+    position: relative;
+    display: flex;
+    align-items: center;
+  }
+
+  &__icon {
+    height: 1.5rem;
+    width: 1.5rem;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    right: 5px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+//Input styles
   &__field {
     border: 1px solid lightgray;
     border-radius: 5px;
@@ -32,9 +48,10 @@
       }
     }
   }
-
+//Styles for text under input(helper text)
   &__helper-text{
-    padding: 5px;
+    padding: 5px 5px 5px 0;
+    width: 100%;
     font-size: 12px;
     color: lightgray;
     letter-spacing: 1px;
@@ -42,7 +59,7 @@
     overflow-wrap: break-word;
     &--invalid {
       color: red;
-      padding: 5px;
+      padding: 5px 5px 5px 0;
       font-size: 12px;
       letter-spacing: 1px;
       max-inline-size: 320px;

@@ -1,0 +1,9 @@
+.icon-btn {
+  display: flex;
+  align-items: center;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+/*# sourceMappingURL=IconButton.css.map */

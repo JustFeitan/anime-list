@@ -6,10 +6,12 @@ import {IAnime} from "../../models/IAnime";
 import AnimeItem from "../AnimeItem/AnimeItem";
 import {useDebounce} from "../../hooks/useDebounce";
 import DropDown from "../UI/DropDown/DropDown";
-import {useAppSelector} from "../../hooks/redux";
-import MyPrimaryButton from "../UI/buttons/MyPrimaryButton/MyPrimaryButton";
 import {AppRoutes} from "../../routing/routes";
 import SecondaryButton from "../UI/buttons/SecondaryButton/SecondaryButton";
+import {useAuth} from "../../hooks/useAuth";
+import Input from "../UI/inputs/Input/Input";
+import {useAppDispatch} from "../../hooks/redux";
+import {authActions} from "../../store/reducers/auth";
 
 const Header: FC = () => {
 
@@ -17,8 +19,9 @@ const Header: FC = () => {
     const [isFocused, setIsFocused] = useState<boolean>(false);
     const navigate = useNavigate();
     const location = useLocation();
+    const dispatch = useAppDispatch();
 
-    const {isAuth} = useAppSelector(state => state.authReducer);
+    const user = useAuth();
 
     const onBlurHandler = (e: React.FocusEvent<HTMLInputElement>) => {
         setSearchInput('');
@@ -42,6 +45,10 @@ const Header: FC = () => {
         navigate(AppRoutes.LOGIN, {state: {from: location}})
     }
 
+    const logoutHandler = () => {
+        dispatch(authActions.logout());
+    }
+
     return (
         <header className='header'>
             <div className="header__wrapper">
@@ -52,20 +59,24 @@ const Header: FC = () => {
                     <Link className='header__link' to='anime'>Anime</Link>
                     <Link className='header__link' to='manga'>Manga</Link>
                 </nav>
-                {/*!!!!!!!!Добавить компонент!!!!!!!!!!!!*/}
                 <div className='header__search' onBlur={onBlurHandler}>
-                    <input className='header__input' type="text" placeholder='Search...'
-                           value={searchInput}
-                           onChange={onChangedHandler}
-                           onFocus={onFocusHandler}
+                    <Input
+                        className='header__search__input'
+                        type="text"
+                        placeholder='Search...'
+                        value={searchInput}
+                        onChange={onChangedHandler}
+                        onFocus={onFocusHandler}
                     />
-                    <DropDown isActive={isFocused} error={error} isLoading={isLoading} items={animes as IAnime[]}
+                    <DropDown isActive={isFocused} error={error} isLoading={isLoading}
+                              items={animes as IAnime[]}
                               renderItem={(anime: IAnime, index) => <AnimeItem anime={anime} key={index}/>}/>
                 </div>
+
                 <div className='header__profile'>
                     {
-                        isAuth
-                            ? <div className='header__profile__logo'>
+                        user
+                            ? <div onClick={logoutHandler} className='header__profile__logo'>
 
                             </div>
                             : <SecondaryButton onClick={LoginInHandler}>

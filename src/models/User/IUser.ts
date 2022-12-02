@@ -1,5 +1,6 @@
 export interface IUser {
-    id: number | string;
+    id: number;
     username: string;
+    email: string;
     password: string;
 }

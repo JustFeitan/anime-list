@@ -14,7 +14,7 @@ const AnimeItem: FC<AnimeItemProps> = memo(({anime}) => {
     const navigate = useNavigate();
     const animeTitle = anime.title;
     const ImgStyles = {
-        backgroundImage: `url(${anime.picture})`,
+        backgroundImage: `url(${anime.picture})` ,
         backgroundSize: 'cover',
         backgroundRepeat: 'no-repeat',
         minHeight: 275,

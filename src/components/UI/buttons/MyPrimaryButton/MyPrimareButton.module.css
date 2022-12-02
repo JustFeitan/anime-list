@@ -1,11 +1,16 @@
 .primaryBtn {
   background: #00D1FF;
   color: white;
+  font-weight: 700;
   width: 145px;
   height: 30px;
   border: none;
   border-radius: 5px;
   cursor: pointer;
+}
+.primaryBtn:disabled {
+  background-color: grey;
+  color: white;
 }
 
 /*# sourceMappingURL=MyPrimareButton.module.css.map */

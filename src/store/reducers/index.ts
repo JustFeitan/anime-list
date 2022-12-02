@@ -1,9 +1,10 @@
-import {authReducer} from './auth/AuthSlice';
 import {animeReducer} from './anime/AnimeSlice'
 import {animeAPIReducer, animeAPI} from "../../services/AnimeService";
+import {authReducer} from "./auth";
 
-export default {
+export const reducers = {
     authReducer,
     animeReducer,
     [animeAPI.reducerPath]: animeAPIReducer,
 }
+

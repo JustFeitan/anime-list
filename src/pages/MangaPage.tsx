@@ -1,15 +1,5 @@
-import React, {useState} from 'react';
-import {animeAPI} from "../services/AnimeService";
-import {IAnimeFilter} from "../models/IAnimeFilter";
-import {useAnimeBySeason} from "../hooks/useAnimeBySeason";
-import {IAnime} from "../models/IAnime";
-import FilterWindow from "../components/FilterWindow/FilterWindow";
-import {FilterTypes} from "../models/FilterTypes";
-import Loader from "../components/UI/Loader/Loader";
-import List from "../components/Lists/List/List";
-import {ListTypes} from "../models/ListTypes";
-import AnimeItem from "../components/AnimeItem/AnimeItem";
-import {useAnimeFilterWindow} from "../hooks/useAnimeFilterWindow";
+import React, {ChangeEvent, useState} from 'react';
+import {useCookies} from "react-cookie";
 
 const MangaPage = () => {
 
@@ -32,12 +22,18 @@ const MangaPage = () => {
         'Winter',
         'Fall',
     ];
+    const [value, setValue] = useState('');
+    const [cookies, setCookie] = useCookies(['name']);
 
-
+    function onChange(e: ChangeEvent<HTMLInputElement>) {
+        setValue(e.target.value)
+        setCookie('name', e.target.value, { path: '/' });
+    }
 
     return (
         <div>
-                Выборг крутой
+            <input value={value} onChange={onChange} />
+            {cookies.name && <h1>Hello {cookies.name}!</h1>}
         </div>
     );
 };

@@ -1,0 +1,14 @@
+.fullscreen-image-bg {
+  position: absolute;
+  right: 0;
+  left: 0;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: calc(100vh - 50px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+/*# sourceMappingURL=FullScreenImageContainer.css.map */

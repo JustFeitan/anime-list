@@ -1,9 +1,14 @@
 .primaryBtn {
   background: #00D1FF;
   color: white;
+  font-weight: 700;
   width: 145px;
   height: 30px;
   border: none;
   border-radius: 5px;
   cursor: pointer;
+  &:disabled {
+    background-color: grey;
+    color: white;
+  }
 }
