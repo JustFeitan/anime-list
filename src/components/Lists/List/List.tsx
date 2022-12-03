@@ -1,11 +1,10 @@
-import React from 'react'
 import {ListTypes} from "../../../models/ListTypes";
 import styles from './List.module.scss'
 
 interface ListProps<T> {
-    type: ListTypes
+    type: ListTypes;
     items: T[];
-    renderItem: (item: T, index: number) => React.ReactNode
+    renderItem: (item: T, index: number) => JSX.Element;
 }
 
 export default function List<T>(props: ListProps<T>) {

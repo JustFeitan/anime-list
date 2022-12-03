@@ -1,4 +1,4 @@
-import {FC} from 'react';
+import React, {FC} from 'react';
 import FullScreenImageContainer from "../../components/UI/FullScreenImageContainer/FullScreenImageContainer";
 import FormWrapper from "../../components/UI/FormWrapper/FormWrapper";
 import Form from "../../components/UI/Form/Form";
@@ -11,12 +11,16 @@ import * as yup from 'yup';
 import {yupResolver} from "@hookform/resolvers/yup";
 import {loginSchema} from "../LoginPage/LoginPage";
 import {ISignUpRequest} from "../../models/User/IRegisterRequest";
+import {useSignUp} from "../../hooks/useSignUp";
+import {Link, useLocation, useNavigate} from "react-router-dom";
+import {toast} from "react-toastify";
+import './SignUpPage.scss';
 
 const registerSchema = yup.object().shape({
     username: yup
         .string()
         .required('Username is required field')
-        .matches(/^(?=.{8,20}$)(?![_.])(?!.*[_.]{2})[a-zA-Z0-9._]+(?<![_.])$/, 'Username should be from 8 to 20 characters and without _ and .'),
+        .matches(/^(?=.{4,20}$)(?![_.])(?!.*[_.]{2})[a-zA-Z0-9._]+(?<![_.])$/, 'Username should be from 4 to 20 characters and without _ and .'),
     repeatedPassword: yup
         .string()
         .required('Yuo have to repeat password')
@@ -33,13 +37,26 @@ interface SignupFormState {
 
 const SignUpPage: FC = () => {
 
+    const location = useLocation();
+    const navigate = useNavigate();
+
+    const fromPage = location.state?.from?.pathname;
+
     const {register, handleSubmit, formState: {errors}} = useForm<SignupFormState>({
         mode: "onBlur",
         resolver: yupResolver(registerSchema)
     });
 
-    const onSignUpSubmit: SubmitHandler<ISignUpRequest> = (signUpRequest) => {
+    const {signup, signUpUserResult: {isLoading}} = useSignUp();
 
+    const onSignUpSubmit: SubmitHandler<ISignUpRequest> = async (signUpRequest) => {
+        await signup(signUpRequest, () => {
+            navigate(fromPage, {replace: true});
+            toast.success('Thank you for registration! Have fun!', {
+                toastId: 'Thank you for registration! Have fun!',
+                position: toast.POSITION.BOTTOM_CENTER,
+            });
+        })
     }
 
     return (
@@ -75,8 +92,17 @@ const SignUpPage: FC = () => {
                         label='Repeat password'
                         {...register('repeatedPassword')}
                     />
-                    <MyPrimaryButton fullWidth>Sign up</MyPrimaryButton>
+
+                    <MyPrimaryButton isLoading={isLoading} fullWidth height={'40px'}>
+                        Sign up
+                    </MyPrimaryButton>
                 </Form>
+                <div>
+                    <Typography className='login-text' component='span'>
+                        Already have an account?
+                    </Typography>
+                    <Link className='login-btn' to='/login'>Login</Link>
+                </div>
             </FormWrapper>
         </FullScreenImageContainer>
     );

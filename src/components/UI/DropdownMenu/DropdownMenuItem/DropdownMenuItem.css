@@ -1,0 +1,25 @@
+.menu-item {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  border: none;
+  background: transparent;
+  border-radius: 6px;
+  transition-duration: 0.4s;
+  padding: 0.65rem;
+}
+.menu-item__icon-left {
+  display: flex;
+  align-items: center;
+  margin-right: 0.6rem;
+}
+.menu-item__icon-right {
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+}
+.menu-item:hover {
+  background-color: #dadada;
+}
+
+/*# sourceMappingURL=DropdownMenuItem.css.map */

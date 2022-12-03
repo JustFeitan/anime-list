@@ -5291,10 +5291,21 @@
       "id": 7
     },
     {
-
       "email": "12324567@gmail.com",
       "password": "$2a$10$3.KrCm04icIYbl3ldN8w.O6Uo2YDWTOnGZOVwRMqYPMHeyKLdl52W",
       "id": 8
+    },
+    {
+      "email": "12322124567@gmail.com",
+      "password": "$2a$10$L.hTE6g/sDde1RHwpHu0XeMuiQwBzEF2kxxNazHNUZFAZlyTzV156",
+      "id": 9
+    },
+    {
+      "email": "1234567Qwerty@gmail.com",
+      "password": "$2a$10$G/xTW72Ui7H0zF7u7kWTcOgwiuXWLeftemNliBmdpMOnXkbPVrISK",
+      "username": "Maxim",
+      "repeatedPassword": "1234567Qwerty",
+      "id": 10
     }
   ],
   "usersAnimes": [

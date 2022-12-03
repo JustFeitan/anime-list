@@ -7,7 +7,9 @@ import MangaPage from "../pages/MangaPage";
 import AnimeItemPage from "../pages/AnimeItemPage/AnimeItemPage";
 import LoginPage from "../pages/LoginPage/LoginPage";
 import {useAuth} from "../hooks/useAuth";
-import SignUpPage from "../pages/RegisterPage/RegisterPage";
+import SignUpPage from "../pages/SignUpPage/SignUpPage";
+import ProfilePage from "../pages/ProfilePage/ProfilePage";
+import RequireAuth from "../hoc/RequireAuth";
 
 
 const AppRouter = () => {
@@ -21,7 +23,14 @@ const AppRouter = () => {
                 <Route path='anime/:title' element={<AnimeItemPage/>}/>
                 <Route path='anime' element={<AnimeItemPage/>}/>
                 <Route path='login' element={isLoggedIn ? <Navigate to='/' replace/> : <LoginPage/>}/>
-                <Route path='signup' element={<SignUpPage/>}/>
+                <Route path='signup' element={isLoggedIn ? <Navigate to='/' replace/> : <SignUpPage/>}/>
+                <Route path=':username' element={
+                    <RequireAuth>
+                        <ProfilePage/>
+                    </RequireAuth>
+                }>
+
+                </Route>
             </Route>
         </Routes>
     );

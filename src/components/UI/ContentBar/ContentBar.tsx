@@ -49,11 +49,11 @@ export default function ContentBar<T>({title, img, items, renderItem, slider}: C
             </div>
             {slider
             ? <Slider ref={customSlide} {...settings} >
-                    {items.map(item => renderItem(item))}
+                    {items && items.map(item => renderItem(item))}
                 </Slider>
             : <div className='no-slider-bar'>
                     <div className='no-slider-bar__list'>
-                        {items.map(item => renderItem(item))}
+                        {items && items.map(item => renderItem(item))}
                     </div>
                     <MyPrimaryButton>See more</MyPrimaryButton>
                 </div>

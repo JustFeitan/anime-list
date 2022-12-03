@@ -1,4 +1,4 @@
-.primaryBtn {
+.fulfilledBtn {
   background: #00D1FF;
   color: white;
   font-weight: 700;
@@ -8,9 +8,22 @@
   border-radius: 5px;
   cursor: pointer;
 }
-.primaryBtn:disabled {
+.fulfilledBtn:disabled {
   background-color: grey;
   color: white;
+}
+
+.outlinedBtn {
+  background: #fff;
+  color: #00D1FF;
+  border: 1px solid #00D1FF;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+}
+.outlinedBtn:disabled {
+  background-color: white;
+  color: grey;
 }
 
 /*# sourceMappingURL=MyPrimareButton.module.css.map */

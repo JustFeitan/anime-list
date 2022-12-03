@@ -13,7 +13,7 @@ export const authApi = animeAPI.injectEndpoints({
                 body: loginRequest,
             })
         }),
-        register: build.mutation<IUserResponse, ISignUpRequest>({
+        signup: build.mutation<IUserResponse, ISignUpRequest>({
             query: (registerRequest: ISignUpRequest) => ({
                 url: '/register',
                 method: 'POST',

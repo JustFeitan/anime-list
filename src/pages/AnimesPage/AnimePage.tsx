@@ -122,8 +122,12 @@ const user = useAuth();
             {isLoading
                 ? <Loader/>
                 : <div>
-                    <List type={ListTypes.ANIME} items={filteredQuery!.response as IAnime[]}
-                          renderItem={(anime: IAnime, index) => <AnimeItem anime={anime} key={index}/>}/>
+
+                    {filteredQuery &&
+                        <List type={ListTypes.ANIME} items={filteredQuery.response as IAnime[]}
+                           renderItem={(anime: IAnime, index) => <AnimeItem anime={anime} key={index}/>}/>
+                    }
+
                     <ReactPaginate
                         className='pagination'
                         activeClassName='pagination--active'

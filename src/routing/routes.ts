@@ -1,7 +1,8 @@
 export enum AppRoutes {
-    ANIME = 'anime',
-    MANGA = 'manga',
-    LOGIN = 'login',
+    HOME = '/',
+    ANIME = '/anime',
+    MANGA = '/manga',
+    LOGIN = '/login',
 }
 
 

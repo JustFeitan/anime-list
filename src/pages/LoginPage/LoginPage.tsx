@@ -15,6 +15,7 @@ import FullScreenImageContainer from "../../components/UI/FullScreenImageContain
 import LoginBackgroundImage from './../../assets/login-background.jpg'
 import FormWrapper from "../../components/UI/FormWrapper/FormWrapper";
 import PasswordInput from "../../components/UI/inputs/PasswordInput/PasswordInput";
+import {toast} from "react-toastify";
 
 export const loginSchema = yup.object().shape({
     email: yup
@@ -37,7 +38,7 @@ const LoginPage: FC = () => {
 
     const location = useLocation();
     const navigate = useNavigate();
-    const {login, mutationResult: {isLoading}} = useLogin();
+
 
     const fromPage = location.state?.from?.pathname;
 
@@ -46,8 +47,16 @@ const LoginPage: FC = () => {
         resolver: yupResolver(loginSchema)
     })
 
+    const {login, loginUserResult: {isLoading}} = useLogin();
+
     const onLoginSubmit: SubmitHandler<ILoginRequest> = async (loginRequest) => {
-        await login(loginRequest, () => navigate(fromPage, {replace: true}))
+        await login(loginRequest, () => {
+            navigate(fromPage, {replace: true});
+            toast.success('Welcome back!', {
+                toastId: 'Welcome back!',
+                position: toast.POSITION.BOTTOM_CENTER,
+            });
+        })
     }
 
 
@@ -76,7 +85,6 @@ const LoginPage: FC = () => {
                         Log in
                     </MyPrimaryButton>
                 </Form>
-
                 <div>
                     <Typography className='register-text' component='span'>Don't have
                         account?</Typography>

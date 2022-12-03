@@ -1,17 +1,10 @@
 @use './src/styles/variables';
+
+
 .dropdown {
+
   &__result {
     display: none;
-
-    &-nothing {
-      padding: 10px;
-      text-decoration: none;
-      font-style: normal;
-      font-weight: 400;
-      font-size: 22px;
-      color: #00D1FF;
-    }
-
     &--active {
       display: flex;
       justify-content: center;
@@ -19,10 +12,9 @@
       position: absolute;
       top: 44px;
       width: 100%;
-      z-index: 1;
+      z-index: 2;
       min-height: 50px;
-      max-height: calc(100vh - 50px);
-      border: 2px solid black;
+      max-height: calc(100vh - 10vh);
       border-radius: 5px;
       overflow: scroll;
       overflow-x: hidden;
@@ -39,7 +31,7 @@
       /* Handle */
       &::-webkit-scrollbar-thumb {
         border-radius: 3px;
-        background: #00D1FF;
+        background: variables.$primary-text-color;
       }
 
       /* Handle on hover */

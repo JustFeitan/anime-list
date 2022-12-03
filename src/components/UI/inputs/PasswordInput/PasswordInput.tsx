@@ -3,7 +3,7 @@ import Input, {InputProps} from "../Input/Input";
 import IconButton from "../../buttons/IconButton/IconButton";
 import {MdVisibility, MdVisibilityOff} from "react-icons/md";
 
-interface PasswordInputProps extends HTMLProps<HTMLInputElement>, InputProps {
+interface PasswordInputProps extends  InputProps {
 
 }
 

@@ -14,11 +14,11 @@ function App() {
   const dispatch = useAppDispatch();
 
 
-  // useEffect(() => {
-  //     if (cookies["jwt-token"] && cookies['user']) {
-  //       dispatch(authActions.setUser(cookies['user']))
-  //     }
-  // }, [])
+  useEffect(() => {
+      if (cookies["jwt-token"] && cookies['user']) {
+        dispatch(authActions.setUser(cookies['user']))
+      }
+  }, [])
 
 
 

@@ -1,0 +1,15 @@
+.login-text {
+  font-size: 12px;
+}
+
+.login-btn {
+  margin-left: 5px;
+  font-size: 12px;
+  font-weight: 700;
+  &:link{
+    color: #00D1FF;
+  }
+  &:visited {
+    color: #002cbb;
+  }
+}

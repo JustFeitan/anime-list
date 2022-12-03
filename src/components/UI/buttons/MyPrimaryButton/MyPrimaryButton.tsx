@@ -1,31 +1,33 @@
 import React, {AriaAttributes, ButtonHTMLAttributes, DetailedHTMLProps, FC} from 'react';
 import styles from './MyPrimareButton.module.scss'
 
-interface MyPrimaryButtonProps extends DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>, AriaAttributes {
+export interface CustomButtonProps extends DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>, AriaAttributes {
     fullWidth?: boolean;
     width?: string;
     height?: string;
     fontSize?: string;
-    isLoading?: boolean
+    isLoading?: boolean;
+    variant?: 'fulfilled' | 'outlined';
 }
 
 
-const MyPrimaryButton: FC<MyPrimaryButtonProps> = ({
-                                                       fullWidth,
-                                                       width = '145px',
-                                                       fontSize,
-                                                       height = '30px',
-                                                       children,
-                                                       isLoading,
-                                                       ...props
-                                                   }) => {
+const MyPrimaryButton: FC<CustomButtonProps> = ({
+                                                    variant = 'fulfilled',
+                                                    fullWidth,
+                                                    width = '145px',
+                                                    fontSize,
+                                                    height = '35px',
+                                                    children,
+                                                    isLoading,
+                                                    ...props
+                                                }) => {
     const optionalStyles = {
         width: fullWidth ? '100%' : width,
         height: height,
         fontSize: fontSize,
     }
 
-    return <button className={styles.primaryBtn}
+    return <button className={variant === 'fulfilled' ? styles.fulfilledBtn : styles.outlinedBtn}
                    type='submit'
                    style={optionalStyles}
                    {...props}

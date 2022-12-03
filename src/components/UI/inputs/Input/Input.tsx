@@ -1,7 +1,7 @@
-import React, {HTMLProps} from 'react';
+import React, {ComponentProps, HTMLProps} from 'react';
 import './Input.scss'
 
-export interface InputProps extends HTMLProps<HTMLInputElement> {
+export interface InputProps extends ComponentProps<'input'> {
     label?: string;
     helperText?: string;
     error?: boolean;
