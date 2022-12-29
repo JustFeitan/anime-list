@@ -33,6 +33,7 @@
       ]
     },
     {
+      "id": 2,
       "sources": [
         "https://anisearch.com/anime/15244",
         "https://kitsu.io/anime/44893",
@@ -68,6 +69,79 @@
       ]
     },
     {
+      "id": 3,
+      "sources": [
+        "https://anisearch.com/anime/15244",
+        "https://kitsu.io/anime/44893",
+        "https://myanimelist.net/anime/41090"
+      ],
+      "title": "\"Star\"t2000",
+      "type": "SPECIAL",
+      "episodes": 1,
+      "status": "FINISHED",
+      "animeSeason": {
+        "season": "FALL",
+        "year": 2019
+      },
+      "picture": "https://cdn.myanimelist.net/images/anime/1108/105484.jpg",
+      "thumbnail": "https://cdn.myanimelist.net/images/anime/1108/105484t.jpg",
+      "synonyms": [
+        "\"STAR\"T",
+        "HaNaMiNa",
+        "Irodorimidori",
+        "Machida, Tokyo Image Movie",
+        "Start"
+      ],
+      "relations": [
+        "https://kitsu.io/anime/43239",
+        "https://kitsu.io/anime/44891",
+        "https://myanimelist.net/anime/40360",
+        "https://myanimelist.net/anime/41091"
+      ],
+      "tags": [
+        "music",
+        "present",
+        "slice of life"
+      ]
+    },
+    {
+      "id": 4,
+      "sources": [
+        "https://anisearch.com/anime/15244",
+        "https://kitsu.io/anime/44893",
+        "https://myanimelist.net/anime/41090"
+      ],
+      "title": "\"Star\"t3000",
+      "type": "SPECIAL",
+      "episodes": 1,
+      "status": "FINISHED",
+      "animeSeason": {
+        "season": "FALL",
+        "year": 2019
+      },
+      "picture": "https://cdn.myanimelist.net/images/anime/1108/105484.jpg",
+      "thumbnail": "https://cdn.myanimelist.net/images/anime/1108/105484t.jpg",
+      "synonyms": [
+        "\"STAR\"T",
+        "HaNaMiNa",
+        "Irodorimidori",
+        "Machida, Tokyo Image Movie",
+        "Start"
+      ],
+      "relations": [
+        "https://kitsu.io/anime/43239",
+        "https://kitsu.io/anime/44891",
+        "https://myanimelist.net/anime/40360",
+        "https://myanimelist.net/anime/41091"
+      ],
+      "tags": [
+        "music",
+        "present",
+        "slice of life"
+      ]
+    },
+    {
+      "id": 5,
       "sources": [
         "https://anilist.co/anime/113199",
         "https://anime-planet.com/anime/tokyo",
@@ -98,6 +172,7 @@
       ]
     },
     {
+      "id": 6,
       "sources": [
         "https://anidb.net/anime/15157",
         "https://anilist.co/anime/126275",
@@ -194,6 +269,7 @@
       ]
     },
     {
+      "id": 7,
       "sources": [
         "https://anilist.co/anime/128539",
         "https://kitsu.io/anime/43787",
@@ -234,6 +310,7 @@
       ]
     },
     {
+      "id": 3,
       "sources": [
         "https://anime-planet.com/anime/compass",
         "https://myanimelist.net/anime/38603"
@@ -263,6 +340,7 @@
       ]
     },
     {
+      "id": 8,
       "sources": [
         "https://anisearch.com/anime/17271",
         "https://myanimelist.net/anime/51723"
@@ -286,6 +364,7 @@
       ]
     },
     {
+      "id": 9,
       "sources": [
         "https://anisearch.com/anime/17181"
       ],
@@ -309,6 +388,7 @@
       ]
     },
     {
+      "id": 10,
       "sources": [
         "https://kitsu.io/anime/43395"
       ],
@@ -333,6 +413,7 @@
       ]
     },
     {
+      "id": 11,
       "sources": [
         "https://anime-planet.com/anime/a-long-day-of-mr-calpaccio",
         "https://kitsu.io/anime/41656",
@@ -360,6 +441,7 @@
       ]
     },
     {
+      "id": 12,
       "sources": [
         "https://anime-planet.com/anime/knowname-harvest"
       ],
@@ -382,6 +464,7 @@
       ]
     },
     {
+      "id": 13,
       "sources": [
         "https://anime-planet.com/anime/know-name-knew-day"
       ],
@@ -403,6 +486,7 @@
       ]
     },
     {
+      "id": 14,
       "sources": [
         "https://anime-planet.com/anime/making-of-evangelion-another-impact"
       ],
@@ -432,6 +516,7 @@
       ]
     },
     {
+      "id": 15,
       "sources": [
         "https://myanimelist.net/anime/51268"
       ],
@@ -452,6 +537,7 @@
       ]
     },
     {
+      "id": 16,
       "sources": [
         "https://anilist.co/anime/146608"
       ],
@@ -470,6 +556,7 @@
       "tags": []
     },
     {
+      "id": 17,
       "sources": [
         "https://anilist.co/anime/148080"
       ],
@@ -488,6 +575,7 @@
       "tags": []
     },
     {
+      "id": 18,
       "sources": [
         "https://anilist.co/anime/142278"
       ],
@@ -508,6 +596,7 @@
       "tags": []
     },
     {
+      "id": 19,
       "sources": [
         "https://anisearch.com/anime/14740",
         "https://myanimelist.net/anime/40658"
@@ -548,6 +637,7 @@
       ]
     },
     {
+      "id": 20,
       "sources": [
         "https://anime-planet.com/anime/luna-classroom"
       ],
@@ -568,6 +658,7 @@
       ]
     },
     {
+      "id": 21,
       "sources": [
         "https://anime-planet.com/anime/luna-main-character"
       ],
@@ -588,6 +679,7 @@
       ]
     },
     {
+      "id": 22,
       "sources": [
         "https://anidb.net/anime/5391",
         "https://anilist.co/anime/2928",
@@ -679,6 +771,7 @@
       ]
     },
     {
+      "id": 23,
       "sources": [
         "https://anidb.net/anime/5459",
         "https://anilist.co/anime/3269",
@@ -781,6 +874,7 @@
       ]
     },
     {
+      "id": 24,
       "sources": [
         "https://anilist.co/anime/4469",
         "https://anime-planet.com/anime/hack-g-u-trilogy-parody",
@@ -858,6 +952,7 @@
       ]
     },
     {
+      "id": 25,
       "sources": [
         "https://anidb.net/anime/1135",
         "https://anilist.co/anime/454",
@@ -948,6 +1043,7 @@
       ]
     },
     {
+      "id": 26,
       "sources": [
         "https://anilist.co/anime/1143",
         "https://anime-planet.com/anime/hack-sign-intermezzo",
@@ -1033,6 +1129,7 @@
       ]
     },
     {
+      "id": 27,
       "sources": [
         "https://anidb.net/anime/222",
         "https://anilist.co/anime/299",
@@ -1130,6 +1227,7 @@
       ]
     },
     {
+      "id": 28,
       "sources": [
         "https://anidb.net/anime/7883",
         "https://anilist.co/anime/9332",
@@ -1237,6 +1335,7 @@
       ]
     },
     {
+      "id": 29,
       "sources": [
         "https://anilist.co/anime/10390",
         "https://anime-planet.com/anime/hack-quantum-go-our-chim-chims",
@@ -1307,6 +1406,7 @@
       ]
     },
     {
+      "id": 30,
       "sources": [
         "https://anidb.net/anime/4324",
         "https://anilist.co/anime/873",
@@ -1421,6 +1521,7 @@
       ]
     },
     {
+      "id": 31,
       "sources": [
         "https://anidb.net/anime/24",
         "https://anilist.co/anime/48",
@@ -1565,6 +1666,7 @@
       ]
     },
     {
+      "id": 32,
       "sources": [
         "https://anidb.net/anime/447",
         "https://anilist.co/anime/298",
@@ -1686,6 +1788,7 @@
       ]
     },
     {
+      "id": 33,
       "sources": [
         "https://anilist.co/anime/1994",
         "https://anisearch.com/anime/7181",
@@ -1750,6 +1853,7 @@
       ]
     },
     {
+      "id": 34,
       "sources": [
         "https://anidb.net/anime/8606",
         "https://anilist.co/anime/11375",
@@ -1858,6 +1962,7 @@
       ]
     },
     {
+      "id": 35,
       "sources": [
         "https://anilist.co/anime/1487",
         "https://anime-planet.com/anime/hack-sign-unison",
@@ -1940,6 +2045,7 @@
       ]
     },
     {
+      "id": 36,
       "sources": [
         "https://anilist.co/anime/15219",
         "https://anime-planet.com/anime/hack-versus-the-thanatos-report",
@@ -2013,6 +2119,7 @@
       ]
     },
     {
+      "id": 37,
       "sources": [
         "https://anisearch.com/anime/9010"
       ],
@@ -2038,6 +2145,7 @@
       ]
     },
     {
+      "id": 38,
       "sources": [
         "https://anilist.co/anime/109194",
         "https://myanimelist.net/anime/47653"
@@ -2063,6 +2171,7 @@
       ]
     },
     {
+      "id": 39,
       "sources": [
         "https://anidb.net/anime/5121",
         "https://anilist.co/anime/12763",
@@ -2112,6 +2221,7 @@
       ]
     },
     {
+      "id": 40,
       "sources": [
         "https://kitsu.io/anime/12585",
         "https://myanimelist.net/anime/33978",
@@ -2146,6 +2256,7 @@
       ]
     },
     {
+      "id": 41,
       "sources": [
         "https://anidb.net/anime/11392",
         "https://anilist.co/anime/102065",
@@ -2183,6 +2294,7 @@
       ]
     },
     {
+      "id": 42,
       "sources": [
         "https://anidb.net/anime/8699",
         "https://anilist.co/anime/11755",
@@ -2290,6 +2402,7 @@
       ]
     },
     {
+      "id": 43,
       "sources": [
         "https://anime-planet.com/anime/009-re-cyborg-x-zip",
         "https://kitsu.io/anime/12326",
@@ -2326,6 +2439,7 @@
       ]
     },
     {
+      "id": 44,
       "sources": [
         "https://anidb.net/anime/4637",
         "https://anilist.co/anime/1583",
@@ -2392,6 +2506,7 @@
       ]
     },
     {
+      "id": 45,
       "sources": [
         "https://anilist.co/anime/3234",
         "https://anime-planet.com/anime/009-1-rb",
@@ -2454,6 +2569,7 @@
       ]
     },
     {
+      "id": 46,
       "sources": [
         "https://anidb.net/anime/11391",
         "https://anilist.co/anime/99948",
@@ -2492,6 +2608,7 @@
       ]
     },
     {
+      "id": 47,
       "sources": [
         "https://anidb.net/anime/16509",
         "https://anilist.co/anime/137310",
@@ -2552,6 +2669,7 @@
       ]
     },
     {
+      "id": 48,
       "sources": [
         "https://anidb.net/anime/6239",
         "https://anilist.co/anime/5525",
@@ -2625,6 +2743,7 @@
       ]
     },
     {
+      "id": 49,
       "sources": [
         "https://anisearch.com/anime/6768"
       ],
@@ -2649,6 +2768,7 @@
       ]
     },
     {
+      "id": 50,
       "sources": [
         "https://anilist.co/anime/136666"
       ],
@@ -2675,6 +2795,7 @@
       ]
     },
     {
+      "id": 51,
       "sources": [
         "https://anidb.net/anime/3978",
         "https://anilist.co/anime/2730",
@@ -2730,6 +2851,7 @@
       ]
     },
     {
+      "id": 52,
       "sources": [
         "https://anime-planet.com/anime/1-2-3-4"
       ],
@@ -2753,6 +2875,7 @@
       ]
     },
     {
+      "id": 53,
       "sources": [
         "https://anidb.net/anime/2769",
         "https://anilist.co/anime/6060",
@@ -2800,6 +2923,7 @@
       ]
     },
     {
+      "id": 54,
       "sources": [
         "https://anime-planet.com/anime/1-ri-botchi-no-ookami-to-7-hiki-no-ko-yagi",
         "https://kitsu.io/anime/13015",
@@ -2831,6 +2955,7 @@
       ]
     },
     {
+      "id": 55,
       "sources": [
         "https://anilist.co/anime/102528",
         "https://anime-planet.com/anime/1-100-rice-planting",
@@ -2864,6 +2989,7 @@
       ]
     },
     {
+      "id": 56,
       "sources": [
         "https://anilist.co/anime/103464",
         "https://anime-planet.com/anime/1-100-shibuya-crossing",
@@ -2893,6 +3019,7 @@
       ]
     },
     {
+      "id": 57,
       "sources": [
         "https://anilist.co/anime/103463",
         "https://anime-planet.com/anime/1-100-train-station",
@@ -2923,6 +3050,7 @@
       ]
     },
     {
+      "id": 58,
       "sources": [
         "https://anime-planet.com/anime/10-tokyo-warriors"
       ],
@@ -2946,6 +3074,7 @@
       ]
     },
     {
+      "id": 59,
       "sources": [
         "https://myanimelist.net/anime/51239"
       ],
@@ -2977,6 +3106,7 @@
       ]
     },
     {
+      "id": 60,
       "sources": [
         "https://myanimelist.net/anime/51271"
       ],
@@ -3002,6 +3132,7 @@
       ]
     },
     {
+      "id": 61,
       "sources": [
         "https://anidb.net/anime/5308",
         "https://anilist.co/anime/7374",
@@ -3038,6 +3169,7 @@
       ]
     },
     {
+      "id": 62,
       "sources": [
         "https://anidb.net/anime/13560",
         "https://anime-planet.com/anime/100-pascal-sensei",
@@ -3082,6 +3214,7 @@
       ]
     },
     {
+      "id": 63,
       "sources": [
         "https://anidb.net/anime/12410",
         "https://anilist.co/anime/97638",
@@ -3142,6 +3275,7 @@
       ]
     },
     {
+      "id": 64,
       "sources": [
         "https://kitsu.io/anime/45810"
       ],
@@ -3166,6 +3300,7 @@
       ]
     },
     {
+      "id": 65,
       "sources": [
         "https://anilist.co/anime/121960",
         "https://anime-planet.com/anime/wwf-100-renewable-energy",
@@ -3197,6 +3332,7 @@
       ]
     },
     {
+      "id": 66,
       "sources": [
         "https://anidb.net/anime/15415",
         "https://anilist.co/anime/116242",
@@ -3286,6 +3422,7 @@
       ]
     },
     {
+      "id": 67,
       "sources": [
         "https://anidb.net/anime/15930",
         "https://anilist.co/anime/127366",
@@ -3380,6 +3517,7 @@
       ]
     },
     {
+      "id": 68,
       "sources": [
         "https://myanimelist.net/anime/48976"
       ],
@@ -3410,6 +3548,7 @@
       ]
     },
     {
+      "id": 69,
       "sources": [
         "https://anidb.net/anime/2991",
         "https://anilist.co/anime/5133",
@@ -3468,6 +3607,7 @@
       ]
     },
     {
+      "id": 70,
       "sources": [
         "https://anidb.net/anime/15455",
         "https://anilist.co/anime/116740",
@@ -3520,6 +3660,7 @@
       ]
     },
     {
+      "id": 71,
       "sources": [
         "https://myanimelist.net/anime/49414"
       ],
@@ -3545,6 +3686,7 @@
       ]
     },
     {
+      "id": 72,
       "sources": [
         "https://anidb.net/anime/764",
         "https://anilist.co/anime/1549",
@@ -3624,6 +3766,7 @@
       ]
     },
     {
+      "id": 73,
       "sources": [
         "https://anisearch.com/anime/16306"
       ],
@@ -3649,6 +3792,7 @@
       ]
     },
     {
+      "id": 74,
       "sources": [
         "https://anidb.net/anime/5499",
         "https://anilist.co/anime/3914",
@@ -3713,6 +3857,7 @@
       ]
     },
     {
+      "id": 75,
       "sources": [
         "https://kitsu.io/anime/44612"
       ],
@@ -3736,6 +3881,7 @@
       ]
     },
     {
+      "id": 76,
       "sources": [
         "https://anilist.co/anime/128059",
         "https://anime-planet.com/anime/dear-november-boy",
@@ -3768,6 +3914,7 @@
       ]
     },
     {
+      "id": 77,
       "sources": [
         "https://anidb.net/anime/1869",
         "https://anilist.co/anime/1901",
@@ -3848,6 +3995,7 @@
       ]
     },
     {
+      "id": 78,
       "sources": [
         "https://anilist.co/anime/112038",
         "https://anime-planet.com/anime/112-sabsections-of-skyline",
@@ -3876,6 +4024,7 @@
       ]
     },
     {
+      "id": 79,
       "sources": [
         "https://myanimelist.net/anime/51078"
       ],
@@ -3897,6 +4046,7 @@
       ]
     },
     {
+      "id": 80,
       "sources": [
         "https://anilist.co/anime/121678",
         "https://anisearch.com/anime/11273"
@@ -3924,6 +4074,7 @@
       ]
     },
     {
+      "id": 81,
       "sources": [
         "https://anidb.net/anime/6751",
         "https://anilist.co/anime/6682",
@@ -4013,6 +4164,7 @@
       ]
     },
     {
+      "id": 82,
       "sources": [
         "https://anilist.co/anime/110465",
         "https://anime-planet.com/anime/11eyes-picture-drama",
@@ -4049,6 +4201,7 @@
       ]
     },
     {
+      "id": 83,
       "sources": [
         "https://anilist.co/anime/7739",
         "https://anime-planet.com/anime/11eyes-special",
@@ -4117,6 +4270,7 @@
       ]
     },
     {
+      "id": 84,
       "sources": [
         "https://myanimelist.net/anime/43858"
       ],
@@ -4144,6 +4298,7 @@
       ]
     },
     {
+      "id": 85,
       "sources": [
         "https://myanimelist.net/anime/43852"
       ],
@@ -4171,6 +4326,7 @@
       ]
     },
     {
+      "id": 86,
       "sources": [
         "https://myanimelist.net/anime/43912"
       ],
@@ -4194,6 +4350,7 @@
       ]
     },
     {
+      "id": 87,
       "sources": [
         "https://anidb.net/anime/11302",
         "https://anilist.co/anime/99211",
@@ -4228,6 +4385,7 @@
       ]
     },
     {
+      "id": 88,
       "sources": [
         "https://anime-planet.com/anime/12-sai",
         "https://kitsu.io/anime/8481",
@@ -4277,6 +4435,7 @@
       ]
     },
     {
+      "id": 89,
       "sources": [
         "https://anidb.net/anime/10584",
         "https://anilist.co/anime/20716"
@@ -4315,6 +4474,7 @@
       ]
     },
     {
+      "id": 90,
       "sources": [
         "https://anime-planet.com/anime/12-sai-2nd-season",
         "https://kitsu.io/anime/11309",
@@ -4363,6 +4523,7 @@
       ]
     },
     {
+      "id": 91,
       "sources": [
         "https://anidb.net/anime/11899",
         "https://anilist.co/anime/21609",
@@ -4443,6 +4604,7 @@
       ]
     },
     {
+      "id": 91,
       "sources": [
         "https://anidb.net/anime/12198",
         "https://anilist.co/anime/21839",
@@ -4513,6 +4675,7 @@
       ]
     },
     {
+      "id": 92,
       "sources": [
         "https://livechart.me/anime/447"
       ],
@@ -4540,6 +4703,7 @@
       ]
     },
     {
+      "id": 93,
       "sources": [
         "https://anisearch.com/anime/9589"
       ],
@@ -4565,6 +4729,7 @@
       ]
     },
     {
+      "id": 94,
       "sources": [
         "https://anilist.co/anime/145323",
         "https://anime-planet.com/anime/123",
@@ -4596,6 +4761,7 @@
       ]
     },
     {
+      "id": 95,
       "sources": [
         "https://anisearch.com/anime/5133",
         "https://myanimelist.net/anime/5762"
@@ -4638,6 +4804,7 @@
       ]
     },
     {
+      "id": 96,
       "sources": [
         "https://anidb.net/anime/9629",
         "https://anilist.co/anime/18305",
@@ -4676,6 +4843,7 @@
       ]
     },
     {
+      "id": 97,
       "sources": [
         "https://anilist.co/anime/115402",
         "https://myanimelist.net/anime/48881"
@@ -4697,6 +4865,7 @@
       ]
     },
     {
+      "id": 98,
       "sources": [
         "https://myanimelist.net/anime/51221"
       ],
@@ -4723,6 +4892,7 @@
       ]
     },
     {
+      "id": 99,
       "sources": [
         "https://myanimelist.net/anime/51240"
       ],
@@ -4755,6 +4925,7 @@
       ]
     },
     {
+      "id": 100,
       "sources": [
         "https://anidb.net/anime/14129",
         "https://anilist.co/anime/103886",
@@ -4798,6 +4969,7 @@
       ]
     },
     {
+      "id": 101,
       "sources": [
         "https://anime-planet.com/anime/171-eru-majo-le-septet",
         "https://kitsu.io/anime/42942"
@@ -4822,6 +4994,7 @@
       ]
     },
     {
+      "id": 102,
       "sources": [
         "https://anidb.net/anime/16285",
         "https://anilist.co/anime/133411",
@@ -4867,6 +5040,7 @@
       ]
     },
     {
+      "id": 103,
       "sources": [
         "https://anisearch.com/anime/13428"
       ],
@@ -4890,6 +5064,7 @@
       ]
     },
     {
+      "id": 104,
       "sources": [
         "https://anidb.net/anime/12576",
         "https://anilist.co/anime/98512",
@@ -4951,6 +5126,7 @@
       ]
     },
     {
+      "id": 105,
       "sources": [
         "https://kitsu.io/anime/44504"
       ],
@@ -4973,6 +5149,7 @@
       ]
     },
     {
+      "id": 106,
       "sources": [
         "https://anidb.net/anime/11393",
         "https://anilist.co/anime/102987",
@@ -5011,6 +5188,7 @@
       ]
     },
     {
+      "id": 107,
       "sources": [
         "https://anilist.co/anime/111942"
       ],
@@ -5029,6 +5207,7 @@
       "tags": []
     },
     {
+      "id": 108,
       "sources": [
         "https://anime-planet.com/anime/dalljub-step-club-2",
         "https://kitsu.io/anime/42834",
@@ -5058,6 +5237,7 @@
       ]
     },
     {
+      "id": 109,
       "sources": [
         "https://myanimelist.net/anime/51220"
       ],
@@ -5084,6 +5264,7 @@
       ]
     },
     {
+      "id": 110,
       "sources": [
         "https://anilist.co/anime/128527",
         "https://anime-planet.com/anime/243-seiin-high-school-boys-volleyball-team-fukui-ben-kouza",
@@ -5130,6 +5311,7 @@
       ]
     },
     {
+      "id": 111,
       "sources": [
         "https://anilist.co/anime/128526",
         "https://anime-planet.com/anime/243-seiin-high-school-boys-volleyball-team-inside-story",
@@ -5175,6 +5357,7 @@
       ]
     },
     {
+      "id": 112,
       "sources": [
         "https://anilist.co/anime/128398",
         "https://anime-planet.com/anime/243-seiin-high-school-boys-volleyball-team-volleyball-kouza-hen",
@@ -5286,6 +5469,7 @@
     },
     {
       "username": "Qwert",
+      "userAvatar": "https://i.yapx.ru/Ra8I0.jpg",
       "email": "1234567Qwert@gmail.com",
       "password": "$2a$10$tsu0aEP.GcWWV6mG7MFkoeUQ/mKsHaxRSI7t/CceFjfp3EPUH2xn2",
       "id": 7
@@ -5308,11 +5492,14 @@
       "id": 10
     }
   ],
-  "usersAnimes": [
+  "usersAnimesListStatus": [
     {
-      "a_id": 1,
-      "userId": 4,
-      "id": 1
+      "id": "87",
+      "animeId": 8,
+      "status": "Completed",
+      "userId": 7,
+      "progress": "33333",
+      "rating": null
     }
   ]
 }

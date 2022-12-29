@@ -24,7 +24,13 @@ export const authApi = animeAPI.injectEndpoints({
             query: (userId: number) => ({
                 url: `/users/${userId}`
             })
-        })
+        }),
+        getUserByUsername: build.query<IUser, string>({
+            query: (username: string) => ({
+                url: `/users/?username=${username}`
+            })
+        }),
+
 
     })
 })

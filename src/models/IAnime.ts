@@ -6,6 +6,7 @@ export interface ISeason {
 }
 
 export interface IAnime {
+    id: string;
     sources: string;
     title: string;
     type: AnimeTypes;

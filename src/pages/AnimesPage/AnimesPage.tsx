@@ -1,30 +1,27 @@
 import React, {FC, useEffect, useMemo, useState} from 'react';
 import {animeAPI} from "../../services/AnimeService";
-import List from "../../components/Lists/List/List";
+import List from "../../components/UI/Lists/List/List";
 import {ListTypes} from "../../models/ListTypes";
 import {IAnime} from "../../models/IAnime";
 import AnimeItem from "../../components/AnimeItem/AnimeItem";
 import Loader from "../../components/UI/Loader/Loader";
 import {IAnimeFilter} from "../../models/IAnimeFilter";
-import './AnimePage.scss'
+import './AnimesPage.scss';
 import FilterWindow from "../../components/FilterWindow/FilterWindow";
 import {FilterTypes} from "../../models/FilterTypes";
 import {useAnimeFilterWindow} from "../../hooks/useAnimeFilterWindow";
 import {useAnimeQueryParams} from "../../hooks/useAnimeQueryParams";
 import ReactPaginate from "react-paginate";
 import {pageCount} from "../../utils/pageCount";
-import {useNavigate, useSearchParams} from 'react-router-dom'
+import {useSearchParams} from 'react-router-dom'
 import {useMySearchParams} from "../../hooks/useMySearchParams";
-import MyPrimaryButton from "../../components/UI/buttons/MyPrimaryButton/MyPrimaryButton";
 import {AnimeFilterData} from "../../data/AnimeFilterData";
-import {useAuth} from "../../hooks/useAuth";
 
 const {typeFilter, yearFilters, seasonFilters, genresFilters} = AnimeFilterData;
 
-const AnimePage: FC = () => {
+const AnimesPage: FC = () => {
 
-const user = useAuth();
-    console.log(user)
+
     //Main filter state
     const [filters, setFilters] = useState<IAnimeFilter>({season: [], year: [], tags: [], type: []});
     //Local filter state for using inside modal window
@@ -81,14 +78,8 @@ const user = useAuth();
         console.log(selectedItem.selected + 1)
     }
 
-    const navigate = useNavigate()
-    const goBack = () => navigate(-1);
-
     return (
-        <div>
-            <MyPrimaryButton onClick={goBack}>
-                go back
-            </MyPrimaryButton>
+        <div className='container'>
             <div className='filter'>
                 <FilterWindow filterList={typeFilter}
                               filterName={'Types'}
@@ -119,28 +110,31 @@ const user = useAuth();
                               acceptHandler={acceptHandler}
                 />
             </div>
-            {isLoading
-                ? <Loader/>
-                : <div>
+            <div className='filter__result'>
+                {isLoading
+                    ? <Loader/>
+                    : <>
 
-                    {filteredQuery &&
-                        <List type={ListTypes.ANIME} items={filteredQuery.response as IAnime[]}
-                           renderItem={(anime: IAnime, index) => <AnimeItem anime={anime} key={index}/>}/>
-                    }
+                        {filteredQuery &&
+                            <List type={ListTypes.ANIME} items={filteredQuery.response as IAnime[]}
+                                  renderItem={(anime: IAnime, index) => <AnimeItem anime={anime}
+                                                                                   key={index}/>}/>
+                        }
 
-                    <ReactPaginate
-                        className='pagination'
-                        activeClassName='pagination--active'
-                        pageLinkClassName='pagination__link'
-                        pageCount={totalPages as number}
-                        onPageChange={changePageHandler}
-                        onPageActive={acceptHandler}
-                    />
-                </div>
-            }
+                        <ReactPaginate
+                            className='pagination'
+                            activeClassName='pagination--active'
+                            pageLinkClassName='pagination__link'
+                            pageCount={totalPages as number}
+                            onPageChange={changePageHandler}
+                            onPageActive={acceptHandler}
+                        />
+                    </>
+                }
+            </div>
 
         </div>
     );
 };
 
-export default AnimePage;
+export default AnimesPage;

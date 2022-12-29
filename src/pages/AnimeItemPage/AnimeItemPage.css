@@ -1,21 +1,75 @@
-.anime {
+.anime-certain {
+  width: 90%;
   margin-top: 10px;
   padding: 15px;
   background-color: #fff;
   border-radius: 5px;
+  display: flex;
+  flex-wrap: wrap;
+  align-content: start;
 }
-.anime-title {
+.anime-certain__user-status {
+  margin-top: 10px;
+  position: relative;
+}
+.anime-certain__user-status__bar {
+  background-color: #00D1FF;
+  width: 200px;
+  color: white;
+  text-align: center;
+  padding: 10px 25px;
+}
+.anime-certain__user-status__dropdown {
+  left: 0;
+  border: 1px black solid;
+}
+.anime-certain__main {
+  height: fit-content;
+  width: 100%;
+}
+.anime-certain__main__data {
+  display: flex;
+}
+.anime-certain__title {
   padding-bottom: 15px;
   color: #00D1FF;
 }
-.anime-genres {
+.anime-certain__geners {
   color: rgba(0, 0, 0, 0.5);
 }
-.anime__main {
-  display: flex;
-}
-.anime__description {
+.anime-certain__description {
   padding: 0 10px;
+}
+
+.star {
+  position: relative;
+  display: inline-block;
+  width: 0;
+  height: 0;
+  margin-left: 0.9em;
+  margin-right: 0.9em;
+  margin-bottom: 1.2em;
+  border-right: 0.3em solid transparent;
+  border-bottom: 0.7em solid #FC0;
+  border-left: 0.3em solid transparent;
+  /* Controlls the size of the stars. */
+  font-size: 13px;
+}
+.star:before, .star:after {
+  content: "";
+  display: block;
+  width: 0;
+  height: 0;
+  position: absolute;
+  top: 0.6em;
+  left: -1em;
+  border-right: 1em solid transparent;
+  border-bottom: 0.7em solid #FC0;
+  border-left: 1em solid transparent;
+  transform: rotate(-35deg);
+}
+.star:after {
+  transform: rotate(35deg);
 }
 
 /*# sourceMappingURL=AnimeItemPage.css.map */

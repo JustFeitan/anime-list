@@ -27,7 +27,7 @@ const FilterButton: FC<FilterButtonProps> =
             if (params.includes(filterTitle)) {
                 setActive(true);
             }
-        }, params)
+        }, [])
 
 
         let rootStyles = [styles.filterButton];

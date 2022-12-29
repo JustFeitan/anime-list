@@ -1,10 +1,11 @@
+@use 'src/styles/variables';
 .login-text {
-  font-size: 12px;
+  font-size: variables.$small-font-size;
 }
 
 .login-btn {
   margin-left: 5px;
-  font-size: 12px;
+  font-size: variables.$small-font-size;
   font-weight: 700;
   &:link{
     color: #00D1FF;

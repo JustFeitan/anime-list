@@ -3,8 +3,8 @@ import styles from './MyPrimareButton.module.scss'
 
 export interface CustomButtonProps extends DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>, AriaAttributes {
     fullWidth?: boolean;
-    width?: string;
-    height?: string;
+    width?: number;
+    height?: number;
     fontSize?: string;
     isLoading?: boolean;
     variant?: 'fulfilled' | 'outlined';
@@ -14,24 +14,32 @@ export interface CustomButtonProps extends DetailedHTMLProps<ButtonHTMLAttribute
 const MyPrimaryButton: FC<CustomButtonProps> = ({
                                                     variant = 'fulfilled',
                                                     fullWidth,
-                                                    width = '145px',
+                                                    width = 145,
                                                     fontSize,
-                                                    height = '35px',
+                                                    height = 35,
                                                     children,
                                                     isLoading,
+                                                    className,
                                                     ...props
                                                 }) => {
+
     const optionalStyles = {
-        width: fullWidth ? '100%' : width,
-        height: height,
+        width: fullWidth ? '100%' : width + 'px',
+        height: height + 'px',
         fontSize: fontSize,
     }
 
-    return <button className={variant === 'fulfilled' ? styles.fulfilledBtn : styles.outlinedBtn}
-                   type='submit'
-                   style={optionalStyles}
-                   {...props}
-                   disabled={isLoading}
+    return <button
+        className={
+            variant === 'fulfilled'
+                ? styles.fulfilledBtn + ' ' + className
+                : styles.outlinedBtn + ' ' + className
+        }
+        type='submit'
+        {...props}
+        style={optionalStyles}
+
+        disabled={isLoading}
     >
         {isLoading ? children + '...' : children}
     </button>;

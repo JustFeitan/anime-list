@@ -1,45 +1,86 @@
 import React, {useState} from 'react';
 import {useLocation} from "react-router-dom";
-import {IAnime} from "../../models/IAnime";
 import {animeAPI} from "../../services/AnimeService";
 import Loader from "../../components/UI/Loader/Loader";
 import './AnimeItemPage.scss';
+import {useAuth} from "../../hooks/useAuth";
+import {skipToken} from "@reduxjs/toolkit/query";
+import {userAnimeApi} from "../../services/UserAnimeService";
+import AnimeStatusSelect from "../../components/AnimeStatusSelect/AnimeStatusSelect";
+import StarRating from "../../components/UI/StarRating/StarRating";
+import {UserAnimeListItem} from "../../models/UserAnimeListItem";
+import {toast} from "react-toastify";
+
 
 const AnimeItemPage = () => {
 
     const location = useLocation();
-    const state = location.state as {from: string}
-    const animeTitle = state.from;
+    const animeTitle = location.state?.from;
+    const user = useAuth()
+    const [statusListShown, setStatusListShown] = useState<boolean>(true);
 
-    const {data: anime, isLoading, error} = animeAPI.useFetchAnimeByTitleQuery(animeTitle);
+    //get anime
+    const {
+        data: anime,
+        isLoading: isLoadingAnime,
+        error,
+        isSuccess
+    } = animeAPI.useFetchAnimeByTitleQuery(animeTitle ?? skipToken);
 
+    //get userAnimeListItem
+    const {
+        data: userAnimeListItem,
+        isLoading: isLoadingUserAnimeListItem
+    } = userAnimeApi.useGetAnimeStatusForUserQuery(isSuccess && user?.id ? {
+        animeId: anime!.id,
+        userId: user.id
+    } : skipToken);
+
+    const [updateAnimeInList] = userAnimeApi.useUpdateAnimeInUserListMutation();
+    const onRatingChange = async (rate: number) => {
+        const newUserAnimeListItem: UserAnimeListItem = {
+            ...userAnimeListItem!,
+            rating: rate,
+        }
+       await updateAnimeInList(newUserAnimeListItem);
+    }
 
     return (
-        <section>
+        <section className='anime-certain'>
 
             {error
                 ? <div>Error</div>
-                :   isLoading
+                : isLoadingAnime
                     ? <Loader/>
-                    : anime
-                        ?
-                    <div className='anime'>
-
-                        <h1 className='anime-title'>{anime[0].title}</h1>
-                        <div className='anime__main'>
-                            <img src={anime[0].picture} alt=""/>
-                            <div className='anime__description'>
-                                <h2>Description</h2>
-                                <span className='anime-genres'>{anime[0].tags.slice(1,4).join(' ')}</span>
-                                <p>
-                                    Something from data base i don't have(
-                                </p>
+                    : anime &&
+                    <>
+                        <div className="anime-certain__main">
+                            <h1 className='anime-certain__title'>{anime.title}</h1>
+                            <div className='anime-certain__main__data'>
+                                <img src={anime.picture} alt=""/>
+                                <div className='anime-certain__description'>
+                                    <h2>Description</h2>
+                                    <span
+                                        className='anime-certain__genres'>{anime.tags.slice(1, 4).join(' ')}</span>
+                                    <p>
+                                        Something from data base i don't have(
+                                    </p>
+                                </div>
                             </div>
                         </div>
 
-                    </div>
-                        :null
 
+                        <div className={'anime-certain__user-status'}>
+                            {!isLoadingUserAnimeListItem && user &&
+                                <AnimeStatusSelect anime={anime} userAnimeListItem={userAnimeListItem!}
+                                                   user={user}/>
+                            }
+                            { userAnimeListItem &&
+                                <StarRating rate={userAnimeListItem.rating} starCount={5} onRatingChange={rate => onRatingChange(rate)}/>
+                            }
+                        </div>
+
+                    </>
             }
 
         </section>

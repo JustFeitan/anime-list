@@ -1,10 +1,11 @@
 import {createApi, fetchBaseQuery} from "@reduxjs/toolkit/dist/query/react";
 import {IAnime} from "../models/IAnime";
 import {AnimeSeasonTypes} from "../models/AnimeTypes";
-import {QueryFilterPage} from "../models/QueryFilterPage";
+import {DefaultQuery} from "../models/DefaultQuery";
 import {AppStore} from "../store/store";
 
-type FetchBaseQueryMeta = { request: Request; response?: Response }
+
+export type FetchBaseQueryMeta = { request: Request; response?: Response }
 
 export const emptyApi = createApi({
     baseQuery: fetchBaseQuery({baseUrl: '/'}),
@@ -23,6 +24,7 @@ export const animeAPI = createApi({
             return headers;
         },
     }),
+    tagTypes: ['AnimeList'],
     endpoints: (build) => ({
         fetchAllAnime: build.query<IAnime[], number>({
             query: (limit: number = 10) => ({
@@ -32,31 +34,38 @@ export const animeAPI = createApi({
                 }
             }),
         }),
-        fetchWholeAnime: build.query<IAnime[], number>({
-            query: () => ({
-                url: `/anime`,
-            }),
-        }),
         fetchAnimeBySeason: build.query<IAnime[], AnimeSeasonTypes>({
             query: (season: AnimeSeasonTypes) => ({
                 url: `/anime?animeSeason.season=${season}`
             })
         }),
-        fetchAnimeByFilter: build.query<{ response: IAnime[], totalCount: number }, QueryFilterPage>({
+        fetchAnimeByFilter: build.query<{ response: IAnime[], totalCount: number }, DefaultQuery>({
             query: (queryParams) => ({
                 url: `/anime?${queryParams.query}`,
                 params: {
                     _page: queryParams.page,
-                    _limit: queryParams.limit || 10,
+                    _limit: queryParams.limit,
                 }
             }),
+            providesTags: ['AnimeList'],
             transformResponse(response: IAnime[], meta: FetchBaseQueryMeta) {
                 return {response, totalCount: Number(meta.response?.headers.get('X-Total-Count'))}
             }
         }),
-        fetchAnimeByTitle: build.query<IAnime[], string>({
+        fetchAnimeByTitle: build.query<IAnime | null, string>({
             query: (animeTitle: string) => ({
                 url: `/anime?title=${animeTitle}`
+            }),
+            transformResponse(response: IAnime[]) {
+                if (response.length) {
+                    return response[0]
+                }
+                return null;
+            },
+        }),
+        fetchAnimeById: build.query<IAnime[], number>({
+            query: (animeId: number) => ({
+                url: `/anime?id=${animeId}`
             })
         }),
         fetchAnimeBySearch: build.query<IAnime[], string>({
@@ -66,7 +75,7 @@ export const animeAPI = createApi({
                     _limit: 25
                 }
             })
-        })
+        }),
 
     })
 

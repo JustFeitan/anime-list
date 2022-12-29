@@ -1,5 +1,5 @@
 @use 'styles/normalize.css';
-
+@use 'src/styles/variables';
 * {
   margin: 0;
   padding: 0;
@@ -8,10 +8,16 @@
 
 body {
   font-family: 'Roboto', sans-serif;
-  font-size: 14px;
+  font-size: variables.$main-font-size;
   background: #F4F4F4;
 }
 
 .app{
 
+}
+
+@media (max-width: 540px) {
+  body {
+    font-size: 12px;
+  }
 }

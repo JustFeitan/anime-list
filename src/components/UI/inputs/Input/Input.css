@@ -1,66 +1,17 @@
-.input {
-  width: 100%;
-}
-.input__label {
-  font-size: 14px;
-  font-weight: 700;
-  margin-bottom: 5px;
-  letter-spacing: 1px;
-}
-.input__wrapper {
-  width: 100%;
-  position: relative;
-  display: flex;
-  align-items: center;
-}
-.input__icon {
-  height: 1.5rem;
-  width: 1.5rem;
-  position: absolute;
-  display: flex;
-  align-items: center;
-  right: 5px;
-  top: 50%;
-  transform: translateY(-50%);
-}
-.input__field {
-  border: 1px solid lightgray;
-  border-radius: 5px;
-  font-size: 14px;
-  padding: 10px 7px;
-  width: 100%;
-  letter-spacing: 1px;
-}
-.input__field:focus {
-  outline: none;
-}
-.input__field--invalid {
-  border: 1px solid red;
-  border-radius: 5px;
-  font-size: 14px;
-  padding: 10px 7px;
-  width: 100%;
-  letter-spacing: 1px;
-}
-.input__field--invalid:focus {
-  outline: none;
-}
-.input__helper-text {
-  padding: 5px 5px 5px 0;
-  width: 100%;
-  font-size: 12px;
-  color: lightgray;
-  letter-spacing: 1px;
-  min-inline-size: 320px;
-  overflow-wrap: break-word;
-}
-.input__helper-text--invalid {
-  color: red;
-  padding: 5px 5px 5px 0;
-  font-size: 12px;
-  letter-spacing: 1px;
-  max-inline-size: 320px;
-  overflow-wrap: break-word;
-}
+/* Error: Can't find stylesheet to import.
+ *   ,
+ * 1 | @use 'src/styles/variables';
+ *   | ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ *   '
+ *   Input.scss 1:1  root stylesheet */
 
-/*# sourceMappingURL=Input.css.map */
+body::before {
+  font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
+      "Droid Sans Mono", monospace, monospace;
+  white-space: pre;
+  display: block;
+  padding: 1em;
+  margin-bottom: 1em;
+  border-bottom: 2px solid black;
+  content: "Error: Can't find stylesheet to import.\a   \2577 \a 1 \2502  @use 'src/styles/variables';\d\a   \2502  ^^^^^^^^^^^^^^^^^^^^^^^^^^^\a   \2575 \a   Input.scss 1:1  root stylesheet";
+}

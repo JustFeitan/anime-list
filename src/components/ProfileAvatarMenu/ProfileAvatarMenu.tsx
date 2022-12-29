@@ -28,23 +28,26 @@ const ProfileAvatarMenu = () => {
     })
 
     const LoginInHandler = () => {
-        navigate(AppRoutes.LOGIN, {state: {from: location}})
+        navigate(AppRoutes.LOGIN, {state: {from: location}});
+        setIsMenuOpen(false)
     }
 
     const logoutHandler = () => {
         dispatch(authActions.logout());
+        setIsMenuOpen(false)
     }
 
     const goToProfile = () => {
-        navigate(AppRoutes.HOME + user?.username + user?.id)
+        navigate(AppRoutes.HOME + user?.username, {state: {userId: user?.id}});
+        setIsMenuOpen(false)
     }
 
     return (
-        <div className='profile-menu'>
+        <div ref={dropdownMenu} className='profile-menu'>
             {
                 user
                     ? <>
-                        <Avatar onClick={() => setIsMenuOpen(prevState => !prevState)}/>
+                        <Avatar avatarImage={user.userAvatar} onClick={() => setIsMenuOpen(prevState => !prevState)}/>
 
                         <CSSTransition
                             in={isMenuOpen}
@@ -52,7 +55,7 @@ const ProfileAvatarMenu = () => {
                             timeout={500}
                             classNames='menu-primary'
                         >
-                            <DropdownMenu ref={dropdownMenu}>
+                            <DropdownMenu>
                                 <DropdownMenuItem
                                     onClick={goToProfile}
                                     iconLeft={<ProfileIcon/>}
@@ -75,8 +78,8 @@ const ProfileAvatarMenu = () => {
                     </>
 
                     : <MyPrimaryButton
-                        height='30px'
-                        width='100px'
+                        height={30}
+                        width={100}
                         variant='outlined'
                         onClick={LoginInHandler}
                     >

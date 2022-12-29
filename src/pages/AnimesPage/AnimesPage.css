@@ -6,6 +6,12 @@
   width: 100%;
   justify-content: space-evenly;
 }
+.filter__result {
+  min-height: 70vh;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
 
 .pagination {
   padding: 15px;
@@ -32,6 +38,10 @@
   padding: 5px;
   background: #00D1FF;
   color: white;
+}
+
+.container {
+  width: 100%;
 }
 
 /*# sourceMappingURL=AnimesPage.css.map */

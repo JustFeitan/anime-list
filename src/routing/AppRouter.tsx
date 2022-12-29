@@ -1,15 +1,20 @@
-import React from 'react';
+import {lazy} from 'react';
 import {Navigate, Route, Routes} from "react-router-dom";
-import Layout from "../pages/Layout";
-import HomePage from "../pages/HomePage/HomePage";
-import AnimePage from "../pages/AnimesPage/AnimePage";
-import MangaPage from "../pages/MangaPage";
-import AnimeItemPage from "../pages/AnimeItemPage/AnimeItemPage";
-import LoginPage from "../pages/LoginPage/LoginPage";
 import {useAuth} from "../hooks/useAuth";
-import SignUpPage from "../pages/SignUpPage/SignUpPage";
-import ProfilePage from "../pages/ProfilePage/ProfilePage";
+
+import Layout from "../pages/Layout";
 import RequireAuth from "../hoc/RequireAuth";
+const HomePage = lazy(() => import("../pages/HomePage/HomePage"));
+const AnimesPage = lazy(() => import("../pages/AnimesPage/AnimesPage"));
+const AnimeItemPage = lazy(() => import("../pages/AnimeItemPage/AnimeItemPage"));
+const MangaPage = lazy(() => import("../pages/MangaPage"));
+const LoginPage = lazy(() => import("../pages/LoginPage/LoginPage"));
+const SignUpPage = lazy(() => import("../pages/SignUpPage/SignUpPage"));
+const ProfilePage = lazy(() => import("../pages/ProfilePage/ProfilePage"));
+const CompleteAnimeList = lazy(() => import("../pages/ProfilePage/CompleteAnimeList/CompleteAnimeList"));
+const WatchingAnimeList = lazy(() => import("../pages/ProfilePage/WatchingAnimeList/WatchingAnimeList"));
+const PlanToWatchAnimeList = lazy(() => import("../pages/ProfilePage/PlanToWatchAnimeList/PlanToWatchAnimeList"));
+
 
 
 const AppRouter = () => {
@@ -18,7 +23,7 @@ const AppRouter = () => {
         <Routes>
             <Route path='/' element={<Layout/>}>
                 <Route index element={<HomePage/>}/>
-                <Route path='anime' element={<AnimePage/>}/>
+                <Route path='anime' element={<AnimesPage/>}/>
                 <Route path='manga' element={<MangaPage/>}/>
                 <Route path='anime/:title' element={<AnimeItemPage/>}/>
                 <Route path='anime' element={<AnimeItemPage/>}/>
@@ -29,7 +34,9 @@ const AppRouter = () => {
                         <ProfilePage/>
                     </RequireAuth>
                 }>
-
+                    <Route index element={<CompleteAnimeList/>}/>
+                    <Route path='anime-list/watching' element={<WatchingAnimeList/>}/>
+                    <Route path='anime-list/plan' element={<PlanToWatchAnimeList/>}/>
                 </Route>
             </Route>
         </Routes>

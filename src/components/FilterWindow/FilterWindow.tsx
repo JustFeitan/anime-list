@@ -1,5 +1,5 @@
 import React, {FC, useEffect, useState} from 'react';
-import List from "../Lists/List/List";
+import List from "../UI/Lists/List/List";
 import {ListTypes} from "../../models/ListTypes";
 import FilterButton from "../UI/buttons/FilterButton/FilterButton";
 import MyPrimaryButton from "../UI/buttons/MyPrimaryButton/MyPrimaryButton";
@@ -49,8 +49,9 @@ const FilterWindow: FC<AnimeFilterProps> = ({filterList, filterName, filterType,
             <Modal visible={modal} setVisible={setModal}>
                 <List type={ListTypes.FILTER}
                       items={filterList}
-                      renderItem={(filterTitle) =>
+                      renderItem={(filterTitle, index) =>
                           <FilterButton
+                              key={index}
                               reset={isReset}
                               filter={filter}
                               filterTitle={filterTitle}
@@ -61,14 +62,14 @@ const FilterWindow: FC<AnimeFilterProps> = ({filterList, filterName, filterType,
                 <div className='filter__nav'>
                     <MyPrimaryButton
                         onClick={reset}
-                        width={'70px'}
+                        width={70}
                     >
                         Reset
                     </MyPrimaryButton>
 
                     <MyPrimaryButton
                         onClick={accept}
-                        width={'70px'}
+                        width={70}
                     >
                         Accept
                     </MyPrimaryButton>

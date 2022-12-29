@@ -1,6 +1,9 @@
+@use 'src/styles/variables';
 main {
   width: 1100px;
-
+  display: flex;
+  justify-content: center;
+  min-height: calc(100vh - variables.$header-height);
 }
 
 .app {
@@ -8,4 +11,22 @@ main {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+
+@media (max-width: 1060px) {
+  .main {
+    width: 800px;
+  }
+}
+
+@media (max-width: 820px) {
+  .main {
+    width: 550px;
+  }
+}
+
+@media (max-width: 540px) {
+  .main {
+    width: 450px;
+  }
 }

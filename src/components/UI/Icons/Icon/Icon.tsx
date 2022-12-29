@@ -1,5 +1,6 @@
 import {ComponentProps, FC} from "react";
 import {IconInterface} from "../../../../models/Icon";
+import './Icon.scss';
 
 interface IconProps extends IconInterface, ComponentProps<'span'>{
     icon: JSX.Element;
@@ -11,7 +12,7 @@ const Icon: FC<IconProps> = ({icon, size= 20, ...props}) => {
         height: size + 'px',
     }
     return (
-        <span className='icon' style={styles} {...props}>
+        <span className='icon-btn' style={styles} {...props}>
             {icon}
         </span>
     );

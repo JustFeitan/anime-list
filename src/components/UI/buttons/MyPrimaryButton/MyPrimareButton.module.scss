@@ -1,18 +1,25 @@
+@use './src/styles/variables';
 .fulfilledBtn {
   background: #00D1FF;
   color: white;
+  font-size: variables.$main-font-size;
   font-weight: 700;
-  width: 145px;
-  height: 30px;
   border: none;
+  line-height: 0;
   border-radius: 5px;
   cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   &:disabled {
     background-color: grey;
     color: white;
   }
 }
 .outlinedBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   background: #fff;
   color: #00D1FF;
   border: 1px solid #00D1FF;

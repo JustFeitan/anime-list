@@ -81,13 +81,14 @@ const LoginPage: FC = () => {
                         {...register('password')}
                     />
 
-                    <MyPrimaryButton isLoading={isLoading} fullWidth height='40px'>
+                    <MyPrimaryButton isLoading={isLoading} fullWidth height={40}>
                         Log in
                     </MyPrimaryButton>
                 </Form>
                 <div>
-                    <Typography className='register-text' component='span'>Don't have
-                        account?</Typography>
+                    <Typography className='register-text' component='span'>
+                        Don't have account?
+                    </Typography>
                     <Link className='register-btn' to='/signup'>Register</Link>
                 </div>
             </FormWrapper>

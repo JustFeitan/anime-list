@@ -1,3 +1,5 @@
+
+@use 'src/styles/variables';
 .slick-slide{
   border-left: 4px solid #F4F4F4;
 }
@@ -23,7 +25,7 @@
     margin-left: 3px;
     text-decoration: none;
     font-weight: 700;
-    font-size: 20px;
+    font-size: variables.$big-font-size;
     line-height: 23px;
     color: #00D1FF;
   }

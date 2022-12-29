@@ -1,36 +1,17 @@
-.search {
-  position: relative;
-  width: 100%;
-  margin: 9px;
-}
-.search__input {
-  border: 1px solid lightgray !important;
-  border-radius: 5px;
-  font-size: 14px;
-  padding: 6px 5px 6px 30px !important;
-  background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/0/0b/Search_Icon.svg/1024px-Search_Icon.svg.png");
-  background-repeat: no-repeat;
-  background-size: 20px;
-  background-position: 5px center;
-  width: 100%;
-}
-.search__result-nothing {
-  padding: 10px;
-  text-decoration: none;
-  font-style: normal;
-  font-weight: 400;
-  font-size: 22px;
-  color: #00D1FF;
-}
+/* Error: Can't find stylesheet to import.
+ *   ,
+ * 1 | @use 'src/styles/variables';
+ *   | ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ *   '
+ *   SearchWithDropDown.scss 1:1  root stylesheet */
 
-.fainted-bg {
-  position: fixed;
-  z-index: 1;
-  top: 50px;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.35);
+body::before {
+  font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
+      "Droid Sans Mono", monospace, monospace;
+  white-space: pre;
+  display: block;
+  padding: 1em;
+  margin-bottom: 1em;
+  border-bottom: 2px solid black;
+  content: "Error: Can't find stylesheet to import.\a   \2577 \a 1 \2502  @use 'src/styles/variables';\d\a   \2502  ^^^^^^^^^^^^^^^^^^^^^^^^^^^\a   \2575 \a   SearchWithDropDown.scss 1:1  root stylesheet";
 }
-
-/*# sourceMappingURL=SearchWithDropDown.css.map */

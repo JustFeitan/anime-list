@@ -1,6 +1,6 @@
 import {IAnimeFilter} from "../models/IAnimeFilter";
 import {useMemo} from "react";
-import {QueryFilterPage} from "../models/QueryFilterPage";
+import {DefaultQuery} from "../models/DefaultQuery";
 import {FilterTypes} from "../models/FilterTypes";
 import {useMySearchParams} from "./useMySearchParams";
 import {IMySearchParams} from "../models/IMySearchParams";
@@ -9,7 +9,7 @@ import {IMySearchParams} from "../models/IMySearchParams";
 export const useAnimeQueryParams = (mySearchParams: IMySearchParams, page: number, limit: number = 15) => {
     const queryFilter = useMemo(() => {
 
-        const queryParams: QueryFilterPage = {
+        const queryParams: DefaultQuery = {
             query: '',
             page: page,
             limit: limit,

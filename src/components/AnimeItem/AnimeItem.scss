@@ -1,3 +1,4 @@
+@use 'src/styles/variables';
 .anime-item {
   display: flex;
   flex-direction: column;
@@ -35,7 +36,7 @@
 
   &__title {
     font-weight: 700;
-    font-size: 16px;
+    font-size: variables.$middle-font-size;
     line-height: 16px;
     color: #00D1FF;
     overflow: hidden;
@@ -49,7 +50,7 @@
     flex-wrap: wrap;
     font-style: normal;
     font-weight: 400;
-    font-size: 14px;
+    font-size: variables.$main-font-size;
     line-height: 14px;
   }
 
@@ -58,7 +59,7 @@
     flex-basis: 100%;
     font-style: normal;
     font-weight: 400;
-    font-size: 14px;
+    font-size: variables.$main-font-size;
     line-height: 14px;
     white-space: nowrap;
     overflow: hidden;

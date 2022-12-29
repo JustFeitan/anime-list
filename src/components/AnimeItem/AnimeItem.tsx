@@ -2,6 +2,7 @@ import React, {FC, memo} from 'react';
 import {IAnime} from "../../models/IAnime";
 import './AnimeItem.scss'
 import {useNavigate} from "react-router-dom";
+import AnimeCover from "../AnimeCover/AnimeCover";
 
 
 interface AnimeItemProps {
@@ -12,17 +13,14 @@ interface AnimeItemProps {
 const AnimeItem: FC<AnimeItemProps> = memo(({anime}) => {
 
     const navigate = useNavigate();
-    const animeTitle = anime.title;
-    const ImgStyles = {
-        backgroundImage: `url(${anime.picture})` ,
-        backgroundSize: 'cover',
-        backgroundRepeat: 'no-repeat',
-        minHeight: 275,
+
+    const goToCertainAnime = () => {
+        navigate(`/anime/${anime.title}`,{state: {from:anime.title}})
     }
 
     return (
-        <article className='anime-item' onClick={() => navigate(`/anime/${animeTitle}`,{state: {from:animeTitle}})}>
-            <div style={ImgStyles} className='anime-item__img'>
+        <article className='anime-item' onClick={goToCertainAnime}>
+            <AnimeCover anime={anime} minHeight={275}>
                 <div className="anime-item__description" >
                     <div className="anime-item__title">
                         {anime.title}
@@ -36,7 +34,7 @@ const AnimeItem: FC<AnimeItemProps> = memo(({anime}) => {
                         <span>{anime.animeSeason.year}</span>
                     </div>
                 </div>
-            </div>
+            </AnimeCover>
         </article>
     );
 });

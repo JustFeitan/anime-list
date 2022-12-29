@@ -1,7 +1,8 @@
 import {ComponentProps, FC, ReactNode} from 'react';
 import './DropdownMenuItem.scss';
+import {CustomButtonProps} from "../../buttons/MyPrimaryButton/MyPrimaryButton";
 
-interface DropdownMenuItem  extends ComponentProps<'button'>{
+interface DropdownMenuItem  extends CustomButtonProps{
     children: ReactNode;
     iconLeft?: JSX.Element;
     iconRight?: JSX.Element;

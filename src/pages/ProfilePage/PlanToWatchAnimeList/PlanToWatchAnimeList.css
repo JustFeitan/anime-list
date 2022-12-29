@@ -1,0 +1,13 @@
+.plan-anime-list {
+  display: flex;
+  flex-direction: column;
+  background: white;
+  border-radius: 35px;
+  margin-top: 25px;
+  padding: 15px 35px;
+}
+.plan-anime-list__show-all {
+  align-self: center;
+}
+
+/*# sourceMappingURL=PlanToWatchAnimeList.css.map */

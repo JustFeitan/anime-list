@@ -93,7 +93,7 @@ const SignUpPage: FC = () => {
                         {...register('repeatedPassword')}
                     />
 
-                    <MyPrimaryButton isLoading={isLoading} fullWidth height={'40px'}>
+                    <MyPrimaryButton isLoading={isLoading} fullWidth height={40}>
                         Sign up
                     </MyPrimaryButton>
                 </Form>

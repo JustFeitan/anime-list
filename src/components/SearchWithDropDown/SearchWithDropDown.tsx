@@ -1,7 +1,7 @@
 import Input from "../UI/inputs/Input/Input";
 import {DropDown} from "../UI/DropDown/DropDown";
 import Loader from "../UI/Loader/Loader";
-import List from "../Lists/List/List";
+import List from "../UI/Lists/List/List";
 import {ListTypes} from "../../models/ListTypes";
 import React, {ChangeEvent, useMemo, useState} from "react";
 import {FetchBaseQueryError} from "@reduxjs/toolkit/query";

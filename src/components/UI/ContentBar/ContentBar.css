@@ -1,57 +1,17 @@
-.slick-slide {
-  border-left: 4px solid #F4F4F4;
-}
+/* Error: Can't find stylesheet to import.
+ *   ,
+ * 2 | @use 'src/styles/variables';
+ *   | ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ *   '
+ *   ContentBar.scss 2:1  root stylesheet */
 
-.slick-list {
-  padding: 10px 0 !important;
+body::before {
+  font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
+      "Droid Sans Mono", monospace, monospace;
+  white-space: pre;
+  display: block;
+  padding: 1em;
+  margin-bottom: 1em;
+  border-bottom: 2px solid black;
+  content: "Error: Can't find stylesheet to import.\a   \2577 \a 2 \2502  @use 'src/styles/variables';\d\a   \2502  ^^^^^^^^^^^^^^^^^^^^^^^^^^^\a   \2575 \a   ContentBar.scss 2:1  root stylesheet";
 }
-
-.slider-bar {
-  margin-top: 30px;
-}
-.slider-bar__title-bar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  height: 60px;
-  background: white;
-  border-radius: 12px;
-  padding: 15px 17px;
-  margin-bottom: 20px;
-}
-.slider-bar__title {
-  margin-left: 3px;
-  text-decoration: none;
-  font-weight: 700;
-  font-size: 20px;
-  line-height: 23px;
-  color: #00D1FF;
-}
-.slider-bar__arrows {
-  display: flex;
-  justify-content: space-between;
-  width: 60px;
-}
-.slider-bar__title-img {
-  display: flex;
-  align-items: center;
-}
-
-.no-slider-bar {
-  padding: 0 10px;
-  width: 100%;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-content: space-between;
-}
-.no-slider-bar__list {
-  width: 100%;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  justify-items: center;
-  align-content: space-between;
-}
-
-/*# sourceMappingURL=ContentBar.css.map */

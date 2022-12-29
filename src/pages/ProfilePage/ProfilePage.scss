@@ -1,0 +1,139 @@
+@use './src/styles/variables';
+
+.profile {
+  width: 90%;
+
+  &__header {
+    width: 100%;
+    border-radius: 35px;
+    height: 430px;
+    background-color: white;
+    margin-top: 65px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    //User's profile cover
+    &__cover {
+      position: relative;
+      height: 250px;
+      border-top-left-radius: 35px;
+      border-top-right-radius: 35px;
+      background-color: grey;
+
+      &__img {
+
+      }
+    }
+
+    //User's main info and edit block
+    &__main {
+      position: absolute;
+      width: 90%;
+      bottom: -90px;
+      margin: 0 45px;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: flex-end;
+
+      &__data {
+
+        display: flex;
+        align-items: flex-end;
+        //User's username and email
+        &__info {
+          display: flex;
+          flex-direction: column;
+          margin-left: 20px;
+          margin-bottom: 10px;
+
+          &__username {
+            font-size: variables.$big-font-size;
+            font-weight: 700;
+            line-height: 23px;
+            margin-bottom: 5px;
+          }
+
+          &__email {
+            color: variables.$secondary-text-color;
+            font-size: variables.$middle-font-size;
+            line-height: 19px;
+          }
+        }
+      }
+
+      &__btns {
+        margin-left: auto;
+        margin-bottom: 15px;
+      }
+    }
+
+    //Navigation for anime list in profile
+    &__nav {
+
+      display: flex;
+      //margin: 0 120px;
+      &__link {
+        width: 100%;
+        border-radius: 35px;
+        padding: 5px;
+
+        &:hover {
+          //background-color: lightgray;
+          //transition: all 0.4s;
+        }
+      }
+    }
+  }
+
+
+}
+
+@media (max-width: 820px) {
+  .profile {
+
+    &__header {
+
+      //User's main info and edit block
+      &__main {
+        position: absolute;
+        bottom: -120px;
+        left: -30px;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        &__data {
+          flex-direction: column;
+          align-items: start;
+        }
+        &__btns {
+          margin-top: 80px;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 540px) {
+  .profile {
+
+    &__header {
+
+      //User's main info and edit block
+      &__main {
+        position: absolute;
+        bottom: -120px;
+        left: -30px;
+        display: flex;
+        flex-wrap: wrap;
+        align-items:center;
+        &__data {
+          flex-direction: column;
+          align-items: start;
+        }
+        &__btns {
+          margin-top: 80px;
+        }
+      }
+    }
+  }
+}

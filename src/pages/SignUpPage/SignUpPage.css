@@ -1,17 +1,17 @@
-.login-text {
-  font-size: 12px;
-}
+/* Error: Can't find stylesheet to import.
+ *   ,
+ * 1 | @use 'src/styles/variables';
+ *   | ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ *   '
+ *   SignUpPage.scss 1:1  root stylesheet */
 
-.login-btn {
-  margin-left: 5px;
-  font-size: 12px;
-  font-weight: 700;
+body::before {
+  font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
+      "Droid Sans Mono", monospace, monospace;
+  white-space: pre;
+  display: block;
+  padding: 1em;
+  margin-bottom: 1em;
+  border-bottom: 2px solid black;
+  content: "Error: Can't find stylesheet to import.\a   \2577 \a 1 \2502  @use 'src/styles/variables';\d\a   \2502  ^^^^^^^^^^^^^^^^^^^^^^^^^^^\a   \2575 \a   SignUpPage.scss 1:1  root stylesheet";
 }
-.login-btn:link {
-  color: #00D1FF;
-}
-.login-btn:visited {
-  color: #002cbb;
-}
-
-/*# sourceMappingURL=SignUpPage.css.map */

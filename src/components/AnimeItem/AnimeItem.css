@@ -1,64 +1,17 @@
-.anime-item {
-  display: flex;
-  flex-direction: column;
-  width: 190px;
-  background-color: white;
-  border-radius: 8px;
-  margin-bottom: 20px;
-  transition: transform 0.3s;
-}
-.anime-item:hover {
-  cursor: pointer;
-  -webkit-box-shadow: 0px 5px 10px 2px rgba(0, 144, 255, 0.2);
-  -moz-box-shadow: 0px 5px 10px 2px rgba(0, 144, 255, 0.2);
-  box-shadow: 0px 5px 10px 2px rgba(0, 144, 255, 0.2);
-  transform: scale(1.05);
-}
-.anime-item__img {
-  display: flex;
-  flex-direction: column;
-  justify-content: end;
-  background-position: center;
-  border-radius: 9px;
-}
-.anime-item__description {
-  min-height: 75px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  padding: 10px;
-  border-radius: 0 0 8px 8px;
-  background-color: white;
-  opacity: 0.9;
-}
-.anime-item__title {
-  font-weight: 700;
-  font-size: 16px;
-  line-height: 16px;
-  color: #00D1FF;
-  overflow: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-}
-.anime-item__data {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  font-style: normal;
-  font-weight: 400;
-  font-size: 14px;
-  line-height: 14px;
-}
-.anime-item__genres {
-  margin-bottom: 5px;
-  flex-basis: 100%;
-  font-style: normal;
-  font-weight: 400;
-  font-size: 14px;
-  line-height: 14px;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
+/* Error: Can't find stylesheet to import.
+ *   ,
+ * 1 | @use 'src/styles/variables';
+ *   | ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ *   '
+ *   AnimeItem.scss 1:1  root stylesheet */
 
-/*# sourceMappingURL=AnimeItem.css.map */
+body::before {
+  font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
+      "Droid Sans Mono", monospace, monospace;
+  white-space: pre;
+  display: block;
+  padding: 1em;
+  margin-bottom: 1em;
+  border-bottom: 2px solid black;
+  content: "Error: Can't find stylesheet to import.\a   \2577 \a 1 \2502  @use 'src/styles/variables';\d\a   \2502  ^^^^^^^^^^^^^^^^^^^^^^^^^^^\a   \2575 \a   AnimeItem.scss 1:1  root stylesheet";
+}

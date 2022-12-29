@@ -1,4 +1,4 @@
-import {ListTypes} from "../../../models/ListTypes";
+import {ListTypes} from "../../../../models/ListTypes";
 import styles from './List.module.scss'
 
 interface ListProps<T> {
