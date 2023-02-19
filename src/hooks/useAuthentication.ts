@@ -5,23 +5,27 @@ import {IUserResponse} from "../models/User/IUserResponse";
 
 export const useAuthentication = () => {
     const dispatch = useAppDispatch();
-    const [cookies, setCookie] = useCookies(['jwt-token', 'user']);
+    const [cookies, setCookie] = useCookies(['jwt-token']);
 
     return async function authentication(authenticationUser: () => Promise<IUserResponse>, onSuccess?: () => any) {
-            const expires = new Date();
-            expires.setHours(new Date().getHours() + 1);
-            const userResponse = await authenticationUser();
-            dispatch(authActions.setUser(userResponse))
-            setCookie('jwt-token', userResponse.accessToken, {
-                expires: expires,
-                path: '/'
-            })
-            setCookie('user', userResponse, {
-                expires: expires,
-                path: '/'
-            })
-            if (onSuccess) {
-                await onSuccess();
-            }
+        const expires = new Date();
+        expires.setHours(new Date().getHours() + 1);
+        const userResponse = await authenticationUser();
+        dispatch(authActions.setUser(userResponse))
+        console.log(userResponse)
+        setCookie('jwt-token', userResponse.accessToken, {
+            expires: expires,
+            path: '/'
+        });
+        localStorage.setItem('user', JSON.stringify(userResponse))
+        // setCookie('user', userResponse, {
+        //     expires: expires,
+        //     path: '/'
+        // })
+
+        if (onSuccess) {
+            await onSuccess();
+        }
+        return userResponse
     }
 }

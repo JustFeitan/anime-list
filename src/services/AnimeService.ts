@@ -24,7 +24,7 @@ export const animeAPI = createApi({
             return headers;
         },
     }),
-    tagTypes: ['AnimeList'],
+    tagTypes: ['AnimeList', 'User'],
     endpoints: (build) => ({
         fetchAllAnime: build.query<IAnime[], number>({
             query: (limit: number = 10) => ({

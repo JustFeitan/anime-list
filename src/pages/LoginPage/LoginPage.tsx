@@ -40,7 +40,7 @@ const LoginPage: FC = () => {
     const navigate = useNavigate();
 
 
-    const fromPage = location.state?.from?.pathname;
+    const fromPage = location.state?.from?.pathname || '/';
 
     const {register, formState: {errors}, handleSubmit, getValues} = useForm<LoginFormState>({
         mode: "onBlur",

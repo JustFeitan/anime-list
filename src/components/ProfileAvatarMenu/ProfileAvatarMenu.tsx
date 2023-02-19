@@ -12,12 +12,15 @@ import {useAppDispatch} from "../../hooks/redux";
 import {useAuth} from "../../hooks/useAuth";
 import useOutsideClickHandler from "../../hooks/useOutsideClickHandler";
 import './ProfileAvatarMenu.scss';
+import {useCookies} from "react-cookie";
 
 const ProfileAvatarMenu = () => {
 
     const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
     const navigate = useNavigate();
     const location = useLocation();
+
+    const [cookies, setCookie, removeCookie] = useCookies(['jwt-token']);
 
     const dispatch = useAppDispatch();
     const user = useAuth();
@@ -34,9 +37,11 @@ const ProfileAvatarMenu = () => {
 
     const logoutHandler = () => {
         dispatch(authActions.logout());
-        setIsMenuOpen(false)
+        localStorage.removeItem('user')
+        removeCookie('jwt-token');
+        setIsMenuOpen(false);
     }
-
+    console.log(user)
     const goToProfile = () => {
         navigate(AppRoutes.HOME + user?.username, {state: {userId: user?.id}});
         setIsMenuOpen(false)
@@ -47,7 +52,7 @@ const ProfileAvatarMenu = () => {
             {
                 user
                     ? <>
-                        <Avatar avatarImage={user.userAvatar} onClick={() => setIsMenuOpen(prevState => !prevState)}/>
+                        <Avatar avatarImage={user.userAvatar as string} onClick={() => setIsMenuOpen(prevState => !prevState)}/>
 
                         <CSSTransition
                             in={isMenuOpen}

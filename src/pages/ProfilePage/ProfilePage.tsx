@@ -1,4 +1,4 @@
-import {FC, Suspense} from 'react';
+import {FC, Suspense, useState} from 'react';
 import {Outlet, useLocation, useParams} from "react-router-dom";
 import {useAuth} from "../../hooks/useAuth";
 import Avatar from "../../components/UI/Avatar/Avatar";
@@ -10,16 +10,28 @@ import './ProfilePage.scss';
 import Navbar from "../../components/UI/Navbar/Navbar";
 import NavbarItem from "../../components/UI/Navbar/NavbarItem/NavbarItem";
 import {AppRoutes} from "../../routing/routes";
+import Modal from "../../components/UI/Modal/Modal";
+import EditProfile from "../../components/EditProfileModal/EditProfileModal";
+import {IUser} from "../../models/User/IUser";
 
 const ProfilePage: FC = () => {
 
-    const loggedInUser = useAuth();
     const {username} = useParams();
     const location = useLocation();
     const userId = location.state?.userId;
     const {data: user, error: userError, isLoading} = authApi.useGetUserQuery(userId);
     console.log(userId)
 
+    const [visible, setVisible] = useState<boolean>(false);
+
+
+    const editProfileModalHandler = () => {
+        setVisible(true);
+    }
+
+    const onSubmitProfileChanges =  () => {
+        setVisible(false);
+    }
 
     return (
         <div className='profile'>
@@ -30,13 +42,13 @@ const ProfilePage: FC = () => {
                         {/*User's cover image*/}
 
                         <div className="profile__header__cover">
-                            <img className="profile__header__cover__img"/>
+                            <img src={user!.profileCover as string} alt='' className="profile__header__cover__img"/>
                             <div className="profile__header__main">
 
                                 <div className="profile__header__main__data">
                                     {/*User's Avatar*/}
                                     <div className="profile__header__main__data__avatar">
-                                        <Avatar size={165} avatarImage={user?.userAvatar}/>
+                                        <Avatar size={165} avatarImage={user!.userAvatar as string}/>
                                     </div>
                                     {/*User's username and email*/}
                                     <div className="profile__header__main__data__info">
@@ -56,10 +68,17 @@ const ProfilePage: FC = () => {
                                 </div>
                                 {/*User's edit buttons*/}
                                 <div className='profile__header__main__btns'>
-                                    <MyPrimaryButton>
+                                    <MyPrimaryButton onClick={editProfileModalHandler}>
                                         Edit Profile
                                     </MyPrimaryButton>
                                 </div>
+                                <Modal visible={visible} setVisible={setVisible}>
+                                    <EditProfile
+                                        user={user!}
+                                        onSubmitHandler={onSubmitProfileChanges}
+                                    />
+                                </Modal>
+
                             </div>
                         </div>
 

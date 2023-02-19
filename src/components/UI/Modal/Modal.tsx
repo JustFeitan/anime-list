@@ -1,13 +1,13 @@
-import React, {FC, ReactChild} from 'react';
+import React, {ComponentProps, FC, ReactChild} from 'react';
 import classes from './Modal.module.scss'
 
-interface ModalProps {
+interface ModalProps extends ComponentProps<'div'> {
     visible: boolean;
-    setVisible: (visible: boolean) => void;
+    setVisible?: (visible: boolean) => void;
     children: ReactChild | React.ReactNode;
 }
 
-const Modal: FC<ModalProps> = ({visible, children, setVisible}) => {
+const Modal: FC<ModalProps> = ({visible, children, setVisible, className, ...props}) => {
     const rootClasses = [classes.modal];
 
     if (visible) {
@@ -15,8 +15,11 @@ const Modal: FC<ModalProps> = ({visible, children, setVisible}) => {
     }
 
     return (
-        <div className={rootClasses.join(' ')} onClick={() => setVisible(false)}>
-            <div className={classes.modalWrapper} onClick={event => event.stopPropagation()}>
+        <div className={rootClasses.join(' ')} onClick={() => {
+            setVisible ? setVisible(false) : visible = false
+        }}>
+            <div className={className ? classes.modalWrapper + ' ' + className : classes.modalWrapper}
+                 onClick={event => event.stopPropagation()}>
                 <div className={classes.modalContent}>
                     {children}
                 </div>

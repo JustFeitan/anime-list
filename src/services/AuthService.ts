@@ -3,6 +3,7 @@ import {IUserResponse} from "../models/User/IUserResponse";
 import {ILoginRequest} from "../models/User/ILoginRequest";
 import {ISignUpRequest} from "../models/User/IRegisterRequest";
 import {IUser} from "../models/User/IUser";
+import {FetchBaseQueryMeta} from "@reduxjs/toolkit/query";
 
 export const authApi = animeAPI.injectEndpoints({
     endpoints: (build) => ({
@@ -20,15 +21,29 @@ export const authApi = animeAPI.injectEndpoints({
                 body: registerRequest,
             })
         }),
-        getUser: build.query<IUser, number>({
+        getUser: build.query<Omit<IUser, 'password'>, number>({
             query: (userId: number) => ({
                 url: `/users/${userId}`
-            })
+            }),
+            providesTags: ['User'],
+            transformResponse(response : IUser) {
+                const {password, ...user} = response
+                return user;
+            }
         }),
         getUserByUsername: build.query<IUser, string>({
             query: (username: string) => ({
                 url: `/users/?username=${username}`
-            })
+            }),
+            providesTags: ['User']
+        }),
+        updateUser: build.mutation<Omit<IUser, 'password'>, Omit<IUser, 'password'>>({
+            query: (user: Omit<IUser, 'password'>) => ({
+                url: `/users/${user.id}`,
+                method: 'PATCH',
+                body: user,
+            }),
+            invalidatesTags: ['User']
         }),
 
 

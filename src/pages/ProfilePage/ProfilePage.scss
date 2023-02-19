@@ -21,7 +21,13 @@
       background-color: grey;
 
       &__img {
-
+        height: 100%;
+        width: 100%;
+        border-top-left-radius: 35px;
+        border-top-right-radius: 35px;
+        background-color: lightgray;
+        background-size: contain;
+        background-position: center;
       }
     }
 
@@ -36,7 +42,11 @@
       align-items: flex-end;
 
       &__data {
-
+        &__avatar{
+          background-color: white;
+          border: white 5px solid;
+          border-radius: 50%;
+        }
         display: flex;
         align-items: flex-end;
         //User's username and email
@@ -129,6 +139,7 @@
         &__data {
           flex-direction: column;
           align-items: start;
+
         }
         &__btns {
           margin-top: 80px;

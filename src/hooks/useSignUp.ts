@@ -7,7 +7,7 @@ export const useSignUp = () => {
   const authenticate = useAuthentication();
 
   async function signup(signUpRequest: ISignUpRequest, onSuccess?: () => void) {
-    await authenticate(() => signupUser(signUpRequest).unwrap(), onSuccess)
+    return await authenticate(() => signupUser(signUpRequest).unwrap(), onSuccess)
   }
 
   return {signup, signUpUserResult}

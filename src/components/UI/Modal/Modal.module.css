@@ -19,7 +19,7 @@
 
 .modalContent {
   width: 100%;
-  min-height: 210px;
+  min-height: inherit;
   display: flex;
   flex-direction: column;
   justify-content: space-between;

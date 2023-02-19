@@ -6,7 +6,7 @@ import {AppStore} from "../../store";
 
 interface AuthState {
     accessToken: string | null;
-    user: IUser | null;
+    user: IUser | Omit<IUser, 'password'> | null;
     isLoading: boolean;
 }
 
@@ -32,8 +32,9 @@ export const authSlice = createSlice({
         setUserLoading: (state) => {
             state.isLoading = true;
         },
-        setUserBio: (state, action: PayloadAction<IUser>) => {
+        setUserBio: (state, action: PayloadAction<Omit<IUser, 'password'>>) => {
             state.user = action.payload;
+            state.isLoading = false;
         },
     }
 })

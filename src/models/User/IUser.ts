@@ -3,5 +3,6 @@ export interface IUser {
     username: string;
     email: string;
     password: string;
-    userAvatar: string;
+    userAvatar: string | null | ArrayBuffer;
+    profileCover: string | null | ArrayBuffer;
 }

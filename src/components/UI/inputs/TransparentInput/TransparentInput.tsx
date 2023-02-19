@@ -1,39 +1,45 @@
-import React, {ChangeEvent, FC, useState} from 'react';
+import {ChangeEvent, FC, useEffect, useRef, useState} from 'react';
 import Input, {InputProps} from "../Input/Input";
+import './TransparentInput.scss';
 
-interface TransparentInputProps extends InputProps{
-   // onChange: (e: ChangeEvent<HTMLInputElement>) => void;
+interface TransparentInputProps extends InputProps {
+    autoSize?: boolean;
 }
 
-const TransparentInput: FC<TransparentInputProps> = ({ ...props}) => {
+const TransparentInput: FC<TransparentInputProps> = ({value, onChange, width, autoSize = false, ...props}) => {
 
-    const [episodeProgressWight, setEpisodeProgressWight] = useState<string>('70px');
-    const [episodeProgress, setEpisodeProgress] = useState<string | null>( '0');
+    const [episodeProgress, setEpisodeProgress] = useState<string | number | readonly string[] | undefined>(value);
+    const [episodeProgressWight, setEpisodeProgressWight] = useState<string>((episodeProgress as string).length * 12 + 'px');
 
     const onFocusEpisodeProgress = (e: ChangeEvent<HTMLInputElement>) => {
-        if (e.target.value === '-') setEpisodeProgress('');
+        if (episodeProgress === '-') setEpisodeProgress('');
     }
 
     const onBlurEpisodeProgress = (e: ChangeEvent<HTMLInputElement>) => {
         if (e.target.value.length === 0) {
             setEpisodeProgressWight('30px');
         }
-        if (e.target.value === '') setEpisodeProgress('-');
+        if (episodeProgress === '') setEpisodeProgress( '-');
     }
 
+    const onChangeHandler = (e: ChangeEvent<HTMLInputElement>) => {
+        let onlyNumbers: string | null = e.target.value.replace(/\D/g, '');
+        setEpisodeProgress(onlyNumbers);
+        setEpisodeProgressWight((onlyNumbers as string).length * 12 + 'px');
+        if (!onChange) return;
+        onChange(e);
+    }
 
     return (
-        // @ts-ignore
         <Input
-            maxLength={5}
-            pattern='[0-9]*'
-            style={{width: episodeProgressWight}}
-            value={episodeProgress!}
+            style={autoSize ? {width: episodeProgressWight} : {width}}
             onFocus={onFocusEpisodeProgress}
             onBlur={onBlurEpisodeProgress}
-            className='anime-list__item__right__data__progress__input'
+            value={episodeProgress}
+            className='input-transparent'
             {...props}
-            //onChange={onChange}
+            onChange={onChangeHandler}
+            ref={null}
         />
     );
 };

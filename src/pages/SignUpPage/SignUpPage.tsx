@@ -15,6 +15,9 @@ import {useSignUp} from "../../hooks/useSignUp";
 import {Link, useLocation, useNavigate} from "react-router-dom";
 import {toast} from "react-toastify";
 import './SignUpPage.scss';
+import defaultAvatar from './../../assets/hot.png';
+import {formDataFromObject} from "../../utils/formDataFromObject";
+import {authApi} from "../../services/AuthService";
 
 const registerSchema = yup.object().shape({
     username: yup
@@ -42,21 +45,32 @@ const SignUpPage: FC = () => {
 
     const fromPage = location.state?.from?.pathname;
 
-    const {register, handleSubmit, formState: {errors}} = useForm<SignupFormState>({
+    const {register, handleSubmit, formState: {errors}, unregister} = useForm<SignupFormState>({
         mode: "onBlur",
         resolver: yupResolver(registerSchema)
     });
 
     const {signup, signUpUserResult: {isLoading}} = useSignUp();
+    const [updateUser, {}] = authApi.useUpdateUserMutation();
 
-    const onSignUpSubmit: SubmitHandler<ISignUpRequest> = async (signUpRequest) => {
-        await signup(signUpRequest, () => {
+
+
+    const onSignUpSubmit: SubmitHandler<Omit<SignupFormState, 'repeatedPassword'>> = async (signUpRequest) => {
+        unregister('repeatedPassword');
+        const newUser: ISignUpRequest = {
+            ...signUpRequest,
+            userAvatar: defaultAvatar,
+            profileCover: defaultAvatar,
+        }
+        await signup(newUser, () => {
             navigate(fromPage, {replace: true});
             toast.success('Thank you for registration! Have fun!', {
                 toastId: 'Thank you for registration! Have fun!',
                 position: toast.POSITION.BOTTOM_CENTER,
             });
         })
+
+
     }
 
     return (

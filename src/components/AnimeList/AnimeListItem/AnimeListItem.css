@@ -42,15 +42,6 @@
   max-width: 70px;
   align-items: center;
 }
-.anime-list__item__right__data__progress__input {
-  text-align: center;
-  padding: 2px;
-  border: none;
-  background-color: transparent;
-}
-.anime-list__item__right__data__progress__input:focus {
-  border: 1px solid lightgray;
-}
 .anime-list__item__right__btns {
   min-width: 70px;
   margin-left: 20px;

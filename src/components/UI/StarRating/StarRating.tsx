@@ -27,7 +27,6 @@ const StarRating: FC<StarRatingProps> = ({
     const [rating, setRating] = useState<number>(rate || -1);
     const [visualRating, setVisualRating] = useState<number>(rating);
 
-    console.log(rate, rating)
     const onStarHover = (index: number) => {
         setVisualRating(index)
     }

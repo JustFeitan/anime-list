@@ -1,6 +1,12 @@
-# Getting Started with Create React App
+# Animelist website
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Сайт для отсллеживания аниме произведений, с возможностью добавлять в ращные списки.
+
+## Возможности:
+
+- Регистрация с валидацией
+- Добавить произведение в один из трех списков(просмотренно, буду смотреть, смотрю) а затем редактировать их в профиле
+- Отфильтровать аниме под году, типу, сезону и жанру
 
 ## Available Scripts
 

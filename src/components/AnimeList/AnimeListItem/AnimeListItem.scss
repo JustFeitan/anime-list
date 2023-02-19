@@ -42,16 +42,7 @@
         min-width: 30px;
         max-width: 70px;
         align-items: center;
-        &__input {
-          text-align: center;
-          padding: 2px;
 
-          border: none;
-          background-color: transparent;
-          &:focus {
-            border: 1px solid lightgray;;
-          }
-        }
       }
       width: 185px;
       display: flex;

@@ -22,7 +22,7 @@ const statusOptions: UserAnimeStatusOptions = [
 interface AnimeStatusSelectProps {
     anime: IAnime;
     userAnimeListItem: UserAnimeListItem | null;
-    user: IUser | null;
+    user: Omit<IUser, 'password'> | null;
 }
 
 const AnimeStatusSelect: FC<AnimeStatusSelectProps> = ({anime, userAnimeListItem, user,  ...props}) => {

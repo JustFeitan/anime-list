@@ -1,3 +1,11 @@
-
+.input-transparent {
+  text-align: center;
+  padding: 2px;
+  border: none;
+  background-color: transparent;
+}
+.input-transparent:focus {
+  border: 1px solid lightgray;
+}
 
 /*# sourceMappingURL=TransparentInput.css.map */

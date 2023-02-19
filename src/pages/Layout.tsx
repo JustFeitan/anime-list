@@ -5,11 +5,7 @@ import './Layout.scss'
 import 'react-toastify/dist/ReactToastify.css';
 import {ToastContainer} from "react-toastify";
 
-
-
 const Layout = () => {
-
-
     return (
         <div className='app'>
             <Header/>

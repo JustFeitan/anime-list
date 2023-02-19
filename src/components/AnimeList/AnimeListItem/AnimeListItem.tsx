@@ -1,4 +1,4 @@
-import React, {ChangeEvent, FC, useCallback, useEffect, useState} from 'react';
+import React, {ChangeEvent, FC, useState} from 'react';
 import {IAnime} from "../../../models/IAnime";
 import Typography from "../../UI/Typography/Typography";
 import AnimeCover from "../../AnimeCover/AnimeCover";
@@ -9,13 +9,13 @@ import Modal from "../../UI/Modal/Modal";
 import {UserAnimeListItem} from "../../../models/UserAnimeListItem";
 import {useAuth} from "../../../hooks/useAuth";
 import AnimeStatusSelect from "../../AnimeStatusSelect/AnimeStatusSelect";
-import {useParams} from "react-router-dom";
+import {useNavigate, useParams} from "react-router-dom";
 import {userAnimeApi} from "../../../services/UserAnimeService";
 import {skipToken} from "@reduxjs/toolkit/query";
 import StarRating from "../../UI/StarRating/StarRating";
-import Input from "../../UI/inputs/Input/Input";
-import {useDebounce} from "../../../hooks/useDebounce";
 import {useDebounceCallback} from "../../../hooks/useDebounceCallback";
+import TransparentInput from "../../UI/inputs/TransparentInput/TransparentInput";
+import {AppRoutes} from "../../../routing/routes";
 
 interface AnimeListItemProps {
     anime: IAnime;
@@ -27,10 +27,9 @@ interface AnimeListItemProps {
 const AnimeListItem: FC<AnimeListItemProps> = ({anime, index, onDeleteAnimeItem, onChangeAnimeItem}) => {
 
     const [editVisible, setEditVisible] = useState<boolean>(false);
-
-    const [episodeProgressWight, setEpisodeProgressWight] = useState<string>('0px');
     const {username: pageUserName} = useParams()
     const user = useAuth();
+    const navigate = useNavigate();
 
     //get userAnimeListItem
     const {
@@ -40,17 +39,7 @@ const AnimeListItem: FC<AnimeListItemProps> = ({anime, index, onDeleteAnimeItem,
         animeId: anime.id,
         userId: user.id
     } : skipToken);
-    const [episodeProgress, setEpisodeProgress] = useState<string | null>( '');
 
-    useEffect(() => {
-        if (isLoadingUserAnimeListItem) return;
-        setEpisodeProgress(userAnimeListItem!.progress || '-');
-        if (!userAnimeListItem!.progress) {
-            setEpisodeProgressWight('30px');
-            return;
-        }
-        setEpisodeProgressWight(userAnimeListItem!.progress.length * 12 + 'px');
-    }, [isLoadingUserAnimeListItem])
 
     const onDeleteHandler = () => {
         onDeleteAnimeItem(anime.id + '' + user?.id);
@@ -58,21 +47,23 @@ const AnimeListItem: FC<AnimeListItemProps> = ({anime, index, onDeleteAnimeItem,
 
     const [updateAnimeInList] = userAnimeApi.useUpdateAnimeInUserListMutation();
     const debouncedUpdateAnimeInList = useDebounceCallback(updateAnimeInList, 1500)
-    const onRatingChange = async (rate: number) => {
+
+
+    const onRatingChange = async (rate: number | ChangeEvent<HTMLInputElement>) => {
+        if (typeof rate !== 'number') {
+
+        }
         const newUserAnimeListItem: UserAnimeListItem = {
             ...userAnimeListItem!,
-            rating: rate,
+            rating: typeof rate === 'number' ? rate :
+                Number(rate.target.value) < 10 ? Number(rate.target.value) : null,
         }
         await updateAnimeInList(newUserAnimeListItem);
     }
 
     const onEpisodeProgressChange = async (e: ChangeEvent<HTMLInputElement>) => {
-        if (e.target.value.length > 0) {
-            setEpisodeProgressWight(e.target.value.length * 12 + 'px')
-        }
         let onlyNumbers: string | null = e.target.value.replace(/\D/g, '');
-        if (onlyNumbers === '') onlyNumbers = null;
-        setEpisodeProgress(onlyNumbers);
+        if (onlyNumbers === '' || +onlyNumbers > anime.episodes) onlyNumbers = null;
         const newUserAnimeListItem: UserAnimeListItem = {
             ...userAnimeListItem!,
             progress: onlyNumbers,
@@ -81,17 +72,9 @@ const AnimeListItem: FC<AnimeListItemProps> = ({anime, index, onDeleteAnimeItem,
 
     }
 
-    const onFocusEpisodeProgress = (e: ChangeEvent<HTMLInputElement>) => {
-        if (e.target.value === '-') setEpisodeProgress('');
+    const onAnimeCoverClick = () => {
+        navigate(AppRoutes.ANIME + anime.title)
     }
-
-    const onBlurEpisodeProgress = (e: ChangeEvent<HTMLInputElement>) => {
-        if (e.target.value.length === 0) {
-            setEpisodeProgressWight('30px');
-        }
-        if (e.target.value === '') setEpisodeProgress('-');
-    }
-
     return (
         <div className='anime-list__item'>
             {
@@ -99,22 +82,25 @@ const AnimeListItem: FC<AnimeListItemProps> = ({anime, index, onDeleteAnimeItem,
                 <>
                     <div className="anime-list__item__left">
                         <Typography component='span'>{index + 1}</Typography>
-                        <AnimeCover anime={anime} minHeight={105} minWidth={75}/>
+                        <AnimeCover onClick={onAnimeCoverClick} anime={anime} minHeight={105} minWidth={75}/>
                         <Typography className='anime-list__item__left__title'
                                     component='span'>{anime.title}</Typography>
                     </div>
                     <div className="anime-list__item__right">
                         <div className="anime-list__item__right__data">
-                            <Typography component='span'>{userAnimeListItem!.rating ?? '-'}</Typography>
+                            <TransparentInput
+                                width={'50px'}
+                                maxLength={2}
+                                pattern='[0-9]*'
+                                value={userAnimeListItem?.rating ?? '-'}
+                                onChange={onRatingChange}
+                            />
                             <div className="anime-list__item__right__data__progress">
-                                <Input
+                                <TransparentInput
+                                    autoSize={true}
                                     maxLength={5}
                                     pattern='[0-9]*'
-                                    style={{width: episodeProgressWight}}
-                                    value={episodeProgress!}
-                                    onFocus={onFocusEpisodeProgress}
-                                    onBlur={onBlurEpisodeProgress}
-                                    className='anime-list__item__right__data__progress__input'
+                                    value={userAnimeListItem?.progress ?? '-'}
                                     onChange={onEpisodeProgressChange}
                                 />
                                 <Typography component='span'>{'/' + anime.episodes}</Typography>
@@ -125,13 +111,13 @@ const AnimeListItem: FC<AnimeListItemProps> = ({anime, index, onDeleteAnimeItem,
                         {user?.username === pageUserName &&
                             <>
                                 <div className="anime-list__item__right__btns">
-                                    <MyPrimaryButton
-                                        width={30}
-                                        height={30}
-                                        onClick={() => setEditVisible(prevState => !prevState)}
-                                    >
-                                        <EditIconWhite/>
-                                    </MyPrimaryButton>
+                                    {/*<MyPrimaryButton*/}
+                                    {/*    width={30}*/}
+                                    {/*    height={30}*/}
+                                    {/*    onClick={() => setEditVisible(prevState => !prevState)}*/}
+                                    {/*>*/}
+                                    {/*    <EditIconWhite/>*/}
+                                    {/*</MyPrimaryButton>*/}
                                     <MyPrimaryButton
                                         className='anime-list__item__right__btns__delete'
                                         width={30}
@@ -142,19 +128,19 @@ const AnimeListItem: FC<AnimeListItemProps> = ({anime, index, onDeleteAnimeItem,
                                     </MyPrimaryButton>
                                 </div>
 
-                                <Modal visible={editVisible} setVisible={setEditVisible}>
-                                    {
-                                        !isLoadingUserAnimeListItem &&
-                                        <AnimeStatusSelect anime={anime}
-                                                           user={user}
-                                                           userAnimeListItem={userAnimeListItem!}
-                                        />
-                                    }
-                                    {userAnimeListItem &&
-                                        <StarRating rate={userAnimeListItem.rating} starCount={5}
-                                                    onRatingChange={rate => onRatingChange(rate)}/>
-                                    }
-                                </Modal>
+                                {/*<Modal visible={editVisible} setVisible={setEditVisible}>*/}
+                                {/*    {*/}
+                                {/*        !isLoadingUserAnimeListItem &&*/}
+                                {/*        <AnimeStatusSelect anime={anime}*/}
+                                {/*                           user={user}*/}
+                                {/*                           userAnimeListItem={userAnimeListItem!}*/}
+                                {/*        />*/}
+                                {/*    }*/}
+                                {/*    {userAnimeListItem &&*/}
+                                {/*        <StarRating rate={userAnimeListItem.rating} starCount={5}*/}
+                                {/*                    onRatingChange={rate => onRatingChange(rate)}/>*/}
+                                {/*    }*/}
+                                {/*</Modal>*/}
                             </>
 
                         }

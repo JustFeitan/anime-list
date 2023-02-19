@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {useLocation} from "react-router-dom";
+import {useParams} from "react-router-dom";
 import {animeAPI} from "../../services/AnimeService";
 import Loader from "../../components/UI/Loader/Loader";
 import './AnimeItemPage.scss';
@@ -9,13 +9,11 @@ import {userAnimeApi} from "../../services/UserAnimeService";
 import AnimeStatusSelect from "../../components/AnimeStatusSelect/AnimeStatusSelect";
 import StarRating from "../../components/UI/StarRating/StarRating";
 import {UserAnimeListItem} from "../../models/UserAnimeListItem";
-import {toast} from "react-toastify";
 
 
 const AnimeItemPage = () => {
 
-    const location = useLocation();
-    const animeTitle = location.state?.from;
+    const {title: animeTitle} = useParams();
     const user = useAuth()
     const [statusListShown, setStatusListShown] = useState<boolean>(true);
 
@@ -42,7 +40,7 @@ const AnimeItemPage = () => {
             ...userAnimeListItem!,
             rating: rate,
         }
-       await updateAnimeInList(newUserAnimeListItem);
+        await updateAnimeInList(newUserAnimeListItem);
     }
 
     return (
@@ -75,8 +73,9 @@ const AnimeItemPage = () => {
                                 <AnimeStatusSelect anime={anime} userAnimeListItem={userAnimeListItem!}
                                                    user={user}/>
                             }
-                            { userAnimeListItem &&
-                                <StarRating rate={userAnimeListItem.rating} starCount={5} onRatingChange={rate => onRatingChange(rate)}/>
+                            {userAnimeListItem &&
+                                <StarRating rate={userAnimeListItem.rating} starCount={5}
+                                            onRatingChange={rate => onRatingChange(rate)}/>
                             }
                         </div>
 

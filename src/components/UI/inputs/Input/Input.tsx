@@ -1,7 +1,14 @@
-import React, {ComponentProps, HTMLProps} from 'react';
+import React, {
+    AriaAttributes,
+    ComponentProps,
+    DetailedHTMLProps,
+    HTMLAttributes,
+    HTMLProps,
+    InputHTMLAttributes
+} from 'react';
 import './Input.scss'
 
-export interface InputProps extends ComponentProps<'input'> {
+export interface InputProps extends DetailedHTMLProps<InputHTMLAttributes<HTMLInputElement>, HTMLInputElement>, AriaAttributes {
     label?: string;
     helperText?: string;
     error?: boolean;
