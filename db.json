@@ -5409,24 +5409,7 @@
       ]
     }
   ],
-  "posts": [
-    {
-      "id": 1,
-      "title": "json-server",
-      "author": "typicode",
-      "userId": 2
-    },
-    {
-      "text": "blabla",
-      "id": 2,
-      "userId": 4
-    },
-    {
-      "text": "blabla",
-      "userId": 4,
-      "id": 3
-    }
-  ],
+  "posts": [],
   "comments": [
     {
       "id": 1,
@@ -5446,12 +5429,100 @@
   ],
   "usersAnimesListStatus": [
     {
-      "id": "87",
+      "id": "61",
+      "animeId": 6,
+      "status": "Watching",
+      "userId": 1,
+      "progress": "-",
+      "rating": 3
+    },
+    {
+      "id": "81",
       "animeId": 8,
-      "status": "Completed",
-      "userId": 7,
-      "progress": "1",
-      "rating": 1
+      "status": "Watching",
+      "userId": 1,
+      "progress": "-",
+      "rating": 4
+    },
+    {
+      "id": "271",
+      "animeId": 27,
+      "status": "Watching",
+      "userId": 1,
+      "progress": "-",
+      "rating": 3
+    },
+    {
+      "id": "301",
+      "animeId": 30,
+      "status": "Watching",
+      "userId": 1,
+      "progress": "-",
+      "rating": null
+    },
+    {
+      "id": "11",
+      "animeId": 1,
+      "status": "Watching",
+      "userId": 1,
+      "progress": "-",
+      "rating": 2
+    },
+    {
+      "id": "21",
+      "animeId": 2,
+      "status": "Watching",
+      "userId": 1,
+      "progress": "-",
+      "rating": null
+    },
+    {
+      "id": "31",
+      "animeId": 3,
+      "status": "Watching",
+      "userId": 1,
+      "progress": "-",
+      "rating": 4
+    },
+    {
+      "id": "41",
+      "animeId": 4,
+      "status": "Watching",
+      "userId": 1,
+      "progress": "-",
+      "rating": null
+    },
+    {
+      "id": "51",
+      "animeId": 5,
+      "status": "Watching",
+      "userId": 1,
+      "progress": "-",
+      "rating": null
+    },
+    {
+      "id": "71",
+      "animeId": 7,
+      "status": "Watching",
+      "userId": 1,
+      "progress": "-",
+      "rating": 5
+    },
+    {
+      "id": "741",
+      "animeId": 74,
+      "status": "Watching",
+      "userId": 1,
+      "progress": "-",
+      "rating": 4
+    },
+    {
+      "id": "91",
+      "animeId": 9,
+      "status": "Watching",
+      "userId": 1,
+      "progress": "-",
+      "rating": 3
     }
   ]
 }

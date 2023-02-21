@@ -27,4 +27,32 @@
   align-content: space-between;
 }
 
+@media (max-width: 1060px) {
+  .all {
+    padding: 15px 15px 0 15px;
+  }
+}
+@media (max-width: 1000px) {
+  .search {
+    justify-content: center;
+  }
+}
+@media (max-width: 655px) {
+  .all {
+    padding: 5px 5px 0 5px;
+  }
+
+  .search {
+    justify-content: space-evenly;
+  }
+}
+@media (max-width: 540px) {
+  .anime {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-content: center;
+  }
+}
+
 /*# sourceMappingURL=List.module.css.map */

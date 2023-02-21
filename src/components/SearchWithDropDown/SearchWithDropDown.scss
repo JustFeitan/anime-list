@@ -3,6 +3,9 @@
   position: relative;
   width: 100%;
   margin: 9px;
+  &__wrapper {
+    top: 44px;
+  }
   &__input {
     border: 1px solid lightgray !important;
     border-radius: 5px;
@@ -32,3 +35,16 @@
   height: 100%;
   background: rgb(0, 0, 0, 0.35);
 }
+ @media (max-width: 655px) {
+   .search {
+     margin: 0;
+     &__wrapper {
+       max-height: 60vh;
+       top: 30px;
+     }
+   }
+   .fainted-bg {
+     display: none;
+   }
+
+ }
