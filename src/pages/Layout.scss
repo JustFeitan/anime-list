@@ -31,8 +31,8 @@ main {
   }
 }
 
-//@media (max-width: 420px) {
-//  .main {
-//    width: 400px;
-//  }
-//}
+@media (max-width: 420px) {
+  .main {
+    width: 375px;
+  }
+}

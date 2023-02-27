@@ -1,5 +1,6 @@
 .anime-certain {
   width: 90%;
+  height: fit-content;
   margin-top: 10px;
   padding: 15px;
   background-color: #fff;
@@ -31,14 +32,17 @@
   display: flex;
 }
 .anime-certain__title {
-  padding-bottom: 15px;
   color: #00D1FF;
 }
-.anime-certain__geners {
+.anime-certain__genres {
+  font-style: italic;
   color: rgba(0, 0, 0, 0.5);
 }
 .anime-certain__description {
   padding: 0 10px;
+}
+.anime-certain__description > * {
+  margin-bottom: 5px;
 }
 
 .star {

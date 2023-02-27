@@ -53,24 +53,27 @@ const ProfileAvatarMenu = () => {
             {user ? (
                 <>
                     <Avatar
+                        data-testid="header-user-avatar"
                         avatarImage={user.userAvatar as string}
                         onClick={() => setIsMenuOpen((prevState) => !prevState)}
                     />
-
                     <CSSTransition
                         in={isMenuOpen}
                         unmountOnExit
                         timeout={500}
                         classNames="menu-primary"
                     >
-                        <DropdownMenu>
+                        <DropdownMenu data-testid="header-profile-menu">
                             <DropdownMenuItem
                                 onClick={goToProfile}
                                 iconLeft={<ProfileIcon />}
                             >
                                 My Profile
                             </DropdownMenuItem>
-                            <DropdownMenuItem iconLeft={<ListIcon />}>
+                            <DropdownMenuItem
+                                onClick={goToProfile}
+                                iconLeft={<ListIcon />}
+                            >
                                 My Animes
                             </DropdownMenuItem>
                             <DropdownMenuItem

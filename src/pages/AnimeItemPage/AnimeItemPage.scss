@@ -1,5 +1,6 @@
 .anime-certain{
   width: 90%;
+  height: fit-content;
   margin-top: 10px;
   padding: 15px;
   background-color: #fff;
@@ -32,14 +33,17 @@
   }
 
   &__title{
-    padding-bottom: 15px;
     color: #00D1FF;
   }
-  &__geners{
+  &__genres{
+    font-style: italic;
     color: rgba(0, 0, 0, .5);
   }
 
   &__description {
+    & > * {
+      margin-bottom: 5px;
+    }
     padding: 0 10px;
   }
 }

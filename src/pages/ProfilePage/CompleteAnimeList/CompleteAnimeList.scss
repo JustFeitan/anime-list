@@ -9,3 +9,8 @@
     align-self: center;
   }
 }
+@media (max-width: 420px) {
+  .completed-anime-list {
+    padding: 5px 10px;
+  }
+}

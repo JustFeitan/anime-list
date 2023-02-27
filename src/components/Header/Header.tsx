@@ -7,7 +7,6 @@ import SearchWithDropDown from "../SearchWithDropDown/SearchWithDropDown";
 import { IAnime } from "../../models/IAnime";
 import ProfileAvatarMenu from "../ProfileAvatarMenu/ProfileAvatarMenu";
 import SearchIcon from "../UI/Icons/SearchIcon";
-import Modal from "../UI/Modal/Modal";
 import { DropDown } from "../UI/DropDown/DropDown";
 
 const Header: FC = () => {
@@ -41,7 +40,7 @@ const Header: FC = () => {
     const onSearchIconClick = () => {
         setSearchVisible((prevState) => !prevState);
     };
-    console.log(searchVisible);
+
     return (
         <header className="header">
             <div className="header__wrapper">

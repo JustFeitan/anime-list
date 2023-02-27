@@ -49,14 +49,14 @@
   .search {
     justify-content: space-evenly;
   }
+
 }
 
 @media (max-width: 540px) {
   .anime {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: center;
     align-content: center;
-
   }
 }

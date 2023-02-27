@@ -151,3 +151,33 @@
     }
   }
 
+
+
+@media (max-width: 420px) {
+  .anime-list__item {
+    &__left {
+      &__title {
+        width: 70px;
+
+      }
+
+      & > * {
+        margin-right: 5px;
+      }
+    }
+
+    &__right {
+      width: 133px;
+      &__data {
+        & > * {
+          width: 40px;
+        }
+      }
+
+      &__btns {
+
+      }
+
+    }
+  }
+}

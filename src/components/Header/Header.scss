@@ -78,7 +78,7 @@
     align-items: center;
 
     &__search-icon {
-      display: none;
+      display: none!important;
     }
   }
 }
@@ -148,14 +148,16 @@
     }
 
     &__right {
-      width: 130px;
-
+      width: 160px;
+      justify-content: space-evenly;
       &__search-icon {
-        display: block;
+        display: block!important;
       }
     }
   }
 }
+
+
 
 @media (max-width: 450px) {
   .header {
@@ -168,7 +170,6 @@
     }
 
     &__right {
-      width: 130px;
 
       &__search-icon {
         display: block;

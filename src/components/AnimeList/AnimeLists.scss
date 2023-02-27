@@ -43,7 +43,7 @@
   .anime-list {
     &__header {
       &__left {
-
+        width: 30%;
       }
       &__right {
 
@@ -58,7 +58,21 @@
   .anime-list {
     &__header {
       &__left {
+        width: 35%;
+      }
+      &__right {
+        width: 120px;
+        margin-right: 0;
+      }
+    }
+  }
+}
 
+@media (max-width: 420px) {
+  .anime-list {
+    &__header {
+      &__left {
+        width: 37%;
       }
       &__right {
         width: 120px;

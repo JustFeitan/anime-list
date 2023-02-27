@@ -10,4 +10,10 @@
   align-self: center;
 }
 
+@media (max-width: 420px) {
+  .watching-anime-list {
+    padding: 5px 10px;
+  }
+}
+
 /*# sourceMappingURL=WatchingAnimeList.css.map */

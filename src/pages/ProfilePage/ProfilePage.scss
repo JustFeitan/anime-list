@@ -148,3 +148,28 @@
     }
   }
 }
+
+@media (max-width: 420px) {
+  .profile {
+    &__header {
+      height: 470px;
+      //User's main info and edit block
+      &__main {
+        position: absolute;
+        bottom: -170px;
+        left: -30px;
+        display: flex;
+        flex-wrap: wrap;
+        align-items:center;
+        &__data {
+          flex-direction: column;
+          align-items: start;
+
+        }
+        &__btns {
+          margin-top: 0px;
+        }
+      }
+    }
+  }
+}

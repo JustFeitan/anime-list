@@ -15,7 +15,8 @@
 
 @media (max-width: 470px) {
   .form-wrapper {
-    width: 250px;
+    width: 310px;
+    padding: 30px 15px;
   }
 }
 

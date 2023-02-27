@@ -91,5 +91,19 @@
     width: 150px;
   }
 }
+@media (max-width: 420px) {
+  .anime-list__item__left__title {
+    width: 70px;
+  }
+  .anime-list__item__left > * {
+    margin-right: 5px;
+  }
+  .anime-list__item__right {
+    width: 133px;
+  }
+  .anime-list__item__right__data > * {
+    width: 40px;
+  }
+}
 
 /*# sourceMappingURL=AnimeListItem.css.map */

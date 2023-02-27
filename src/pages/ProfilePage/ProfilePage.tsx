@@ -34,7 +34,7 @@ const ProfilePage: FC = () => {
     };
 
     return (
-        <div className="profile">
+        <div className="profile" data-testid="profile-page">
             {isLoading ? (
                 <Loader />
             ) : (

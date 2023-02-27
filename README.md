@@ -1,12 +1,33 @@
 # Animelist website
 
-Сайт для отсллеживания аниме произведений, с возможностью добавлять в ращные списки.
+Сайт для отслеживания аниме произведений, с возможностью добавлять в разные списки.
 
 ## Возможности:
 
 - Регистрация с валидацией
 - Добавить произведение в один из трех списков(просмотренно, буду смотреть, смотрю) а затем редактировать их в профиле
+- Ставить оценку произведеиям
 - Отфильтровать аниме под году, типу, сезону и жанру
+- Поиск аниме
+- Редактировать профиль
+
+## Использеумый стэк
+### Фронт:
+
+- React
+- Typescript
+- Redux + Redux Toolkit
+- RTK Query
+- CSS/Scss
+### Бэк:
+
+- typicode/json-server - https://github.com/typicode/json-server
+- JSON Server Auth(для авторизации) - https://www.npmjs.com/package/json-server-auth
+
+### Остальное:
+
+- Тестирование - jest
+- Prettier
 
 ## Available Scripts
 
@@ -20,10 +41,9 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 The page will reload if you make edits.\
 You will also see any lint errors in the console.
 
-### `npm test`
+### `npm run server`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+For start full fake REST API
 
 ### `npm run build`
 
@@ -45,8 +65,3 @@ Instead, it will copy all the configuration files and the transitive dependencie
 
 You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
