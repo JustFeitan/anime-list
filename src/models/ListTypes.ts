@@ -1,5 +1,5 @@
 export enum ListTypes {
-    ANIME = 'ANIME',
-    FILTER = 'FILTER',
-    SEARCH = 'SEARCH',
+    ANIME = "ANIME",
+    FILTER = "FILTER",
+    SEARCH = "SEARCH",
 }

@@ -1,90 +1,90 @@
-.anime-certain{
-  width: 90%;
-  height: fit-content;
-  margin-top: 10px;
-  padding: 15px;
-  background-color: #fff;
-  border-radius: 5px;
-  display: flex;
-  flex-wrap: wrap;
-  align-content: start;
-  &__user-status {
-    margin-top: 10px;
-    position: relative;
-    &__bar {
-      background-color: #00D1FF;
-      width: 200px;
-      color: white;
-      text-align: center;
-      padding: 10px 25px;
-    }
-    &__dropdown {
-      left: 0;
-      border: 1px black solid;
-    }
-  }
-
-  &__main{
+.anime-certain {
+    width: 90%;
     height: fit-content;
-    width: 100%;
-    &__data {
-      display: flex;
+    margin-top: 10px;
+    padding: 15px;
+    background-color: #fff;
+    border-radius: 5px;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: start;
+    &__user-status {
+        margin-top: 10px;
+        position: relative;
+        &__bar {
+            background-color: #00d1ff;
+            width: 200px;
+            color: white;
+            text-align: center;
+            padding: 10px 25px;
+        }
+        &__dropdown {
+            left: 0;
+            border: 1px black solid;
+        }
     }
-  }
 
-  &__title{
-    color: #00D1FF;
-  }
-  &__genres{
-    font-style: italic;
-    color: rgba(0, 0, 0, .5);
-  }
-
-  &__description {
-    & > * {
-      margin-bottom: 5px;
+    &__main {
+        height: fit-content;
+        width: 100%;
+        &__data {
+            display: flex;
+        }
     }
-    padding: 0 10px;
-  }
+
+    &__title {
+        color: #00d1ff;
+    }
+    &__genres {
+        font-style: italic;
+        color: rgba(0, 0, 0, 0.5);
+    }
+
+    &__description {
+        & > * {
+            margin-bottom: 5px;
+        }
+        padding: 0 10px;
+    }
 }
 
 .star {
-  position: relative;
+    position: relative;
 
-  display: inline-block;
-  width: 0;
-  height: 0;
-
-  margin-left: .9em;
-  margin-right: .9em;
-  margin-bottom: 1.2em;
-
-  border-right:  .3em solid transparent;
-  border-bottom: .7em  solid #FC0;
-  border-left:   .3em solid transparent;
-
-  /* Controlls the size of the stars. */
-  font-size: 13px;
-  &:before, &:after {
-    content: '';
-
-    display: block;
+    display: inline-block;
     width: 0;
     height: 0;
 
-    position: absolute;
-    top: .6em;
-    left: -1em;
+    margin-left: 0.9em;
+    margin-right: 0.9em;
+    margin-bottom: 1.2em;
 
-    border-right:  1em solid transparent;
-    border-bottom: .7em  solid #FC0;
-    border-left:   1em solid transparent;
+    border-right: 0.3em solid transparent;
+    border-bottom: 0.7em solid #fc0;
+    border-left: 0.3em solid transparent;
 
-    transform: rotate(-35deg);
-  }
+    /* Controlls the size of the stars. */
+    font-size: 13px;
+    &:before,
+    &:after {
+        content: "";
 
-  &:after {
-    transform: rotate(35deg);
-  }
+        display: block;
+        width: 0;
+        height: 0;
+
+        position: absolute;
+        top: 0.6em;
+        left: -1em;
+
+        border-right: 1em solid transparent;
+        border-bottom: 0.7em solid #fc0;
+        border-left: 1em solid transparent;
+
+        transform: rotate(-35deg);
+    }
+
+    &:after {
+        transform: rotate(35deg);
+    }
 }
-

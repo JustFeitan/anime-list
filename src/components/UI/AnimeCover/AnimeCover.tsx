@@ -1,4 +1,5 @@
 import { ComponentProps, FC } from "react";
+
 import { IAnime } from "../../../models/IAnime";
 import "./AnimeCover.scss";
 

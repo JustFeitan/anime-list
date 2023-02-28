@@ -1,6 +1,7 @@
-import React, { ReactNode } from "react";
 import { render } from "@testing-library/react";
+import React, { ReactNode } from "react";
 import { Provider } from "react-redux";
+
 import { setStore } from "../store/store";
 
 export const RenderWithRedux = (

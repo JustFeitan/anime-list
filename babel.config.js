@@ -9,4 +9,19 @@ module.exports = {
             },
         ],
     ],
+    plugins: [
+        ["babel-plugin-root-import"],
+        {
+            paths: [
+                {
+                    rootPathSuffix: "./src/components/",
+                    rootPathPrefix: "~/",
+                },
+                {
+                    rootPathSuffix: "./src/utils",
+                    rootPathPrefix: "!/",
+                },
+            ],
+        },
+    ],
 };

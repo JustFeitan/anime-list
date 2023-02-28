@@ -1,65 +1,66 @@
 .filter {
-  padding: 0 25px;
-  margin-top: 30px;
-  display: flex;
-  flex-wrap: nowrap;
-  width: 100%;
-  justify-content: space-evenly;
-}
-.filter__result {
-  min-height: 70vh;
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-}
-
-.pagination {
-  padding: 15px;
-  display: flex;
-  justify-content: space-evenly;
-  list-style: none;
-  width: 100%;
-}
-.pagination__link {
-  font-size: 12px;
-  border-radius: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border: 1px solid #00D1FF;
-  height: 25px;
-  width: 25px;
-  cursor: pointer;
-}
-.pagination--active {
-  border-radius: 50%;
-  background: #00D1FF;
-  color: white;
-}
-
-.previous, .next {
-  border-radius: 10%;
-  padding: 5px;
-  background: #00D1FF;
-  color: white;
-}
-
-.container {
-  width: 100%;
-}
-
-@media (max-width: 820px) {
-  .filter {
     padding: 0 25px;
     margin-top: 30px;
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     width: 100%;
     justify-content: space-evenly;
-  }
-  .filter * {
-    margin-bottom: 5px;
-  }
+}
+.filter__result {
+    min-height: 70vh;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.pagination {
+    padding: 15px;
+    display: flex;
+    justify-content: space-evenly;
+    list-style: none;
+    width: 100%;
+}
+.pagination__link {
+    font-size: 12px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #00d1ff;
+    height: 25px;
+    width: 25px;
+    cursor: pointer;
+}
+.pagination--active {
+    border-radius: 50%;
+    background: #00d1ff;
+    color: white;
+}
+
+.previous,
+.next {
+    border-radius: 10%;
+    padding: 5px;
+    background: #00d1ff;
+    color: white;
+}
+
+.container {
+    width: 100%;
+}
+
+@media (max-width: 820px) {
+    .filter {
+        padding: 0 25px;
+        margin-top: 30px;
+        display: flex;
+        flex-wrap: wrap;
+        width: 100%;
+        justify-content: space-evenly;
+    }
+    .filter * {
+        margin-bottom: 5px;
+    }
 }
 
 /*# sourceMappingURL=AnimesPage.css.map */

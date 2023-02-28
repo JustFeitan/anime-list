@@ -1,16 +1,19 @@
 import { FC, Suspense, useState } from "react";
 import { Outlet, useLocation, useParams } from "react-router-dom";
+
+import EditProfile from "../../components/EditProfileModal/EditProfileModal";
 import Avatar from "../../components/UI/Avatar/Avatar";
-import Typography from "../../components/UI/Typography/Typography";
-import { authApi } from "../../services/AuthService";
 import Loader from "../../components/UI/Loader/Loader";
-import MyPrimaryButton from "../../components/UI/buttons/MyPrimaryButton/MyPrimaryButton";
-import "./ProfilePage.scss";
+import Modal from "../../components/UI/Modal/Modal";
 import Navbar from "../../components/UI/Navbar/Navbar";
 import NavbarItem from "../../components/UI/Navbar/NavbarItem/NavbarItem";
+import Typography from "../../components/UI/Typography/Typography";
+import MyPrimaryButton from "../../components/UI/buttons/MyPrimaryButton/MyPrimaryButton";
+
+import { authApi } from "../../services/AuthService";
+
 import { AppRoutes } from "../../routing/routes";
-import Modal from "../../components/UI/Modal/Modal";
-import EditProfile from "../../components/EditProfileModal/EditProfileModal";
+import "./ProfilePage.scss";
 
 const ProfilePage: FC = () => {
     const { username } = useParams();

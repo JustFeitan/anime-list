@@ -1,5 +1,5 @@
-import {ListTypes} from "../../../../models/ListTypes";
-import styles from './List.module.scss'
+import { ListTypes } from "../../../../models/ListTypes";
+import styles from "./List.module.scss";
 
 interface ListProps<T> {
     type: ListTypes;
@@ -8,7 +8,6 @@ interface ListProps<T> {
 }
 
 export default function List<T>(props: ListProps<T>) {
-
     const rootStiles = [styles.all];
     switch (props.type) {
         case ListTypes.ANIME:
@@ -22,13 +21,8 @@ export default function List<T>(props: ListProps<T>) {
             break;
     }
     return (
-            <div className={rootStiles.join(' ')}>
-                {props.items.map(props.renderItem)}
-            </div>
-
+        <div className={rootStiles.join(" ")}>
+            {props.items.map(props.renderItem)}
+        </div>
     );
-};
-
-
-
-
+}

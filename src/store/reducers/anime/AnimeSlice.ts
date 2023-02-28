@@ -1,5 +1,6 @@
-import {createSlice, PayloadAction} from "@reduxjs/toolkit";
-import {IAnime} from "../../../models/IAnime";
+import { PayloadAction, createSlice } from "@reduxjs/toolkit";
+
+import { IAnime } from "../../../models/IAnime";
 
 interface AnimeState {
     loading: boolean;
@@ -10,18 +11,17 @@ interface AnimeState {
 const initialState: AnimeState = {
     animes: [],
     loading: false,
-    error: '',
-}
+    error: "",
+};
 
 export const animeSlice = createSlice({
-    name: 'anime',
+    name: "anime",
     initialState,
     reducers: {
         setAnimes(store, action: PayloadAction<IAnime[]>) {
             store.animes = [...store.animes, ...action.payload];
-        }
-    }
-})
-
+        },
+    },
+});
 
 export const animeReducer = animeSlice.reducer;

@@ -1,23 +1,27 @@
-import {authActions} from "../store/reducers/auth";
-import {useAppDispatch} from "./redux";
-import {useCookies} from "react-cookie";
-import {IUserResponse} from "../models/User/IUserResponse";
+import { useCookies } from "react-cookie";
+
+import { IUserResponse } from "../models/User/IUserResponse";
+import { authActions } from "../store/reducers/auth";
+import { useAppDispatch } from "./redux";
 
 export const useAuthentication = () => {
     const dispatch = useAppDispatch();
-    const [cookies, setCookie] = useCookies(['jwt-token']);
+    const [cookies, setCookie] = useCookies(["jwt-token"]);
 
-    return async function authentication(authenticationUser: () => Promise<IUserResponse>, onSuccess?: () => any) {
+    return async function authentication(
+        authenticationUser: () => Promise<IUserResponse>,
+        onSuccess?: () => any
+    ) {
         const expires = new Date();
         expires.setHours(new Date().getHours() + 1);
         const userResponse = await authenticationUser();
-        dispatch(authActions.setUser(userResponse))
-        console.log(userResponse)
-        setCookie('jwt-token', userResponse.accessToken, {
+        dispatch(authActions.setUser(userResponse));
+        console.log(userResponse);
+        setCookie("jwt-token", userResponse.accessToken, {
             expires: expires,
-            path: '/'
+            path: "/",
         });
-        localStorage.setItem('user', JSON.stringify(userResponse))
+        localStorage.setItem("user", JSON.stringify(userResponse));
         // setCookie('user', userResponse, {
         //     expires: expires,
         //     path: '/'
@@ -26,6 +30,6 @@ export const useAuthentication = () => {
         if (onSuccess) {
             await onSuccess();
         }
-        return userResponse
-    }
-}
+        return userResponse;
+    };
+};

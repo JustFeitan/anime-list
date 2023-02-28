@@ -1,4 +1,4 @@
-import {AnimeSeasonTypes, AnimeTypes} from "./AnimeTypes";
+import { AnimeSeasonTypes, AnimeTypes } from "./AnimeTypes";
 
 export interface ISeason {
     season: AnimeSeasonTypes;
@@ -19,4 +19,3 @@ export interface IAnime {
     relations: string[];
     tags: string[];
 }
-

@@ -1,15 +1,11 @@
-import React, {FC} from 'react';
+import React, { FC } from "react";
 
-interface SearchListProps{
-    items: [],
+interface SearchListProps {
+    items: [];
 }
 
-const SearchList:FC<SearchListProps> = ({}) => {
-    return (
-        <div className='search-list'>
-
-        </div>
-    );
+const SearchList: FC<SearchListProps> = ({}) => {
+    return <div className="search-list"></div>;
 };
 
 export default SearchList;

@@ -1,19 +1,19 @@
 .plan-anime-list {
-  display: flex;
-  flex-direction: column;
-  background: white;
-  border-radius: 35px;
-  margin-top: 25px;
-  padding: 15px 35px;
+    display: flex;
+    flex-direction: column;
+    background: white;
+    border-radius: 35px;
+    margin-top: 25px;
+    padding: 15px 35px;
 }
 .plan-anime-list__show-all {
-  align-self: center;
+    align-self: center;
 }
 
 @media (max-width: 420px) {
-  .plan-anime-list {
-    padding: 5px 10px;
-  }
+    .plan-anime-list {
+        padding: 5px 10px;
+    }
 }
 
 /*# sourceMappingURL=PlanToWatchAnimeList.css.map */

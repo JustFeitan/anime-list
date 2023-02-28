@@ -1,21 +1,23 @@
+import { skipToken } from "@reduxjs/toolkit/query";
 import React, { ChangeEvent, FC, useState } from "react";
+import { useNavigate, useParams } from "react-router-dom";
+
+import { userAnimeApi } from "../../../services/UserAnimeService";
+
+import { useAuth } from "../../../hooks/useAuth";
+import { useDebounceCallback } from "../../../hooks/useDebounceCallback";
 import { IAnime } from "../../../models/IAnime";
-import Typography from "../../UI/Typography/Typography";
+import { UserAnimeListItem } from "../../../models/UserAnimeListItem";
+import { AppRoutes } from "../../../routing/routes";
+import AnimeStatusSelect from "../../AnimeStatusSelect/AnimeStatusSelect";
 import AnimeCover from "../../UI/AnimeCover/AnimeCover";
-import "./AnimeListItem.scss";
-import MyPrimaryButton from "../../UI/buttons/MyPrimaryButton/MyPrimaryButton";
 import { EditIconWhite } from "../../UI/Icons/EditIconWhite";
 import Modal from "../../UI/Modal/Modal";
-import { UserAnimeListItem } from "../../../models/UserAnimeListItem";
-import { useAuth } from "../../../hooks/useAuth";
-import AnimeStatusSelect from "../../AnimeStatusSelect/AnimeStatusSelect";
-import { useNavigate, useParams } from "react-router-dom";
-import { userAnimeApi } from "../../../services/UserAnimeService";
-import { skipToken } from "@reduxjs/toolkit/query";
 import StarRating from "../../UI/StarRating/StarRating";
-import { useDebounceCallback } from "../../../hooks/useDebounceCallback";
+import Typography from "../../UI/Typography/Typography";
+import MyPrimaryButton from "../../UI/buttons/MyPrimaryButton/MyPrimaryButton";
 import TransparentInput from "../../UI/inputs/TransparentInput/TransparentInput";
-import { AppRoutes } from "../../../routing/routes";
+import "./AnimeListItem.scss";
 
 interface AnimeListItemProps {
     anime: IAnime;

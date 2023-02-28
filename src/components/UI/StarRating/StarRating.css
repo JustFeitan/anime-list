@@ -1,15 +1,15 @@
 .rating-stars {
-  display: flex;
-  padding: 5px;
+    display: flex;
+    padding: 5px;
 }
 .rating-stars span {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
 }
 .rating-stars > span + span {
-  padding-left: 5px;
+    padding-left: 5px;
 }
 
 /*# sourceMappingURL=StarRating.css.map */

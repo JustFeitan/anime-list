@@ -1,9 +1,9 @@
-import { FetchBaseQueryError } from "@reduxjs/toolkit/query";
 import {
-    isRejectedWithValue,
     Middleware,
     MiddlewareAPI,
+    isRejectedWithValue,
 } from "@reduxjs/toolkit";
+import { FetchBaseQueryError } from "@reduxjs/toolkit/query";
 import { toast } from "react-toastify";
 
 /**

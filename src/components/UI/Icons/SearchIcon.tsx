@@ -1,6 +1,7 @@
 import React, { ComponentProps, FC } from "react";
-import Icon from "./Icon/Icon";
+
 import { IconInterface } from "../../../models/Icon";
+import Icon from "./Icon/Icon";
 
 interface CertainIconProps extends IconInterface, ComponentProps<"span"> {}
 

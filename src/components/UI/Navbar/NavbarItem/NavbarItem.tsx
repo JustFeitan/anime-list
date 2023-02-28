@@ -1,5 +1,6 @@
 import React, { FC } from "react";
 import { NavLink, NavLinkProps } from "react-router-dom";
+
 import "./NavbarItem.scss";
 
 interface NavbarItem extends NavLinkProps {}

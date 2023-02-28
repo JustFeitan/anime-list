@@ -1,15 +1,21 @@
-import {IAnimeFilter} from "../models/IAnimeFilter";
-import {useMemo} from "react";
-import {FilterTypes} from "../models/FilterTypes";
+import { useMemo } from "react";
 
+import { FilterTypes } from "../models/FilterTypes";
+import { IAnimeFilter } from "../models/IAnimeFilter";
 
-export const useMySearchParams = (filters: IAnimeFilter, searchParams: URLSearchParams) => {
-
+export const useMySearchParams = (
+    filters: IAnimeFilter,
+    searchParams: URLSearchParams
+) => {
     return useMemo(() => {
         // ADD TYPE!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
-
-        const mySearchParams: { year: string[], season: string[], type: string[], tags: string[] } = {
+        const mySearchParams: {
+            year: string[];
+            season: string[];
+            type: string[];
+            tags: string[];
+        } = {
             year: [],
             tags: [],
             season: [],
@@ -19,7 +25,7 @@ export const useMySearchParams = (filters: IAnimeFilter, searchParams: URLSearch
         for (const filterKey in filters) {
             switch (filterKey) {
                 case FilterTypes.YEAR:
-                    mySearchParams.year = filters.year
+                    mySearchParams.year = filters.year;
                     break;
                 case FilterTypes.SEASON:
                     mySearchParams.season = filters.season;
@@ -35,5 +41,4 @@ export const useMySearchParams = (filters: IAnimeFilter, searchParams: URLSearch
 
         return mySearchParams;
     }, [filters, searchParams]);
-
-}
+};

@@ -1,18 +1,19 @@
 import React, { useRef, useState } from "react";
-import Avatar from "../UI/Avatar/Avatar";
+import { useCookies } from "react-cookie";
+import { useLocation, useNavigate } from "react-router-dom";
 import { CSSTransition } from "react-transition-group";
+
+import { useAppDispatch } from "../../hooks/redux";
+import { useAuth } from "../../hooks/useAuth";
+import useOutsideClickHandler from "../../hooks/useOutsideClickHandler";
+import { AppRoutes } from "../../routing/routes";
+import { authActions } from "../../store/reducers/auth";
+import Avatar from "../UI/Avatar/Avatar";
 import DropdownMenu from "../UI/DropdownMenu/DropdownMenu";
 import DropdownMenuItem from "../UI/DropdownMenu/DropdownMenuItem/DropdownMenuItem";
 import { ListIcon, LogoutIcon, ProfileIcon } from "../UI/Icons";
 import MyPrimaryButton from "../UI/buttons/MyPrimaryButton/MyPrimaryButton";
-import { AppRoutes } from "../../routing/routes";
-import { authActions } from "../../store/reducers/auth";
-import { useLocation, useNavigate } from "react-router-dom";
-import { useAppDispatch } from "../../hooks/redux";
-import { useAuth } from "../../hooks/useAuth";
-import useOutsideClickHandler from "../../hooks/useOutsideClickHandler";
 import "./ProfileAvatarMenu.scss";
-import { useCookies } from "react-cookie";
 
 const ProfileAvatarMenu = () => {
     const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);

@@ -1,12 +1,13 @@
-import Input from "../UI/inputs/Input/Input";
-import { DropDown } from "../UI/DropDown/DropDown";
-import Loader from "../UI/Loader/Loader";
-import List from "../UI/Lists/List/List";
-import { ListTypes } from "../../models/ListTypes";
-import React, { ChangeEvent, useMemo, useState } from "react";
-import { FetchBaseQueryError } from "@reduxjs/toolkit/query";
 import { SerializedError } from "@reduxjs/toolkit";
+import { FetchBaseQueryError } from "@reduxjs/toolkit/query";
+import React, { ChangeEvent, useMemo, useState } from "react";
+
 import { useDebounce } from "../../hooks/useDebounce";
+import { ListTypes } from "../../models/ListTypes";
+import { DropDown } from "../UI/DropDown/DropDown";
+import List from "../UI/Lists/List/List";
+import Loader from "../UI/Loader/Loader";
+import Input from "../UI/inputs/Input/Input";
 import "./SearchWithDropDown.scss";
 
 interface SearchWithDropDownProps<T> {

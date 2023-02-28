@@ -1,4 +1,5 @@
 import { ComponentProps, FC } from "react";
+
 import { IconInterface } from "../../../../models/Icon";
 import "./Icon.scss";
 

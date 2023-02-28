@@ -1,62 +1,59 @@
 .all {
-  padding: 25px 25px 0 25px;
-  width: 100%;
+    padding: 25px 25px 0 25px;
+    width: 100%;
 }
 
 .anime {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  align-content: space-between;
-
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-content: space-between;
 }
 
 .filter {
-  padding: 0;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  align-content: start;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-content: start;
 }
 
 //change to another
 .search {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  align-content: space-between;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-content: space-between;
 }
 
 @media (max-width: 1060px) {
-  .all {
-    padding: 15px 15px 0 15px;
-  }
-
+    .all {
+        padding: 15px 15px 0 15px;
+    }
 }
 
 @media (max-width: 1000px) {
-  .search {
-    justify-content: center;
-  }
+    .search {
+        justify-content: center;
+    }
 }
 
 @media (max-width: 655px) {
-  .all {
-    padding: 5px 5px 0 5px;
-  }
-  .search {
-    justify-content: space-evenly;
-  }
-
+    .all {
+        padding: 5px 5px 0 5px;
+    }
+    .search {
+        justify-content: space-evenly;
+    }
 }
 
 @media (max-width: 540px) {
-  .anime {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-content: center;
-  }
+    .anime {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-content: center;
+    }
 }

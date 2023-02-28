@@ -1,8 +1,9 @@
-import {useMemo} from "react";
-import {AnimeSeasonTypes} from "../models/AnimeTypes";
-import {IAnime} from "../models/IAnime";
-import {IAnimeFilter} from "../models/IAnimeFilter";
-import {FilterTypes} from "../models/FilterTypes";
+import { useMemo } from "react";
+
+import { AnimeSeasonTypes } from "../models/AnimeTypes";
+import { FilterTypes } from "../models/FilterTypes";
+import { IAnime } from "../models/IAnime";
+import { IAnimeFilter } from "../models/IAnimeFilter";
 
 export const useAnimeBySeason = (animes: IAnime[], filters: IAnimeFilter) => {
     return useMemo(() => {
@@ -11,18 +12,20 @@ export const useAnimeBySeason = (animes: IAnime[], filters: IAnimeFilter) => {
             switch (filter) {
                 case FilterTypes.SEASON:
                     if (filters.season.length) {
-                        animes = animes!.filter((anime) => filters.season.includes(anime.animeSeason.season));
+                        animes = animes!.filter((anime) =>
+                            filters.season.includes(anime.animeSeason.season)
+                        );
                     }
                     break;
                 case FilterTypes.YEAR:
                     if (filters.year.length) {
-                        animes = animes!.filter((anime) => filters.year.includes(anime.animeSeason.year));
+                        animes = animes!.filter((anime) =>
+                            filters.year.includes(anime.animeSeason.year)
+                        );
                     }
                     break;
             }
         }
         return animes;
-
-    }, [animes, filters])
-
-}
+    }, [animes, filters]);
+};

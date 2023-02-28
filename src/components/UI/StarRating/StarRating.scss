@@ -1,13 +1,13 @@
-.rating-stars{
-  display: flex;
-  padding: 5px;
-  & span {
+.rating-stars {
     display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-  }
-  & > span + span{
-    padding-left: 5px;
-  }
+    padding: 5px;
+    & span {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+    }
+    & > span + span {
+        padding-left: 5px;
+    }
 }

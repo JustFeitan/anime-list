@@ -1,23 +1,22 @@
-@use 'styles/normalize.css';
-@use 'src/styles/variables';
+@use "styles/normalize.css";
+@use "src/styles/variables";
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 body {
-  font-family: 'Roboto', sans-serif;
-  font-size: variables.$main-font-size;
-  background: #F4F4F4;
+    font-family: "Roboto", sans-serif;
+    font-size: variables.$main-font-size;
+    background: #f4f4f4;
 }
 
-.app{
-
+.app {
 }
 
 @media (max-width: 540px) {
-  body {
-    font-size: 12px;
-  }
+    body {
+        font-size: 12px;
+    }
 }

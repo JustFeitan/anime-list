@@ -1,23 +1,18 @@
 export namespace AnimeFilterData {
     export const yearFilters = [
-        '2012',
-        '2013',
-        '2014',
-        '2015',
-        '2016',
-        '2017',
-        '2018',
-        '2019',
-        '2020',
-        '2021',
-        '2022',
+        "2012",
+        "2013",
+        "2014",
+        "2015",
+        "2016",
+        "2017",
+        "2018",
+        "2019",
+        "2020",
+        "2021",
+        "2022",
     ];
-    export const seasonFilters = [
-        'Spring',
-        'Summer',
-        'Winter',
-        'Fall',
-    ];
+    export const seasonFilters = ["Spring", "Summer", "Winter", "Fall"];
 
     export const genresFilters = [
         "chibi",
@@ -63,11 +58,15 @@ export namespace AnimeFilterData {
         "swords & co",
         "video games",
         "virtual reality",
-        "virtual world"
-    ]
+        "virtual world",
+    ];
 
     export const typeFilter = [
-        'TV', 'MOVIE', 'OVA', 'ONA', 'SPECIAL', 'UNKNOWN'
-    ]
-
+        "TV",
+        "MOVIE",
+        "OVA",
+        "ONA",
+        "SPECIAL",
+        "UNKNOWN",
+    ];
 }

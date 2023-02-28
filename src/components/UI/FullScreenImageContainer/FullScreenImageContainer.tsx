@@ -1,18 +1,23 @@
-import {ComponentProps, FC} from 'react';
-import './FullScreenImageContainer.scss';
-import BackgroundImage from './../../../assets/login-background.jpg'
+import { ComponentProps, FC } from "react";
 
-interface FullScreenImageContainerProps extends ComponentProps<'div'>{
+import BackgroundImage from "./../../../assets/login-background.jpg";
+import "./FullScreenImageContainer.scss";
+
+interface FullScreenImageContainerProps extends ComponentProps<"div"> {
     backgroundImg: string;
 }
 
-const FullScreenImageContainer: FC<FullScreenImageContainerProps> = ({backgroundImg , children, ...props}) => {
+const FullScreenImageContainer: FC<FullScreenImageContainerProps> = ({
+    backgroundImg,
+    children,
+    ...props
+}) => {
     backgroundImg = BackgroundImage;
     const styles = {
-        backgroundImage: backgroundImg &&`url(${backgroundImg})`
-    }
+        backgroundImage: backgroundImg && `url(${backgroundImg})`,
+    };
     return (
-        <div  className='fullscreen-image-bg' style={styles} {...props}>
+        <div className="fullscreen-image-bg" style={styles} {...props}>
             {children}
         </div>
     );

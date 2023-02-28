@@ -1,18 +1,20 @@
+import { yupResolver } from "@hookform/resolvers/yup";
 import { FC, useCallback, useState } from "react";
+import { useDropzone } from "react-dropzone";
+import { SubmitHandler, useForm } from "react-hook-form";
+import * as yup from "yup";
+
+import { authApi } from "../../services/AuthService";
+
+import { useAppDispatch } from "../../hooks/redux";
+import { IUser } from "../../models/User/IUser";
+import { authActions } from "../../store/reducers/auth";
+import Avatar from "../UI/Avatar/Avatar";
 import Form from "../UI/Form/Form";
+import Modal from "../UI/Modal/Modal";
+import MyPrimaryButton from "../UI/buttons/MyPrimaryButton/MyPrimaryButton";
 import Input from "../UI/inputs/Input/Input";
 import "./EditProfileModal.scss";
-import { useDropzone } from "react-dropzone";
-import Avatar from "../UI/Avatar/Avatar";
-import { IUser } from "../../models/User/IUser";
-import MyPrimaryButton from "../UI/buttons/MyPrimaryButton/MyPrimaryButton";
-import { SubmitHandler, useForm } from "react-hook-form";
-import Modal from "../UI/Modal/Modal";
-import { authApi } from "../../services/AuthService";
-import { useAppDispatch } from "../../hooks/redux";
-import { authActions } from "../../store/reducers/auth";
-import * as yup from "yup";
-import { yupResolver } from "@hookform/resolvers/yup";
 
 interface EditProfileProps {
     user: Omit<IUser, "password">;

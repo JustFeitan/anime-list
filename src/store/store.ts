@@ -1,7 +1,9 @@
 import { configureStore } from "@reduxjs/toolkit";
-import { reducers } from "./reducers";
+
 import { animeAPI } from "../services/AnimeService";
 import { rtkQueryErrorLogger } from "../services/helpers";
+
+import { reducers } from "./reducers";
 
 export const setStore = (preloadedState = {}) => {
     return configureStore({

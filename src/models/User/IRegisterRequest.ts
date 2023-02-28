@@ -1,7 +1,4 @@
-import {ILoginRequest} from "./ILoginRequest";
-import {IUser} from "./IUser";
+import { ILoginRequest } from "./ILoginRequest";
+import { IUser } from "./IUser";
 
-
-export interface ISignUpRequest extends Omit<IUser, 'id'>{
-
-}
+export interface ISignUpRequest extends Omit<IUser, "id"> {}

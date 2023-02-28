@@ -4,11 +4,17 @@ import React, {
     DetailedHTMLProps,
     HTMLAttributes,
     HTMLProps,
-    InputHTMLAttributes
-} from 'react';
-import './Input.scss'
+    InputHTMLAttributes,
+} from "react";
 
-export interface InputProps extends DetailedHTMLProps<InputHTMLAttributes<HTMLInputElement>, HTMLInputElement>, AriaAttributes {
+import "./Input.scss";
+
+export interface InputProps
+    extends DetailedHTMLProps<
+            InputHTMLAttributes<HTMLInputElement>,
+            HTMLInputElement
+        >,
+        AriaAttributes {
     label?: string;
     helperText?: string;
     error?: boolean;
@@ -16,51 +22,41 @@ export interface InputProps extends DetailedHTMLProps<InputHTMLAttributes<HTMLIn
     endItem?: JSX.Element;
 }
 
-const Input = React.forwardRef<HTMLInputElement, InputProps>(({
-                                                                  helperText,
-                                                                  error,
-                                                                  label,
-                                                                  className,
-                                                                  endItem,
-                                                                  ...props
-                                                              }, ref) => {
+const Input = React.forwardRef<HTMLInputElement, InputProps>(
+    ({ helperText, error, label, className, endItem, ...props }, ref) => {
+        return (
+            <div className={"input"}>
+                {label && <div className="input__label">{label}</div>}
 
-    return (
-        <div className={'input'}>
-            {
-                label && <div className='input__label'>{label}</div>
-            }
-
-            <div className='input__wrapper'>
-                <input
-                    className={
-                        error
-                            ? `input__field--invalid`
-                            : className
+                <div className="input__wrapper">
+                    <input
+                        className={
+                            error
+                                ? `input__field--invalid`
+                                : className
                                 ? `input__field ${className}`
                                 : `input__field`
-                    }
-                    {...props}
-                    ref={ref}
-                />
-                {endItem &&
-                    <div className='input__icon'>
-                        {endItem}
-                    </div>
-                }
-            </div>
-
-            {helperText &&
-                <div
-                    className={error ? `input__helper-text--invalid` : `input__helper-text`}
-                >
-                    {helperText}
+                        }
+                        {...props}
+                        ref={ref}
+                    />
+                    {endItem && <div className="input__icon">{endItem}</div>}
                 </div>
-            }
 
-        </div>
-
-    );
-});
+                {helperText && (
+                    <div
+                        className={
+                            error
+                                ? `input__helper-text--invalid`
+                                : `input__helper-text`
+                        }
+                    >
+                        {helperText}
+                    </div>
+                )}
+            </div>
+        );
+    }
+);
 
 export default Input;

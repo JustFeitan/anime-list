@@ -1,4 +1,5 @@
 import React, { ComponentProps, FC } from "react";
+
 import avatar from "./../../../assets/hot.png";
 import "./Avatar.scss";
 

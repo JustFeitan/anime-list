@@ -1,15 +1,18 @@
 import React, { useState } from "react";
-import { animeAPI } from "../../services/AnimeService";
-import { IAnime } from "../../models/IAnime";
+import { useNavigate } from "react-router-dom";
+
 import AnimeItem from "../../components/AnimeItem/AnimeItem";
 import ContentBar from "../../components/UI/ContentBar/ContentBar";
-import { AnimeSeasonTypes } from "../../models/AnimeTypes";
 import Loader from "../../components/UI/Loader/Loader";
-import spring from "../../assets/spring.png";
+
+import { animeAPI } from "../../services/AnimeService";
+
 import hot from "../../assets/hot.png";
-import "./HomePage.scss";
-import { useNavigate } from "react-router-dom";
+import spring from "../../assets/spring.png";
+import { AnimeSeasonTypes } from "../../models/AnimeTypes";
+import { IAnime } from "../../models/IAnime";
 import { AppRoutes } from "../../routing/routes";
+import "./HomePage.scss";
 
 const HomePage = () => {
     const [limit, setLimit] = useState<number>(8);

@@ -1,21 +1,21 @@
 .filterButton {
-  font-weight: 700;
-  margin-bottom: 5px;
-  padding: 5px 15px;
-  border: 1px solid #00D1FF;
-  border-radius: 12px;
-  background: white;
-  color: #00D1FF;
+    font-weight: 700;
+    margin-bottom: 5px;
+    padding: 5px 15px;
+    border: 1px solid #00d1ff;
+    border-radius: 12px;
+    background: white;
+    color: #00d1ff;
 }
 
 .filterButton.active {
-  background: #00D1FF;
-  color: white;
+    background: #00d1ff;
+    color: white;
 }
 
 .filterButton.noActive {
-  background: #00D1FF;
-  color: white;
+    background: #00d1ff;
+    color: white;
 }
 
 /*# sourceMappingURL=FilterButtom.module.css.map */

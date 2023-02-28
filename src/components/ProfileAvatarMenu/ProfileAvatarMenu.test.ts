@@ -1,12 +1,13 @@
 import "@testing-library/jest-dom";
 import { fireEvent, screen } from "@testing-library/react";
-import { IUser } from "../../models/User/IUser";
-import { config } from "react-transition-group";
-import { renderTestApp } from "../../utils/renderTestApp";
 import userEvent from "@testing-library/user-event";
+import { config } from "react-transition-group";
+
+import { IUser } from "../../models/User/IUser";
 import { authActions, authReducer } from "../../store/reducers/auth";
-import { getUser } from "../../store/reducers/auth/selectors/getUser";
 import { authSlice } from "../../store/reducers/auth/AuthSlice";
+import { getUser } from "../../store/reducers/auth/selectors/getUser";
+import { renderTestApp } from "../../utils/renderTestApp";
 
 describe("Profile menu tests", () => {
     let userMock: IUser;

@@ -1,17 +1,17 @@
 .watching-anime-list {
-  display: flex;
-  flex-direction: column;
-  background: white;
-  border-radius: 35px;
-  margin-top: 25px;
-  padding: 15px 35px;
-  &__show-all {
-    align-self: center;
-  }
+    display: flex;
+    flex-direction: column;
+    background: white;
+    border-radius: 35px;
+    margin-top: 25px;
+    padding: 15px 35px;
+    &__show-all {
+        align-self: center;
+    }
 }
 
 @media (max-width: 420px) {
-  .watching-anime-list {
-    padding: 5px 10px;
-  }
+    .watching-anime-list {
+        padding: 5px 10px;
+    }
 }

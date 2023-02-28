@@ -1,8 +1,8 @@
-import { animeAPI } from "./AnimeService";
-import { IUserResponse } from "../models/User/IUserResponse";
 import { ILoginRequest } from "../models/User/ILoginRequest";
 import { ISignUpRequest } from "../models/User/IRegisterRequest";
 import { IUser } from "../models/User/IUser";
+import { IUserResponse } from "../models/User/IUserResponse";
+import { animeAPI } from "./AnimeService";
 
 export const authApi = animeAPI.injectEndpoints({
     endpoints: (build) => ({

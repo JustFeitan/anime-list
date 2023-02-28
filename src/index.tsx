@@ -1,17 +1,18 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import App from './App';
-import {BrowserRouter} from "react-router-dom";
-import {Provider} from "react-redux";
-import {setStore} from "./store/store";
-import "slick-carousel/slick/slick.css";
+import React from "react";
+import { CookiesProvider } from "react-cookie";
+import ReactDOM from "react-dom/client";
+import { Provider } from "react-redux";
+import { BrowserRouter } from "react-router-dom";
 import "slick-carousel/slick/slick-theme.css";
-import {CookiesProvider} from "react-cookie";
+import "slick-carousel/slick/slick.css";
+
+import App from "./App";
+import { setStore } from "./store/store";
 
 const store = setStore();
 
 const root = ReactDOM.createRoot(
-  document.getElementById('root') as HTMLElement
+    document.getElementById("root") as HTMLElement
 );
 root.render(
     <BrowserRouter>
@@ -22,4 +23,3 @@ root.render(
         </CookiesProvider>
     </BrowserRouter>
 );
-

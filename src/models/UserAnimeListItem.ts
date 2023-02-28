@@ -1,5 +1,4 @@
-import {AnimeInListStatus} from "./AnimeInListStatus";
-
+import { AnimeInListStatus } from "./AnimeInListStatus";
 
 export interface UserAnimeListItem {
     id: string;

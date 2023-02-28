@@ -1,6 +1,6 @@
-import {AnimeInListStatus} from "./AnimeInListStatus";
+import { AnimeInListStatus } from "./AnimeInListStatus";
 
 export interface AnimeListStatusRequest {
     userId: number | string;
-    status: AnimeInListStatus
+    status: AnimeInListStatus;
 }

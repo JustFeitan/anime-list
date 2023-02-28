@@ -1,13 +1,15 @@
 import React, { FC, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import "./Header.scss";
+
 import { animeAPI } from "../../services/AnimeService";
-import AnimeItem from "../AnimeItem/AnimeItem";
-import SearchWithDropDown from "../SearchWithDropDown/SearchWithDropDown";
+
 import { IAnime } from "../../models/IAnime";
+import AnimeItem from "../AnimeItem/AnimeItem";
 import ProfileAvatarMenu from "../ProfileAvatarMenu/ProfileAvatarMenu";
-import SearchIcon from "../UI/Icons/SearchIcon";
+import SearchWithDropDown from "../SearchWithDropDown/SearchWithDropDown";
 import { DropDown } from "../UI/DropDown/DropDown";
+import SearchIcon from "../UI/Icons/SearchIcon";
+import "./Header.scss";
 
 const Header: FC = () => {
     const [searchInput, setSearchInput] = useState<string>("");

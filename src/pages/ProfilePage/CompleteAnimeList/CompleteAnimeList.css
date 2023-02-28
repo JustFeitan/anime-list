@@ -1,19 +1,19 @@
 .completed-anime-list {
-  display: flex;
-  flex-direction: column;
-  background: white;
-  border-radius: 35px;
-  margin-top: 25px;
-  padding: 15px 35px;
+    display: flex;
+    flex-direction: column;
+    background: white;
+    border-radius: 35px;
+    margin-top: 25px;
+    padding: 15px 35px;
 }
 .completed-anime-list__show-all {
-  align-self: center;
+    align-self: center;
 }
 
 @media (max-width: 420px) {
-  .completed-anime-list {
-    padding: 5px 10px;
-  }
+    .completed-anime-list {
+        padding: 5px 10px;
+    }
 }
 
 /*# sourceMappingURL=CompleteAnimeList.css.map */

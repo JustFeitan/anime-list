@@ -1,27 +1,25 @@
 .menu-item {
-  display: flex;
-  align-items: center;
-  width: 100%;
-  border: none;
-  background: transparent;
-  border-radius: 6px;
-  transition-duration: 0.4s;
-  padding: 0.65rem;
-  &__icon-left {
     display: flex;
     align-items: center;
-    margin-right: 0.6rem;
-  }
+    width: 100%;
+    border: none;
+    background: transparent;
+    border-radius: 6px;
+    transition-duration: 0.4s;
+    padding: 0.65rem;
+    &__icon-left {
+        display: flex;
+        align-items: center;
+        margin-right: 0.6rem;
+    }
 
-  &__icon-right {
-    display: flex;
-    align-items: center;
-    margin-left: auto;
-  }
+    &__icon-right {
+        display: flex;
+        align-items: center;
+        margin-left: auto;
+    }
 
-
-
-  &:hover {
-    background-color: #dadada;
-  }
+    &:hover {
+        background-color: #dadada;
+    }
 }

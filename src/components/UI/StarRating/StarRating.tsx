@@ -1,5 +1,6 @@
 import React, { FC, useState } from "react";
 import { BsStar, BsStarFill, BsStarHalf } from "react-icons/bs";
+
 import "./StarRating.scss";
 
 interface StarRatingProps {

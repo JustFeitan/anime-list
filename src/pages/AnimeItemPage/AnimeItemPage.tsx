@@ -1,15 +1,17 @@
+import { skipToken } from "@reduxjs/toolkit/query";
 import React, { useState } from "react";
 import { useParams } from "react-router-dom";
-import { animeAPI } from "../../services/AnimeService";
-import Loader from "../../components/UI/Loader/Loader";
-import "./AnimeItemPage.scss";
-import { useAuth } from "../../hooks/useAuth";
-import { skipToken } from "@reduxjs/toolkit/query";
-import { userAnimeApi } from "../../services/UserAnimeService";
+
 import AnimeStatusSelect from "../../components/AnimeStatusSelect/AnimeStatusSelect";
+import Loader from "../../components/UI/Loader/Loader";
 import StarRating from "../../components/UI/StarRating/StarRating";
+
+import { animeAPI } from "../../services/AnimeService";
+import { userAnimeApi } from "../../services/UserAnimeService";
+
+import { useAuth } from "../../hooks/useAuth";
 import { UserAnimeListItem } from "../../models/UserAnimeListItem";
-import ContentBar from "../../components/UI/ContentBar/ContentBar";
+import "./AnimeItemPage.scss";
 
 const AnimeItemPage = () => {
     const { title: animeTitle } = useParams();

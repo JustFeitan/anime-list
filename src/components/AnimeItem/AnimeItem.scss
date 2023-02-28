@@ -1,68 +1,68 @@
-@use 'src/styles/variables';
+@use "src/styles/variables";
 .anime-item {
-  display: flex;
-  flex-direction: column;
-  width: 190px;
-  background-color: white;
-  border-radius: 8px;
-  margin-bottom: 20px;
-  transition: transform .3s;
-  &:hover {
-    cursor: pointer;
-    -webkit-box-shadow: 0px 5px 10px 2px rgba(0, 144, 255, 0.2);
-    -moz-box-shadow: 0px 5px 10px 2px rgba(0, 144, 255, 0.2);
-    box-shadow: 0px 5px 10px 2px rgba(0, 144, 255, 0.2);
-    transform: scale(1.05);
-  }
-
-  &__img {
     display: flex;
     flex-direction: column;
-    justify-content: end;
-    background-position: center;
-    border-radius: 9px;
-  }
-
-  &__description {
-    min-height: 75px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    padding: 10px;
-    border-radius: 0 0 8px 8px;
+    width: 190px;
     background-color: white;
-    opacity: .90;
-  }
+    border-radius: 8px;
+    margin-bottom: 20px;
+    transition: transform 0.3s;
+    &:hover {
+        cursor: pointer;
+        -webkit-box-shadow: 0px 5px 10px 2px rgba(0, 144, 255, 0.2);
+        -moz-box-shadow: 0px 5px 10px 2px rgba(0, 144, 255, 0.2);
+        box-shadow: 0px 5px 10px 2px rgba(0, 144, 255, 0.2);
+        transform: scale(1.05);
+    }
 
-  &__title {
-    font-weight: 700;
-    font-size: variables.$middle-font-size;
-    line-height: 16px;
-    color: #00D1FF;
-    overflow: hidden;
-    white-space: nowrap;
-    text-overflow: ellipsis;
-  }
+    &__img {
+        display: flex;
+        flex-direction: column;
+        justify-content: end;
+        background-position: center;
+        border-radius: 9px;
+    }
 
-  &__data {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    font-style: normal;
-    font-weight: 400;
-    font-size: variables.$main-font-size;
-    line-height: 14px;
-  }
+    &__description {
+        min-height: 75px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding: 10px;
+        border-radius: 0 0 8px 8px;
+        background-color: white;
+        opacity: 0.9;
+    }
 
-  &__geners {
-    margin-bottom: 5px;
-    flex-basis: 100%;
-    font-style: normal;
-    font-weight: 400;
-    font-size: variables.$main-font-size;
-    line-height: 14px;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-  }
+    &__title {
+        font-weight: 700;
+        font-size: variables.$middle-font-size;
+        line-height: 16px;
+        color: #00d1ff;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+    }
+
+    &__data {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        font-style: normal;
+        font-weight: 400;
+        font-size: variables.$main-font-size;
+        line-height: 14px;
+    }
+
+    &__geners {
+        margin-bottom: 5px;
+        flex-basis: 100%;
+        font-style: normal;
+        font-weight: 400;
+        font-size: variables.$main-font-size;
+        line-height: 14px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
 }

@@ -1,10 +1,11 @@
 import React, { useRef } from "react";
+import { Link } from "react-router-dom";
 import Slider from "react-slick";
-import "./ContentBar.scss";
+
 import LeftArrow from "../MySliderArrows/LeftArrow/LeftArrow";
 import RightArrow from "../MySliderArrows/RightArrow/RightArrow";
-import { Link } from "react-router-dom";
 import MyPrimaryButton from "../buttons/MyPrimaryButton/MyPrimaryButton";
+import "./ContentBar.scss";
 
 interface ContentBarProps<T> {
     onShowMoreButtonClick?: () => void;

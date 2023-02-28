@@ -1,6 +1,7 @@
 import React, { ComponentProps } from "react";
-import "./DropdownMenu.scss";
+
 import { DropDown, DropDownProps } from "../DropDown/DropDown";
+import "./DropdownMenu.scss";
 
 interface DropDownMenuProps extends ComponentProps<"div"> {
     className: string;

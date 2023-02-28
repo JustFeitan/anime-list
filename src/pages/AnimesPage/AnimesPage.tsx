@@ -1,21 +1,24 @@
 import React, { FC, useEffect, useMemo, useState } from "react";
-import { animeAPI } from "../../services/AnimeService";
-import List from "../../components/UI/Lists/List/List";
-import { ListTypes } from "../../models/ListTypes";
-import { IAnime } from "../../models/IAnime";
+import ReactPaginate from "react-paginate";
+import { useSearchParams } from "react-router-dom";
+
 import AnimeItem from "../../components/AnimeItem/AnimeItem";
-import Loader from "../../components/UI/Loader/Loader";
-import { IAnimeFilter } from "../../models/IAnimeFilter";
-import "./AnimesPage.scss";
 import FilterWindow from "../../components/FilterWindow/FilterWindow";
-import { FilterTypes } from "../../models/FilterTypes";
+import List from "../../components/UI/Lists/List/List";
+import Loader from "../../components/UI/Loader/Loader";
+
+import { animeAPI } from "../../services/AnimeService";
+
+import { AnimeFilterData } from "../../data/AnimeFilterData";
 import { useAnimeFilterWindow } from "../../hooks/useAnimeFilterWindow";
 import { useAnimeQueryParams } from "../../hooks/useAnimeQueryParams";
-import ReactPaginate from "react-paginate";
-import { pageCount } from "../../utils/pageCount/pageCount";
-import { useSearchParams } from "react-router-dom";
 import { useMySearchParams } from "../../hooks/useMySearchParams";
-import { AnimeFilterData } from "../../data/AnimeFilterData";
+import { FilterTypes } from "../../models/FilterTypes";
+import { IAnime } from "../../models/IAnime";
+import { IAnimeFilter } from "../../models/IAnimeFilter";
+import { ListTypes } from "../../models/ListTypes";
+import { pageCount } from "../../utils/pageCount/pageCount";
+import "./AnimesPage.scss";
 
 const { typeFilter, yearFilters, seasonFilters, genresFilters } =
     AnimeFilterData;

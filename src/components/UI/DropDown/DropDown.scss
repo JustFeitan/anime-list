@@ -1,44 +1,39 @@
-@use './src/styles/variables';
-
+@use "./src/styles/variables";
 
 .dropdown {
+    &__result {
+        display: none;
+        &--active {
+            display: flex;
+            justify-content: center;
+            background-color: white;
+            position: absolute;
+            width: 100%;
+            z-index: 2;
+            max-height: calc(100vh - 10vh);
+            border-radius: 5px;
+            overflow: scroll;
+            overflow-x: hidden;
+            /* width */
+            &::-webkit-scrollbar {
+                width: 10px;
+            }
 
-  &__result {
-    display: none;
-    &--active {
-      display: flex;
-      justify-content: center;
-      background-color: white;
-      position: absolute;
-      width: 100%;
-      z-index: 2;
-      max-height: calc(100vh - 10vh);
-      border-radius: 5px;
-      overflow: scroll;
-      overflow-x: hidden;
-      /* width */
-      &::-webkit-scrollbar {
-        width: 10px;
-      }
+            /* Track */
+            &::-webkit-scrollbar-track {
+                background: #f1f1f1;
+            }
 
-      /* Track */
-      &::-webkit-scrollbar-track {
-        background: #f1f1f1;
-      }
+            /* Handle */
+            &::-webkit-scrollbar-thumb {
+                border-radius: 3px;
+                background: variables.$primary-text-color;
+            }
 
-      /* Handle */
-      &::-webkit-scrollbar-thumb {
-        border-radius: 3px;
-        background: variables.$primary-text-color;
-      }
-
-      /* Handle on hover */
-      &::-webkit-scrollbar-thumb:hover {
-        background: dodgerblue;
-      }
-
-
+            /* Handle on hover */
+            &::-webkit-scrollbar-thumb:hover {
+                background: dodgerblue;
+            }
+        }
     }
-  }
-
 }

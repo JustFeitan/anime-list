@@ -1,8 +1,7 @@
-import {AnimeInListStatus} from "../AnimeInListStatus";
+import { AnimeInListStatus } from "../AnimeInListStatus";
 
-export interface UserAnimeStatusOption extends selectOption<AnimeInListStatus>{
-
-}
+export interface UserAnimeStatusOption
+    extends selectOption<AnimeInListStatus> {}
 
 export type UserAnimeStatusOptions = selectOptions<UserAnimeStatusOption>;
 
@@ -14,4 +13,4 @@ export interface selectOption<T = string> {
     readonly isDisabled?: boolean;
 }
 
-export type selectOptions<E extends selectOption> = Array<E>
+export type selectOptions<E extends selectOption> = Array<E>;

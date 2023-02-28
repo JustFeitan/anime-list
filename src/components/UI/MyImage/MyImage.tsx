@@ -1,11 +1,7 @@
-import React, {FC} from 'react';
+import React, { FC } from "react";
 
 const MyImage: FC = () => {
-    return (
-        <div>
-
-        </div>
-    );
+    return <div></div>;
 };
 
 export default MyImage;

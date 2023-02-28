@@ -1,71 +1,70 @@
-@use 'src/styles/variables';
+@use "src/styles/variables";
 .input {
-  width: 100%;
-  &__label {
-    font-size: variables.$main-font-size;
-    font-weight: 700;
-    margin-bottom: 5px;
-    letter-spacing: 1px;
-  }
-
-  &__wrapper{
     width: 100%;
-    position: relative;
-    display: flex;
-    align-items: center;
-  }
-
-  &__icon {
-    height: 1.5rem;
-    width: 1.5rem;
-    position: absolute;
-    display: flex;
-    align-items: center;
-    right: 5px;
-    top: 50%;
-    transform: translateY(-50%);
-  }
-//Input styles
-  &__field {
-    border: 1px solid lightgray;
-    border-radius: 5px;
-    font-size: variables.$main-font-size;
-    padding: 10px 7px;
-    width: 100%;
-    letter-spacing: 1px;
-    &:focus {
-      outline: none;
+    &__label {
+        font-size: variables.$main-font-size;
+        font-weight: 700;
+        margin-bottom: 5px;
+        letter-spacing: 1px;
     }
 
-    &--invalid {
-      border: 1px solid red;
-      border-radius: 5px;
-      font-size: variables.$main-font-size;
-      padding: 10px 7px;
-      width: 100%;
-      letter-spacing: 1px;
-      &:focus {
-        outline: none;
-      }
+    &__wrapper {
+        width: 100%;
+        position: relative;
+        display: flex;
+        align-items: center;
     }
-  }
-//Styles for text under input(helper text)
-  &__helper-text{
-    padding: 5px 5px 5px 0;
-    width: 100%;
-    font-size: variables.$small-font-size;
-    color: lightgray;
-    letter-spacing: 1px;
-    min-inline-size: 320px;
-    overflow-wrap: break-word;
-    &--invalid {
-      color: red;
-      padding: 5px 5px 5px 0;
-      font-size: variables.$small-font-size;
-      letter-spacing: 1px;
-      max-inline-size: 320px;
-      overflow-wrap: break-word;
+
+    &__icon {
+        height: 1.5rem;
+        width: 1.5rem;
+        position: absolute;
+        display: flex;
+        align-items: center;
+        right: 5px;
+        top: 50%;
+        transform: translateY(-50%);
     }
-  }
+    //Input styles
+    &__field {
+        border: 1px solid lightgray;
+        border-radius: 5px;
+        font-size: variables.$main-font-size;
+        padding: 10px 7px;
+        width: 100%;
+        letter-spacing: 1px;
+        &:focus {
+            outline: none;
+        }
+
+        &--invalid {
+            border: 1px solid red;
+            border-radius: 5px;
+            font-size: variables.$main-font-size;
+            padding: 10px 7px;
+            width: 100%;
+            letter-spacing: 1px;
+            &:focus {
+                outline: none;
+            }
+        }
+    }
+    //Styles for text under input(helper text)
+    &__helper-text {
+        padding: 5px 5px 5px 0;
+        width: 100%;
+        font-size: variables.$small-font-size;
+        color: lightgray;
+        letter-spacing: 1px;
+        min-inline-size: 320px;
+        overflow-wrap: break-word;
+        &--invalid {
+            color: red;
+            padding: 5px 5px 5px 0;
+            font-size: variables.$small-font-size;
+            letter-spacing: 1px;
+            max-inline-size: 320px;
+            overflow-wrap: break-word;
+        }
+    }
 }
-

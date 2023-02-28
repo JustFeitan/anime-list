@@ -1,14 +1,17 @@
+import { skipToken } from "@reduxjs/toolkit/query";
 import React, { FC, useState } from "react";
 import { useLocation } from "react-router-dom";
-import { animeAPI } from "../../../services/AnimeService";
-import { useQueryFromId } from "../../../hooks/useQueryFromId";
-import { skipToken } from "@reduxjs/toolkit/query";
-import Loader from "../../../components/UI/Loader/Loader";
+
 import AnimeList from "../../../components/AnimeList/AnimeList";
-import { IAnime } from "../../../models/IAnime";
-import { userAnimeApi } from "../../../services/UserAnimeService";
-import { UserAnimeListItem } from "../../../models/UserAnimeListItem";
+import Loader from "../../../components/UI/Loader/Loader";
 import MyPrimaryButton from "../../../components/UI/buttons/MyPrimaryButton/MyPrimaryButton";
+
+import { animeAPI } from "../../../services/AnimeService";
+import { userAnimeApi } from "../../../services/UserAnimeService";
+
+import { useQueryFromId } from "../../../hooks/useQueryFromId";
+import { IAnime } from "../../../models/IAnime";
+import { UserAnimeListItem } from "../../../models/UserAnimeListItem";
 import "./WatchingAnimeList.scss";
 
 const WatchingAnimeList: FC = () => {

@@ -1,40 +1,40 @@
-@use './src/styles/variables';
+@use "./src/styles/variables";
 .navbar__link {
-  position: relative;
-  width: 100%;
-  text-decoration: none;
-  font-style: normal;
-  font-weight: 400;
-  font-size: variables.$middle-font-size;
-  line-height: 35px;
-  color: #6F747A;
-  text-align: center;
-  &::before {
-    content: "";
-    position: absolute;
-    display: block;
-    width: 80%;
-    height: 2px;
-    bottom: 0;
-    left: 10%;
-    background-color: variables.$primary-text-color;
-    transform: scaleX(0);
-    transition: transform 0.3s ease;
-  }
-
-  &:hover {
-    transition: 0.4s;
-    color: black;
-  }
-
-  &--active {
+    position: relative;
+    width: 100%;
+    text-decoration: none;
+    font-style: normal;
+    font-weight: 400;
+    font-size: variables.$middle-font-size;
+    line-height: 35px;
+    color: #6f747a;
+    text-align: center;
     &::before {
-      transform: scaleX(1);
+        content: "";
+        position: absolute;
+        display: block;
+        width: 80%;
+        height: 2px;
+        bottom: 0;
+        left: 10%;
+        background-color: variables.$primary-text-color;
+        transform: scaleX(0);
+        transition: transform 0.3s ease;
     }
-  }
+
+    &:hover {
+        transition: 0.4s;
+        color: black;
+    }
+
+    &--active {
+        &::before {
+            transform: scaleX(1);
+        }
+    }
 }
 @media (max-width: 540px) {
-  .navbar__link {
-    line-height: 25px;
-  }
+    .navbar__link {
+        line-height: 25px;
+    }
 }

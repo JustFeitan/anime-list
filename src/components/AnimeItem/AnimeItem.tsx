@@ -1,8 +1,9 @@
 import React, { FC, memo } from "react";
-import { IAnime } from "../../models/IAnime";
-import "./AnimeItem.scss";
 import { useNavigate } from "react-router-dom";
+
+import { IAnime } from "../../models/IAnime";
 import AnimeCover from "../UI/AnimeCover/AnimeCover";
+import "./AnimeItem.scss";
 
 interface AnimeItemProps {
     anime: IAnime;
