@@ -1,29 +1,20 @@
-import { lazy } from "react";
 import { Navigate, Route, Routes } from "react-router-dom";
 
 import RequireAuth from "../hoc/RequireAuth";
 import { useAuth } from "../hooks/useAuth";
-import Layout from "../pages/Layout";
-
-const HomePage = lazy(() => import("../pages/HomePage/HomePage"));
-const AnimesPage = lazy(() => import("../pages/AnimesPage/AnimesPage"));
-const AnimeItemPage = lazy(
-    () => import("../pages/AnimeItemPage/AnimeItemPage")
-);
-const MangaPage = lazy(() => import("../pages/MangaPage"));
-const LoginPage = lazy(() => import("../pages/LoginPage/LoginPage"));
-const SignUpPage = lazy(() => import("../pages/SignUpPage/SignUpPage"));
-const ProfilePage = lazy(() => import("../pages/ProfilePage/ProfilePage"));
-const CompleteAnimeList = lazy(
-    () => import("../pages/ProfilePage/CompleteAnimeList/CompleteAnimeList")
-);
-const WatchingAnimeList = lazy(
-    () => import("../pages/ProfilePage/WatchingAnimeList/WatchingAnimeList")
-);
-const PlanToWatchAnimeList = lazy(
-    () =>
-        import("../pages/ProfilePage/PlanToWatchAnimeList/PlanToWatchAnimeList")
-);
+import {
+    AnimeItemPage,
+    AnimesPage,
+    CompleteAnimeList,
+    HomePage,
+    Layout,
+    LoginPage,
+    MangaPage,
+    PlanToWatchAnimeList,
+    ProfilePage,
+    SignUpPage,
+    WatchingAnimeList,
+} from "../pages";
 
 const AppRouter = () => {
     const isLoggedIn = useAuth();
