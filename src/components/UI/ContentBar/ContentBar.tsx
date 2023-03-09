@@ -1,5 +1,4 @@
 import React, { useRef } from "react";
-import { Link } from "react-router-dom";
 import Slider from "react-slick";
 
 import LeftArrow from "../MySliderArrows/LeftArrow/LeftArrow";

@@ -1,9 +1,6 @@
 import React, {
     AriaAttributes,
-    ComponentProps,
     DetailedHTMLProps,
-    HTMLAttributes,
-    HTMLProps,
     InputHTMLAttributes,
 } from "react";
 

@@ -1,109 +1,109 @@
 .anime-list__item {
-    width: 100%;
-    padding: 17px 0;
-    border-top: 0.5px #d1d1d1 solid;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  width: 100%;
+  padding: 17px 0;
+  border-top: 0.5px #d1d1d1 solid;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 .anime-list__item__left {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
 }
 .anime-list__item__left__title {
-    width: 350px;
-    word-wrap: break-word;
+  width: 350px;
+  word-wrap: break-word;
 }
 .anime-list__item__left > * {
-    margin-right: 45px;
+  margin-right: 45px;
 }
 .anime-list__item__right {
-    width: 300px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  width: 300px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 .anime-list__item__right__data {
-    width: 185px;
-    display: flex;
-    justify-content: space-between;
+  width: 185px;
+  display: flex;
+  justify-content: space-between;
 }
 .anime-list__item__right__data > * {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
 }
 .anime-list__item__right__data__progress {
-    display: flex;
-    flex-wrap: nowrap;
-    width: auto;
-    min-width: 30px;
-    max-width: 70px;
-    align-items: center;
+  display: flex;
+  flex-wrap: nowrap;
+  width: auto;
+  min-width: 30px;
+  max-width: 70px;
+  align-items: center;
 }
 .anime-list__item__right__btns {
-    min-width: 70px;
-    margin-left: 20px;
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: nowrap;
+  min-width: 70px;
+  margin-left: 20px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: nowrap;
 }
 .anime-list__item__right__btns__delete {
-    background-color: #fd4752;
+  background-color: #fd4752;
 }
 
 @media (max-width: 1060px) {
-    .anime-list__item__left__title {
-        width: 230px;
-    }
-    .anime-list__item__left > * {
-        margin-right: 15px;
-    }
-    .anime-list__item__right {
-        flex-wrap: wrap;
-    }
-    .anime-list__item__right__btns {
-        margin-top: 10px;
-        width: 100%;
-        justify-content: space-evenly;
-    }
+  .anime-list__item__left__title {
+    width: 230px;
+  }
+  .anime-list__item__left > * {
+    margin-right: 15px;
+  }
+  .anime-list__item__right {
+    flex-wrap: wrap;
+  }
+  .anime-list__item__right__btns {
+    margin-top: 10px;
+    width: 100%;
+    justify-content: space-evenly;
+  }
 }
 @media (max-width: 820px) {
-    .anime-list__item__left__title {
-        width: 150px;
-        overflow: hidden;
-        white-space: nowrap;
-        text-overflow: ellipsis;
-    }
-    .anime-list__item__left > * {
-        margin-right: 5px;
-    }
+  .anime-list__item__left__title {
+    width: 150px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+  .anime-list__item__left > * {
+    margin-right: 5px;
+  }
 }
 @media (max-width: 540px) {
-    .anime-list__item__left__title {
-        width: 100px;
-    }
-    .anime-list__item__left > * {
-        margin-right: 5px;
-    }
-    .anime-list__item__right {
-        width: 150px;
-    }
+  .anime-list__item__left__title {
+    width: 100px;
+  }
+  .anime-list__item__left > * {
+    margin-right: 5px;
+  }
+  .anime-list__item__right {
+    width: 150px;
+  }
 }
 @media (max-width: 420px) {
-    .anime-list__item__left__title {
-        width: 70px;
-    }
-    .anime-list__item__left > * {
-        margin-right: 5px;
-    }
-    .anime-list__item__right {
-        width: 133px;
-    }
-    .anime-list__item__right__data > * {
-        width: 40px;
-    }
+  .anime-list__item__left__title {
+    width: 70px;
+  }
+  .anime-list__item__left > * {
+    margin-right: 5px;
+  }
+  .anime-list__item__right {
+    width: 133px;
+  }
+  .anime-list__item__right__data > * {
+    width: 40px;
+  }
 }
 
 /*# sourceMappingURL=AnimeListItem.css.map */

@@ -1,165 +1,173 @@
 .anime-list__item {
-    width: 100%;
-    padding: 17px 0;
-    border-top: 0.5px #d1d1d1 solid;
+  width: 100%;
+  padding: 17px 0;
+  border-top: 0.5px #d1d1d1 solid;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  &__left {
+    display: flex;
+    align-items: center;
+
+    &__title {
+      width: 350px;
+      word-wrap: break-word;
+    }
+
+    & > * {
+      margin-right: 45px;
+    }
+  }
+
+  &__right {
+    width: 300px;
     display: flex;
     justify-content: space-between;
     align-items: center;
 
-    &__left {
+    &__data {
+      & > * {
         display: flex;
+        justify-content: center;
         align-items: center;
+        width: 50px;
+      }
 
-        &__title {
-            width: 350px;
-            word-wrap: break-word;
-        }
+      &__progress {
+        display: flex;
+        flex-wrap: nowrap;
+        width: auto;
+        min-width: 30px;
+        max-width: 70px;
+        align-items: center;
+      }
 
-        & > * {
-            margin-right: 45px;
-        }
+      width: 185px;
+      display: flex;
+      justify-content: space-between;
+
     }
 
-    &__right {
-        width: 300px;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
+    &__btns {
+      min-width: 70px;
+      margin-left: 20px;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: nowrap;
 
-        &__data {
-            & > * {
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                width: 50px;
-            }
-            &__progress {
-                display: flex;
-                flex-wrap: nowrap;
-                width: auto;
-                min-width: 30px;
-                max-width: 70px;
-                align-items: center;
-            }
-            width: 185px;
-            display: flex;
-            justify-content: space-between;
-        }
-
-        &__btns {
-            min-width: 70px;
-            margin-left: 20px;
-            display: flex;
-            justify-content: space-between;
-            flex-wrap: nowrap;
-            &__delete {
-                background-color: #fd4752;
-            }
-        }
+      &__delete {
+        background-color: #fd4752;
+      }
     }
+  }
 }
 
 @media (max-width: 1060px) {
-    .anime-list__item {
-        &__left {
-            &__title {
-                width: 230px;
-            }
+  .anime-list__item {
+    &__left {
+      &__title {
+        width: 230px;
+      }
 
-            & > * {
-                margin-right: 15px;
-            }
-        }
-
-        &__right {
-            flex-wrap: wrap;
-
-            &__data {
-                & > * {
-                }
-            }
-            &__btns {
-                margin-top: 10px;
-                width: 100%;
-                justify-content: space-evenly;
-            }
-        }
+      & > * {
+        margin-right: 15px;
+      }
     }
+
+    &__right {
+      flex-wrap: wrap;
+
+      &__data {
+        & > * {
+        }
+      }
+
+      &__btns {
+        margin-top: 10px;
+        width: 100%;
+        justify-content: space-evenly;
+      }
+    }
+  }
 }
 
 @media (max-width: 820px) {
-    .anime-list__item {
-        &__left {
-            &__title {
-                width: 150px;
-                overflow: hidden;
-                white-space: nowrap;
-                text-overflow: ellipsis;
-            }
+  .anime-list__item {
+    &__left {
+      &__title {
+        width: 150px;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+      }
 
-            & > * {
-                margin-right: 5px;
-            }
-        }
-
-        &__right {
-            &__data {
-                & > * {
-                }
-            }
-
-            &__btns {
-            }
-        }
+      & > * {
+        margin-right: 5px;
+      }
     }
+
+    &__right {
+      &__data {
+        & > * {
+        }
+      }
+
+      &__btns {
+      }
+    }
+  }
 }
 
 @media (max-width: 540px) {
-    .anime-list__item {
-        &__left {
-            &__title {
-                width: 100px;
-            }
+  .anime-list__item {
+    &__left {
+      &__title {
+        width: 100px;
+      }
 
-            & > * {
-                margin-right: 5px;
-            }
-        }
-
-        &__right {
-            &__data {
-                & > * {
-                }
-            }
-            width: 150px;
-            &__btns {
-            }
-        }
+      & > * {
+        margin-right: 5px;
+      }
     }
+
+    &__right {
+      &__data {
+        & > * {
+        }
+      }
+
+      width: 150px;
+
+      &__btns {
+      }
+    }
+  }
 }
 
 @media (max-width: 420px) {
-    .anime-list__item {
-        &__left {
-            &__title {
-                width: 70px;
-            }
+  .anime-list__item {
+    &__left {
+      &__title {
+        width: 70px;
+      }
 
-            & > * {
-                margin-right: 5px;
-            }
-        }
-
-        &__right {
-            width: 133px;
-            &__data {
-                & > * {
-                    width: 40px;
-                }
-            }
-
-            &__btns {
-            }
-        }
+      & > * {
+        margin-right: 5px;
+      }
     }
+
+    &__right {
+      width: 133px;
+
+      &__data {
+        & > * {
+          width: 40px;
+        }
+      }
+
+      &__btns {
+      }
+    }
+  }
 }
