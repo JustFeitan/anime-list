@@ -15,7 +15,7 @@ export const emptyApi = createApi({
 export const animeAPI = createApi({
     reducerPath: "animeAPI",
     baseQuery: fetchBaseQuery({
-        baseUrl: "http://localhost:5000",
+        baseUrl: "https://calm-rigorous-arrhinceratops.glitch.me",
         prepareHeaders: (headers, { getState }) => {
             const token = (getState() as AppStore).authReducer.accessToken;
             if (token) {
