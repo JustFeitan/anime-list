@@ -1,6 +1,7 @@
 # Animelist website
 
 Сайт для отслеживания аниме произведений, с возможностью добавлять в разные списки.
+Сылка на развернутую на хостинге версию(Netify): [https://animagach.netlify.app](https://animagach.netlify.app)
 
 ## Возможности:
 
